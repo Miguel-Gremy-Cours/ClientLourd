@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ClientLourd.WPF.Properties
+namespace MegaCasting.WPF.Properties
 {
 
 
