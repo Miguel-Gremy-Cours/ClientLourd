@@ -1,5 +1,4 @@
-﻿
-using MegaCasting.DBLib;
+﻿using MegaCasting.DBLib;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -7,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MegaCasting.WPF.ViewModel
+namespace ClientLourd.ViewModel
 {
     public class ViewModelEmployes:ViewModelBase
 
@@ -33,7 +32,7 @@ namespace MegaCasting.WPF.ViewModel
 
 
 
-        public Employe Employe
+        public Employe SelectedEmploye
         {
             get { return _SelectedEmploye; }
             set { _SelectedEmploye = value; }
@@ -43,13 +42,41 @@ namespace MegaCasting.WPF.ViewModel
 
         public ViewModelEmployes(MegaCastingEntities entities):base(entities)
         {
-            this.Employes = new ObservableCollection<Employe>();
-            foreach(Employe employe in this.Entities.Employes)
-            {
-                this.Employes.Add(employe);
-            }
+            this.Entities.Employes.ToList();
+            this.Employes = this.Entities.Employes.Local;
         }
         #endregion
+        /// <summary>
+        /// Ajouter un employé
+        /// </summary>
+        public void InsertEmploye()
+        {
+            if (this.Entities.Employes.Any(person => person.nom == "Nouveau nom")&& this.Entities.Employes.Any(P=>P.prenom=="Nouveau prénom"))
+            {
+                Employe employe = new Employe();
+                employe.nom = "Nouveau nom";
+                employe.prenom = "Nouveau prénom";
+                this.Employes.Add(employe);
+                this.SaveChanges();
+                this.SelectedEmploye = employe;
 
+            }
+
+        }
+
+
+
+        /// <summary>
+        /// supprimer un employé
+        /// </summary>
+
+        public void DeleteEmploye()
+        {
+            // vérification de droit de suppression, aucune table liée
+
+            //suppression d'élément
+            this.Employes.Remove(SelectedEmploye);
+            this.SaveChanges();
+        }
     }
 }

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MegaCasting.WPF.ViewModel
+namespace ClientLourd.ViewModel
 {
    public  class ViewModelOffres:ViewModelBase
     {
@@ -41,11 +41,43 @@ namespace MegaCasting.WPF.ViewModel
 
         public ViewModelOffres(MegaCastingEntities entities):base(entities)
         {
-            this.Offres = new ObservableCollection<Offre>();
-            foreach(Offre offre in this.Entities.Offres)
+            this.Entities.Offres.ToList();
+            this.Offres = this.Entities.Offres.Local;
+        }
+        #endregion
+
+
+        #region Method
+        /// <summary>
+        /// Ajouter une offre
+        /// </summary>
+        public void InsertOffre()
+        {
+            if (this.Entities.Offres.Any(of => of.intitule == "Nouvelle offre"))
             {
+                Offre offre = new Offre();
+                offre.intitule = "Nouvelle offre";
                 this.Offres.Add(offre);
+                this.SaveChanges();
+                this.SelectedOffre = offre;
+
             }
+
+        }
+
+
+
+        /// <summary>
+        /// supprimer une offre
+        /// </summary>
+
+        public void DeleteOffre()
+        {
+            // vérification de droit de suppression, aucune table liée à offresInternautes
+
+            //suppression d'élément
+            this.Offres.Remove(SelectedOffre);
+            this.SaveChanges();
         }
         #endregion
     }

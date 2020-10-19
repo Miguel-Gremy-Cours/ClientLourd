@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MegaCasting.WPF.ViewModel
+namespace ClientLourd.ViewModel
 {
     public class ViewModelStudios:ViewModelBase
     {
@@ -35,11 +35,43 @@ namespace MegaCasting.WPF.ViewModel
         #region Constrcutor
         public ViewModelStudios(MegaCastingEntities entities):base(entities)
         {
-            this.Studios = new ObservableCollection<Studio>();
-            foreach(Studio studio in this.Entities.Studios)
+            this.Entities.Studios.ToList();
+            this.Studios = this.Entities.Studios.Local;
+        }
+        #endregion
+
+        #region Method
+
+        /// <summary>
+        /// Ajouter un nouveau studio
+        /// </summary>
+        public void InsertStudio()
+        {
+            if (this.Entities.Studios.Any(stu => stu.libelle == "Nouveau studio"))
             {
+                Studio studio = new Studio();
+                studio.libelle = "Nouveau studio";
                 this.Studios.Add(studio);
+                this.SaveChanges();
+                this.SelectedStudio = studio;
+
             }
+
+        }
+
+
+
+        /// <summary>
+        /// supprimer un studio
+        /// </summary>
+
+        public void DeleteStudio()
+        {
+            // vérification de droit de suppression, table liée à Offre
+
+            //suppression d'élément
+            this.Studios.Remove(SelectedStudio);
+            this.SaveChanges();
         }
         #endregion
     }

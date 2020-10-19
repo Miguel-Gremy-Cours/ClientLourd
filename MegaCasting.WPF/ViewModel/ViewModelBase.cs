@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MegaCasting.WPF.ViewModel
+namespace ClientLourd.ViewModel
 {
     public abstract class ViewModelBase
     {
@@ -39,6 +39,16 @@ namespace MegaCasting.WPF.ViewModel
             this.Entities = entities;
 
 
+        }
+        #endregion
+
+        #region Method
+        /// <summary>
+        /// Sauvegarde de modification
+        /// </summary>
+        public void SaveChanges()
+        {
+            this.Entities.SaveChanges();
         }
         #endregion
     }

@@ -186,10 +186,12 @@
     <Compile Include="ViewModel\ViewModelCivilite.cs" />
     <Compile Include="ViewModel\ViewModelConnexion.cs" />
     <Compile Include="ViewModel\ViewModelContrat.cs" />
+    <Compile Include="ViewModel\ViewModelDomaineMetier.cs" />
     <Compile Include="ViewModel\ViewModelEmployes.cs" />
     <Compile Include="ViewModel\ViewModelGroupeEmployes.cs" />
     <Compile Include="ViewModel\ViewModelInternautes.cs" />
     <Compile Include="ViewModel\ViewModelMainWindow.cs" />
+    <Compile Include="ViewModel\ViewModelMetier.cs" />
     <Compile Include="ViewModel\ViewModelOffres.cs" />
     <Compile Include="ViewModel\ViewModelOffresInternautes.cs" />
     <Compile Include="ViewModel\ViewModelPartenaires.cs" />

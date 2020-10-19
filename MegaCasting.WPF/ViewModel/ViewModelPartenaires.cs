@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MegaCasting.WPF.ViewModel
+namespace ClientLourd.ViewModel
 {
    public  class ViewModelPartenaires:ViewModelBase
     {
@@ -38,11 +38,45 @@ namespace MegaCasting.WPF.ViewModel
         #region Constrcutor
         public ViewModelPartenaires(MegaCastingEntities entities):base(entities)
         {
-            this.Partenaires = new ObservableCollection<Partenaire>();
-            foreach(Partenaire partenaire in this.Entities.Partenaires)
+
+            this.Entities.Partenaires.ToList();
+            this.Partenaires = this.Entities.Partenaires.Local;
+        }
+        #endregion
+
+
+        #region Method
+
+        /// <summary>
+        /// Ajouter un nouveau partenaire
+        /// </summary>
+        public void InsertPartenaire()
+        {
+            if (this.Entities.Partenaires.Any(partenaire => partenaire.libelle == "Nouveau partenaire"))
             {
+                Partenaire partenaire = new Partenaire();
+                partenaire.libelle = "Nouveau partenaire";
                 this.Partenaires.Add(partenaire);
+                this.SaveChanges();
+                this.SelectedPartenaire = partenaire;
+
             }
+
+        }
+
+
+
+        /// <summary>
+        /// supprimer un partenaire
+        /// </summary>
+
+        public void DeletePartenaire()
+        {
+            // vérification de droit de suppression, aucune table liée
+
+            //suppression d'élément
+            this.Partenaires.Remove(SelectedPartenaire);
+            this.SaveChanges();
         }
         #endregion
     }

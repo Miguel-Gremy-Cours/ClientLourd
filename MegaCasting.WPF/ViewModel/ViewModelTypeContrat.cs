@@ -1,5 +1,5 @@
-﻿using MegaCasting.DBLib;
-
+﻿
+using MegaCasting.DBLib;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MegaCasting.WPF.ViewModel
+namespace ClientLourd.ViewModel
 {
     public class ViewModelTypeContrat:ViewModelBase
 
@@ -59,15 +59,8 @@ namespace MegaCasting.WPF.ViewModel
         }
         #endregion
 
+        #region Method
 
-        #region Méthode
-        /// <summary>
-        /// Sauvegarde de modification
-        /// </summary>
-        public void SaveChanges()
-        {
-            this.Entities.SaveChanges();
-        }
         /// <summary>
         /// Ajouter un nouveau type de contrat
         /// </summary>
@@ -93,7 +86,7 @@ namespace MegaCasting.WPF.ViewModel
 
         public void DeleteTypeContrats()
         {
-            // vérification de droit de suppression
+            // vérification de droit de suppression, aucune table liée
 
             //suppression d'élément
             this.TypeContrats.Remove(SelectedTypeContrat);

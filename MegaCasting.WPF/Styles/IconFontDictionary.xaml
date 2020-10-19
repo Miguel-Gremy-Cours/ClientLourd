@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:system="clr-namespace:System;assembly=mscorlib"
                     xmlns:local="clr-namespace:MegaCasting.WPF.Styles">
-    <FontFamily x:Key="IconFont">/Font/fontawesome-webfont.ttf#Fontawesome</FontFamily>
+    <FontFamily x:Key="IconFont">/Styles/fontawesome-webfont.ttf#Fontawesome</FontFamily>
     <Style x:Key="IconStyle" >
         <Setter Property="TextElement.FontFamily" Value="{StaticResource IconFont}" />
         <Setter Property="Control.OverridesDefaultStyle" Value="True"></Setter>

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MegaCasting.WPF.ViewModel
+namespace ClientLourd.ViewModel
 {
     public class ViewModelCivilite:ViewModelBase
     {
@@ -39,14 +39,48 @@ namespace MegaCasting.WPF.ViewModel
         public ViewModelCivilite(MegaCastingEntities entities) : base(entities)
         {
 
+            this.Entities.Civilites.ToList();
+            this.Civilites = this.Entities.Civilites.Local;
 
-            this.Civilites = new ObservableCollection<Civilite>();
-
-            foreach (Civilite civilite in this.Entities.Civilites)
-            {
-                this.Civilites.Add(civilite);
-            }
+           
         }
+        #endregion
+
+
+        #region Method
+        /// <summary>
+        /// Ajouter une civilité
+        /// </summary>
+        public void InsertCivilite()
+        { 
+                if(this.Entities.Civilites.Any(c=>c.libelle=="Nouvelle civilité"))
+            {
+                Civilite civilite = new Civilite();
+                civilite.libelle = "Nouvel civilité";
+                this.Civilites.Add(civilite);
+                this.SaveChanges();
+                this.SelectedCivilite = civilite;
+            }
+        
+        
+        
+        }
+
+
+        /// <summary>
+        /// supprimer une civilité
+        /// </summary>
+
+        public void DeleteCivilite()
+        {
+            // vérification de droit de suppression,  table civilité liée à Employes, Internautes
+
+            //suppression d'élément
+            this.Civilites.Remove(SelectedCivilite);
+            this.SaveChanges();
+        }
+
+
         #endregion
     }
 }

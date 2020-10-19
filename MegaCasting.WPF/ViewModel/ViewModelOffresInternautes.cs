@@ -1,4 +1,5 @@
 ﻿
+using MahApps.Metro.Behaviors;
 using MegaCasting.DBLib;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MegaCasting.WPF.ViewModel
+namespace ClientLourd.ViewModel
 {
    public    class ViewModelOffresInternautes:ViewModelBase
     {
@@ -37,13 +38,48 @@ namespace MegaCasting.WPF.ViewModel
 
         public ViewModelOffresInternautes(MegaCastingEntities entities):base(entities)
         {
-            this.OffresInternautes = new ObservableCollection<OffresInternaute>();
 
-            foreach(OffresInternaute offresInternaute in this.Entities.OffresInternautes)
-            {
-                this.OffresInternautes.Add(offresInternaute);
-            }
+            this.Entities.OffresInternautes.ToList();
+            this.OffresInternautes = this.Entities.OffresInternautes.Local;
         }
         #endregion
+
+
+        #region Method
+
+        /// <summary>
+        /// Ajouter une offreInternaute
+        /// </summary>
+        public void InsertOffreInternaute()
+        {
+            if (this.Entities.TypeContrats.Any(type => type.libelle == "Nouvelle offreInternaute"))
+            {
+                OffresInternaute offresInternaute = new OffresInternaute();
+                offresInternaute.date_postulation = DateTime.Now ;
+                this.OffresInternautes.Add(offresInternaute);
+                this.SaveChanges();
+                this.SelectedOffresInternaute = offresInternaute;
+
+            }
+
+        }
+
+
+
+        /// <summary>
+        /// supprimer une offreInternaute
+        /// </summary>
+
+        public void DeleteOffreInternaute()
+        {
+            // vérification de droit de suppression, aucune table liée
+
+            //suppression d'élément
+            this.OffresInternautes.Remove(SelectedOffresInternaute);
+            this.SaveChanges();
+        }
+        #endregion
+
+
     }
 }
