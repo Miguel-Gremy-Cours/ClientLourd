@@ -268,7 +268,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MegaCasting.DBLib\MegaCasting.DBLib.csproj">
-      <Project>{43017F47-3E14-44A7-A71A-EB0B47A4E6EA}</Project>
+      <Project>{563AF467-BB0C-406B-B67E-E7B1C9A03F01}</Project>
       <Name>MegaCasting.DBLib</Name>
     </ProjectReference>
   </ItemGroup>

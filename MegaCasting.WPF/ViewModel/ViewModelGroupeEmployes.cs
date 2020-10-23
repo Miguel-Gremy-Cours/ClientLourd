@@ -49,10 +49,10 @@ namespace ClientLourd.ViewModel
         /// </summary>
         public void InsertGropue()
         {
-            if (this.Entities.GroupeEmployes.Any(g => g.libelle == "Nouveau groupe"))
+            if (this.Entities.GroupeEmployes.Any(g => g.Libelle== "Nouveau groupe"))
             {
                 GroupeEmploye groupeEmploye = new GroupeEmploye();
-                groupeEmploye.libelle = "Nouveau groupe";
+                groupeEmploye.Libelle = "Nouveau groupe";
                 this.GroupeEmployes.Add(groupeEmploye);
                 this.SaveChanges();
                 this._SelecteedGroupeEmploye = groupeEmploye;

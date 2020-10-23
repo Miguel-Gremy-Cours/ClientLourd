@@ -66,10 +66,10 @@ namespace ClientLourd.ViewModel
         /// </summary>
         public void InsertTypeContrats()
         {
-            if(this.Entities.TypeContrats.Any(type=>type.libelle=="Nouveau type de contrat"))
+            if(this.Entities.TypeContrats.Any(type=>type.Libelle=="Nouveau type de contrat"))
             {
                 TypeContrat typeContrat = new TypeContrat();
-                typeContrat.libelle = "Nouveau type de contrat";
+                typeContrat.Libelle = "Nouveau type de contrat";
                 this.TypeContrats.Add(typeContrat);
                 this.SaveChanges();
                 this.SelectedTypeContrat = typeContrat;

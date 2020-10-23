@@ -1,5 +1,4 @@
-﻿
-using MegaCasting.DBLib;
+﻿using MegaCasting.DBLib;
 using System;
 using System.Collections.Generic;
 using System.Linq;

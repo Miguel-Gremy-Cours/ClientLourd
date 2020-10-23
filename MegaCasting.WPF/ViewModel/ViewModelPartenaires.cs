@@ -52,10 +52,10 @@ namespace ClientLourd.ViewModel
         /// </summary>
         public void InsertPartenaire()
         {
-            if (this.Entities.Partenaires.Any(partenaire => partenaire.libelle == "Nouveau partenaire"))
+            if (this.Entities.Partenaires.Any(partenaire => partenaire.Libelle== "Nouveau partenaire"))
             {
                 Partenaire partenaire = new Partenaire();
-                partenaire.libelle = "Nouveau partenaire";
+                partenaire.Libelle = "Nouveau partenaire";
                 this.Partenaires.Add(partenaire);
                 this.SaveChanges();
                 this.SelectedPartenaire = partenaire;

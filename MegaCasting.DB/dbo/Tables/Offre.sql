@@ -4,7 +4,7 @@
     [Intitule]           VARCHAR (25)  NOT NULL,
     [IdMetier]           INT           NOT NULL,
     [DatePublication]    DATE          NOT NULL,
-    [Dure_Diffusion]     INT           NOT NULL,
+    [DureDiffusion]      INT           NOT NULL,
     [NombrePostes]       INT           NOT NULL,
     [DescriptionPoste]   VARCHAR (100) NOT NULL,
     [DescriptionProfile] VARCHAR (100) NOT NULL,

@@ -51,11 +51,11 @@ namespace ClientLourd.ViewModel
         /// </summary>
         public void InsertInternaute()
         {
-            if (this.Entities.Internautes.Any(In => In.nom == "Nouveau nom") &&this.Entities.Internautes.Any(Ip=>Ip.prenom == "Nouveau prénom") )
+            if (this.Entities.Internautes.Any(In => In.Nom == "Nouveau Nom") &&this.Entities.Internautes.Any(Ip=>Ip.Prenom == "Nouveau préNom") )
             {
                 Internaute internaute = new Internaute();
-                internaute.nom = "Nouveau nom";
-                internaute.prenom = "Nouveau prénom";
+                internaute.Nom = "Nouveau Nom";
+                internaute.Prenom = "Nouveau préNom";
                 this.Internautes.Add(internaute);
                 this.SaveChanges();
                 this.SelectedInternaute = internaute;

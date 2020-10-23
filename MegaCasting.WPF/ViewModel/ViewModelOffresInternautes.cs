@@ -52,10 +52,10 @@ namespace ClientLourd.ViewModel
         /// </summary>
         public void InsertOffreInternaute()
         {
-            if (this.Entities.TypeContrats.Any(type => type.libelle == "Nouvelle offreInternaute"))
+            if (this.Entities.TypeContrats.Any(type => type.Libelle == "Nouvelle offreInternaute"))
             {
                 OffresInternaute offresInternaute = new OffresInternaute();
-                offresInternaute.date_postulation = DateTime.Now ;
+                offresInternaute.DatePostulation = DateTime.Now ;
                 this.OffresInternautes.Add(offresInternaute);
                 this.SaveChanges();
                 this.SelectedOffresInternaute = offresInternaute;

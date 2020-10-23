@@ -61,14 +61,14 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\TypeContrat.sql" />
-    <Build Include="dbo\Tables\Studios.sql" />
-    <Build Include="dbo\Tables\Partenaires.sql" />
-    <Build Include="dbo\Tables\OffresInternautes.sql" />
-    <Build Include="dbo\Tables\Offres.sql" />
+    <Build Include="dbo\Tables\Studio.sql" />
+    <Build Include="dbo\Tables\Partenaire.sql" />
+    <Build Include="dbo\Tables\OffresInternaute.sql" />
+    <Build Include="dbo\Tables\Offre.sql" />
     <Build Include="dbo\Tables\Metier.sql" />
-    <Build Include="dbo\Tables\Internautes.sql" />
-    <Build Include="dbo\Tables\GroupeEmployes.sql" />
-    <Build Include="dbo\Tables\Employes.sql" />
+    <Build Include="dbo\Tables\Internaute.sql" />
+    <Build Include="dbo\Tables\GroupeEmploye.sql" />
+    <Build Include="dbo\Tables\Employe.sql" />
     <Build Include="dbo\Tables\DomaineMetier.sql" />
     <Build Include="dbo\Tables\Contrat.sql" />
     <Build Include="dbo\Tables\Civilite.sql" />

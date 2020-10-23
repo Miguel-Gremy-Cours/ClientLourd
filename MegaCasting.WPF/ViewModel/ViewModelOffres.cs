@@ -53,10 +53,10 @@ namespace ClientLourd.ViewModel
         /// </summary>
         public void InsertOffre()
         {
-            if (this.Entities.Offres.Any(of => of.intitule == "Nouvelle offre"))
+            if (this.Entities.Offres.Any(of => of.Intitule == "Nouvelle offre"))
             {
                 Offre offre = new Offre();
-                offre.intitule = "Nouvelle offre";
+                offre.Intitule = "Nouvelle offre";
                 this.Offres.Add(offre);
                 this.SaveChanges();
                 this.SelectedOffre = offre;

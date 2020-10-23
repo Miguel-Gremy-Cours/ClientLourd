@@ -56,13 +56,13 @@ namespace ClientLourd.ViewModel
        public void InsertMetier()
         {
 
-            if(this.Entities.Metiers.Any(m=>m.libelle=="Nouveau métier"))
+            if(this.Entities.Metiers.Any(m=>m.Libelle=="Nouveau métier"))
             {
                 Metier metier = new Metier();
-                metier.libelle = "Nouveau métier";
+                metier.Libelle = "Nouveau métier";
                 //TODO: Selectionner un DomaineMetier, lui affecter id de DomaineMetier
 
-                metier.DomaineMetier.libelle = "DomaineMetier";
+                metier.DomaineMetier.Libelle = "DomaineMetier";
 
 
                 this.Metiers.Add(metier);

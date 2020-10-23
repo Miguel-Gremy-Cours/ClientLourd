@@ -53,10 +53,10 @@ namespace ClientLourd.ViewModel
         /// </summary>
         public void InsertCivilite()
         { 
-                if(this.Entities.Civilites.Any(c=>c.libelle=="Nouvelle civilité"))
+                if(this.Entities.Civilites.Any(c=>c.Libelle=="Nouvelle civilité"))
             {
                 Civilite civilite = new Civilite();
-                civilite.libelle = "Nouvel civilité";
+                civilite.Libelle= "Nouvel civilité";
                 this.Civilites.Add(civilite);
                 this.SaveChanges();
                 this.SelectedCivilite = civilite;

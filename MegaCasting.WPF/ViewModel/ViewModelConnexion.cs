@@ -20,15 +20,15 @@ namespace ClientLourd.ViewModel
         }
 
         /// <summary>
-        /// Récupère l'employé correspondant aux logins
+        /// Récupère l'employé correspondant aux Logins
         /// </summary>
-        /// <param name="login"></param>
-        /// <param name="password"></param>
+        /// <param name="Login"></param>
+        /// <param name="Password"></param>
         /// <returns></returns>
-        public Employe GetEmployeeByLogs(string login, string password)
+        public Employe GetEmployeeByLogs(string Login, string Password)
         {
 
-            Employe employe = this.Entities.Employes.FirstOrDefault(empl => empl.login == login && empl.password == password);
+            Employe employe = this.Entities.Employes.FirstOrDefault(empl => empl.Login == Login && empl.Password == Password);
             return employe;
         }
     }

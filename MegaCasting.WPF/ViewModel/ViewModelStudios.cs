@@ -48,10 +48,10 @@ namespace ClientLourd.ViewModel
         /// </summary>
         public void InsertStudio()
         {
-            if (this.Entities.Studios.Any(stu => stu.libelle == "Nouveau studio"))
+            if (this.Entities.Studios.Any(stu => stu.Libelle == "Nouveau studio"))
             {
                 Studio studio = new Studio();
-                studio.libelle = "Nouveau studio";
+                studio.Libelle = "Nouveau studio";
                 this.Studios.Add(studio);
                 this.SaveChanges();
                 this.SelectedStudio = studio;

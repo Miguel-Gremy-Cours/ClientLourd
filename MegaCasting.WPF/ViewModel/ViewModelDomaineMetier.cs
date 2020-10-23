@@ -56,10 +56,10 @@ namespace ClientLourd.ViewModel
         /// </summary>
         public void InsertDomaineMetier()
         {
-            if (this.Entities.DomaineMetiers.Any(dom => dom.libelle == "Nouveau domaine"))
+            if (this.Entities.DomaineMetiers.Any(dom => dom.Libelle== "Nouveau domaine"))
             {
                 DomaineMetier domaineMetier = new DomaineMetier();
-                domaineMetier.libelle = "Nouveau domaine";
+                domaineMetier.Libelle = "Nouveau domaine";
                 this.DomaineMetiers.Add(domaineMetier);
                 this.SaveChanges();
                 this.SelectdDomaineMetier = domaineMetier;

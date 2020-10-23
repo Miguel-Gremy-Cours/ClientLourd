@@ -51,11 +51,11 @@ namespace ClientLourd.ViewModel
         /// </summary>
         public void InsertEmploye()
         {
-            if (this.Entities.Employes.Any(person => person.nom == "Nouveau nom")&& this.Entities.Employes.Any(P=>P.prenom=="Nouveau prénom"))
+            if (this.Entities.Employes.Any(person => person.Nom == "Nouveau Nom")&& this.Entities.Employes.Any(P=>P.Prenom=="Nouveau préNom"))
             {
                 Employe employe = new Employe();
-                employe.nom = "Nouveau nom";
-                employe.prenom = "Nouveau prénom";
+                employe.Nom = "Nouveau Nom";
+                employe.Prenom = "Nouveau préNom";
                 this.Employes.Add(employe);
                 this.SaveChanges();
                 this.SelectedEmploye = employe;
