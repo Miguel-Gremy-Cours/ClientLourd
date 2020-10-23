@@ -197,6 +197,45 @@
     <Compile Include="ViewModel\ViewModelPartenaires.cs" />
     <Compile Include="ViewModel\ViewModelStudios.cs" />
     <Compile Include="ViewModel\ViewModelTypeContrat.cs" />
+    <Compile Include="View\ViewContrat.xaml.cs">
+      <DependentUpon>ViewContrat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewDomaineMetier.xaml.cs">
+      <DependentUpon>ViewDomaineMetier.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewEmployes.xaml.cs">
+      <DependentUpon>ViewEmployes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewGroupeEmployes.xaml.cs">
+      <DependentUpon>ViewGroupeEmployes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewInternautes.xaml.cs">
+      <DependentUpon>ViewInternautes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewMain.xaml.cs">
+      <DependentUpon>ViewMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewMetier.xaml.cs">
+      <DependentUpon>ViewMetier.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewOffres.xaml.cs">
+      <DependentUpon>ViewOffres.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewOffresInternautes.xaml.cs">
+      <DependentUpon>ViewOffresInternautes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewPartenaires.xaml.cs">
+      <DependentUpon>ViewPartenaires.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewStudios.xaml.cs">
+      <DependentUpon>ViewStudios.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewTypeContrat.xaml.cs">
+      <DependentUpon>ViewTypeContrat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Connexion.xaml.cs">
+      <DependentUpon>Connexion.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -226,6 +265,58 @@
     <Page Include="Styles\IconFontDictionary.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ViewContrat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ViewDomaineMetier.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ViewEmployes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ViewGroupeEmployes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ViewInternautes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ViewMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ViewMetier.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ViewOffres.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ViewOffresInternautes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ViewPartenaires.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ViewStudios.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ViewTypeContrat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Connexion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -262,10 +353,7 @@
     <Resource Include="Resources\WindowsIcons-license.txt" />
     <Content Include="Styles\font-awesome Utilisation alerte.css" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="View\" />
-    <Folder Include="Windows\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\MegaCasting.DBLib\MegaCasting.DBLib.csproj">
       <Project>{563AF467-BB0C-406B-B67E-E7B1C9A03F01}</Project>

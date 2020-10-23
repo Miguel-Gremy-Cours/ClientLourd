@@ -19,6 +19,14 @@
         <Setter Property="Margin" Value="10,10,10,10"/>
     </Style>
 
+    <Style x:Key="StackPanelStyle" TargetType="StackPanel">
+        <Style.Setters>
+            <Setter Property="Orientation" Value="Horizontal"/>
+
+        </Style.Setters>
+
+    </Style>
+
     <Style TargetType="{x:Type Button}">
         <Setter Property="FontFamily" Value="Helvetica"/>
         <Setter Property="FontWeight" Value="Light"/>
@@ -29,7 +37,7 @@
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}"
                             CornerRadius="20"
-                            BorderThickness="2"
+                            BorderThickness="0"
                             BorderBrush="White">
 
 

@@ -1,0 +1,151 @@
+﻿<pu:WindowX x:Class="MegaCasting.WPF.Windows.Connexion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MegaCasting.WPF.Windows"
+        mc:Ignorable="d"
+        xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
+        xmlns:metro="http://metro.mahapps.com/winfx/xaml/iconpacks"
+       
+        Title="Connexion" Height="450" Width="380" AllowsTransparency="True" Background="Transparent" WindowStyle="None" ResizeMode="NoResize" MouseDown="WindowX_MouseDown"  WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+            <Border CornerRadius="15" Grid.RowSpan="2">
+                <Border.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="Coral" Offset="0.0"/>
+                        <GradientStop Color="violet" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+
+
+            <StackPanel Grid.Row="0" VerticalAlignment="Center">
+                <TextBlock      Grid.Row="0" 
+                                Grid.Column="0" 
+                                Style="{DynamicResource IconStyle}" 
+                                FontSize="46" 
+                                Text="{DynamicResource fa-camera-retro}" 
+                                Foreground="Wheat"
+                                TextAlignment="Center"
+                                />
+                <TextBlock      Grid.Row="1" 
+                                FontSize="23" 
+                                FontStyle="Italic" 
+                                Text="MegaCasting" 
+                                Foreground="Wheat" 
+                                TextAlignment="Center"/>
+            </StackPanel>
+
+            <Grid Grid.Row="1">
+                <StackPanel Grid.Row="1">
+                    <StackPanel Orientation="Horizontal">
+
+                        <metro:PackIconMaterial Kind="Account" 
+                                                Foreground="White"
+                                                VerticalAlignment="Center"
+                                                HorizontalAlignment="Center"
+                                                Opacity="0.6"
+                                                Margin="55,0,0,0"
+                                                />
+
+
+
+                        <TextBox        Text="Identifiant"
+                                    x:Name="TxtBx_Login"
+                                    Background="Transparent" 
+                                    FontSize="26"
+                                    FontWeight="Light"
+                                    Foreground="Azure"
+                                    Opacity="0.6"
+                                    BorderThickness="0"
+                                    Grid.ColumnSpan="2"
+                                    VerticalAlignment="Center"
+                                    HorizontalContentAlignment="Right"
+                                    Margin="65,0,0,0"
+                    />
+
+                    </StackPanel>
+                    <Border Width="250"
+                            Height="2"
+                            Background="White"
+                            Opacity="0.5"
+                            />
+
+
+                </StackPanel >
+                <StackPanel Grid.Row="2">
+                    <StackPanel Orientation="Horizontal">
+                        <metro:PackIconMaterial Kind="FormTextboxPassword" 
+                                                Foreground="White"
+                                                VerticalAlignment="Center"
+                                                HorizontalAlignment="Center"
+                                                Opacity="0.6"
+                                                Margin="55,60,0,0"
+                                                />
+                        <PasswordBox     
+                                    x:Name="PwBx_Password"
+                                    Grid.ColumnSpan="2"
+                                    FontSize="26"
+                                    FontWeight="Light"
+                                    Opacity="0.6"
+                                    BorderThickness="0"
+                                    BorderBrush="BlanchedAlmond"
+                                    Foreground="Azure"
+                                    Background="Transparent"
+                                    Password="password"
+                                    VerticalAlignment="Center"
+                                    HorizontalContentAlignment="Right"
+                                    pu:PasswordBoxHelper.Watermark="Saisissez votre mots de passe"
+                                    pu:PasswordBoxHelper.CornerRadius="9"
+                                    pu:PasswordBoxHelper.Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                    Margin="65,60,0,0"
+                    />
+                    </StackPanel>
+                    <Border Width="250"
+                            Height="2"
+                            Background="White"
+                            Opacity="0.5"
+                            />
+
+
+                    <StackPanel Orientation="Horizontal"  Margin="0,50,0,0">
+
+
+                        <Button         
+                                    Content="Connexion"
+                                    Width="100"
+                                    Height="40"
+                                    FontSize="20"
+                                    BorderThickness="2"
+                                    
+                                    x:Name="Btn_Login"
+                                   Margin="30,0,0,0"
+                                    Click="Btn_Login_Click"
+                                    />
+                        <Button         
+                                    Content="Oublier mots de passe"
+                                    Width="190"
+                                    Height="40"
+                                    FontSize="20"
+                                    BorderThickness="2"
+                                    x:Name="Btn_Forget"
+                                   Margin="10,0,0,0"
+                                    />
+                    </StackPanel>
+
+                </StackPanel>
+
+
+
+
+            </Grid>
+
+        </Grid>
+    </Grid>
+    </pu:WindowX>

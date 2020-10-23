@@ -1,12 +1,223 @@
-﻿<Window x:Class="MegaCasting.WPF.MainWindow"
+﻿<Controls:MetroWindow x:Class="MegaCasting.WPF.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MegaCasting.WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+       
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+                      xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver" xmlns:view="clr-namespace:MegaCasting.WPF.View"
+                      Title="Bienvenu à la gestion de MegaCasting" Height="850" Width="1400" AllowsTransparency="True" Background="Transparent" WindowStyle="None" ResizeMode="NoResize" 
+                     WindowStartupLocation="CenterScreen" Visibility="Visible" MouseDown="WindowX_MouseDown">
+    <!--xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"-->
     <Grid>
-        
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+            <Border CornerRadius="0" Grid.RowSpan="2">
+                <Border.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="Coral" Offset="0.0"/>
+                        <GradientStop Color="Crimson" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                </Grid.ColumnDefinitions>
+                <materialDesign:PackIcon Grid.Column="0" Kind="Videocam" Foreground="White" Width="75" Height="75"  VerticalAlignment="Center"  HorizontalAlignment="Center"/>
+                <TextBlock Grid.Column="1" Text="MegaCasting" Foreground="White" FontFamily="Helvitica" FontSize="60" FontWeight="Light" VerticalAlignment="Center"/>
+                <Button Grid.Column="2" x:Name="Btn_Close" Click="Btn_Close_Click" BorderThickness="0">
+                    <materialDesign:PackIcon Grid.Column="2" Kind="ExitToApp" Foreground="White" Width="50" Height="50"  VerticalAlignment="Center"  HorizontalAlignment="Center" />
+                </Button>
+
+
+
+            </Grid>
+
+
+
+
+        </Grid>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.2*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="8*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="10*"/>
+            </Grid.RowDefinitions>
+            <Rectangle Grid.Column="0" Grid.Row="1" Fill="AliceBlue" Height="{Binding ElementName=MenuListBox, Path=ActualHeight}" Name="PointerRail"/>
+            <Rectangle Grid.Column="0" Grid.Row="1" Fill="DarkRed" Height="60" VerticalAlignment="Top" Name="Pointer">
+                <Rectangle.RenderTransform>
+                    <TranslateTransform x:Name="PointOffset"/>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle Grid.Row="1"/>
+            <ListBox Grid.Row="1" Grid.Column="1" Name="MenuListBox" >
+
+                <ListBox.Resources>
+                    <Style TargetType="{x:Type ListBoxItem}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                    <Button Content="click"  Margin="0,2" Width="50" Height="25" Click="Button_Click"/>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ListBox.Resources>
+
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+
+                        <EventSetter Event="MouseEnter" Handler="ListBoxItem_MouseEnter"/>
+
+
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="ListBoxItem">
+                                    <StackPanel Height="60" Style="{StaticResource StackPanelStyle}"  Name="MenuContainer">
+                                        <Rectangle Fill="DarkRed" VerticalAlignment="Stretch" Width="10" Visibility="Visible" Name="LeftSideRectangle" />
+                                        <ContentPresenter VerticalAlignment="Center" Margin="10,0,0,0" />
+
+                                    </StackPanel>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Setter Property="Visibility" Value="Visible" TargetName="LeftSideRectangle"/>
+                                            <Setter Property="Background" Value="#FF382F2F" TargetName="MenuContainer"/>
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Visibility" Value="Visible" TargetName="LeftSideRectangle"/>
+                                            <Setter Property="Background" Value="#FFE4511A" TargetName="MenuContainer"/>
+
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+                <ListBoxItem x:Name="ViewMain" Tag="ViewMain">
+                    <Button BorderThickness="0" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewMain" Click="Btn_ViewMain_Click">
+                        <StackPanel Style="{StaticResource StackPanelStyle}">
+                            <iconPacks:PackIconFontAwesome Kind="HomeSolid" Width="30" Height="30" VerticalAlignment="Center" Foreground="White"/>
+                            <TextBlock Text="Home" FontSize="30" FontWeight="Light" Foreground="White" />
+                        </StackPanel>
+                    </Button>
+                </ListBoxItem>
+                <ListBoxItem x:Name="ViewTypeContrat">
+                    <Button BorderThickness="0" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewTypeContrat" Click="Btn_ViewTypeContrat_Click">
+                        <StackPanel Style="{StaticResource StackPanelStyle}">
+                            <iconPacks:PackIconMaterialDesign Kind="MergeType" Width="30" Height="30" VerticalAlignment="Center" Foreground="White"/>
+                            <TextBlock Text="Type contrat" FontSize="30" FontWeight="Light" Foreground="White"/>
+                        </StackPanel>
+                    </Button>
+                </ListBoxItem>
+                <ListBoxItem x:Name="ViewContrat">
+                    <Button BorderThickness="0" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewContrat" Click="Btn_ViewContrat_Click">
+                        <StackPanel Style="{StaticResource StackPanelStyle}">
+                            <iconPacks:PackIconMaterialDesign Kind="Book"  Width="30" Height="30" VerticalAlignment="Center" Foreground="White"/>
+                            <TextBlock Text="Contrats" FontSize="30" FontWeight="Light" Foreground="White"/>
+                        </StackPanel>
+                    </Button>
+                </ListBoxItem>
+                <ListBoxItem x:Name="ViewOfrre">
+                    <Button BorderThickness="0" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewOffre" Click="Btn_ViewOffre_Click">
+                        <StackPanel Style="{StaticResource StackPanelStyle}">
+                            <iconPacks:PackIconFontAwesome Kind="GiftSolid"  Width="30" Height="30" VerticalAlignment="Center" Foreground="White"/>
+                            <TextBlock Text="Offres" FontSize="30" FontWeight="Light" Foreground="White"/>
+                        </StackPanel>
+                    </Button>
+                </ListBoxItem>
+                <ListBoxItem x:Name="ViewOffreInternaute">
+                    <Button BorderThickness="0" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewOffreInternaute" Click="Btn_ViewOffreInternaute_Click">
+                        <StackPanel Style="{StaticResource StackPanelStyle}">
+                            <iconPacks:PackIconFontAwesome Kind="LinkSolid"  Width="30" Height="30" VerticalAlignment="Center" Foreground="White"/>
+                            <TextBlock Text="Offre Internaute" FontSize="30" FontWeight="Light" Foreground="White"/>
+                        </StackPanel>
+                    </Button>
+                </ListBoxItem>
+                <ListBoxItem x:Name="ViewInternaute">
+                    <Button BorderThickness="0" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewInternaute" Click="Btn_ViewInternaute_Click">
+                        <StackPanel Style="{StaticResource StackPanelStyle}">
+                            <iconPacks:PackIconFontAwesome Kind="UserCheckSolid"  Width="30" Height="30" VerticalAlignment="Center" Foreground="White"/>
+                            <TextBlock Text="Internautes" FontSize="30" FontWeight="Light" Foreground="White"/>
+                        </StackPanel>
+                    </Button>
+                </ListBoxItem>
+                <ListBoxItem x:Name="ViewMetier">
+                    <Button BorderThickness="0" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewMetier" Click="Btn_ViewMetier_Click">
+                        <StackPanel Style="{StaticResource StackPanelStyle}">
+                            <iconPacks:PackIconFontAwesome Kind="JointSolid"  Width="30" Height="30" VerticalAlignment="Center" Foreground="White"/>
+                            <TextBlock Text="Métiers" FontSize="30" FontWeight="Light" Foreground="White"/>
+                        </StackPanel>
+                    </Button>
+                </ListBoxItem>
+                <ListBoxItem x:Name="ViewDomaineMetier">
+                    <Button BorderThickness="0" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewDomaineMetier" Click="Btn_ViewDomaineMetier_Click">
+                        <StackPanel Style="{StaticResource StackPanelStyle}">
+                            <iconPacks:PackIconFontAwesome Kind="PagelinesBrands"  Width="30" Height="30" VerticalAlignment="Center" Foreground="White"/>
+                            <TextBlock Text="Domaines" FontSize="30" FontWeight="Light" Foreground="White"/>
+                        </StackPanel>
+                    </Button>
+                </ListBoxItem>
+                <ListBoxItem x:Name="ViewStudio">
+                    <Button BorderThickness="0" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewStudio" Click="Btn_ViewStudio_Click">
+                        <StackPanel Style="{StaticResource StackPanelStyle}">
+                            <iconPacks:PackIconFontAwesome Kind="FilmSolid"  Width="30" Height="30" VerticalAlignment="Center" Foreground="White"/>
+                            <TextBlock Text="Studios" FontSize="30" FontWeight="Light" Foreground="White"/>
+                        </StackPanel>
+                    </Button>
+                </ListBoxItem>
+                <ListBoxItem x:Name="ViewPartenaire">
+                    <Button BorderThickness="0" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewPartenaire" Click="Btn_ViewPartenaire_Click" >
+                        <StackPanel Style="{StaticResource StackPanelStyle}">
+                            <iconPacks:PackIconFontAwesome Kind="HandHoldingHeartSolid"  Width="30" Height="30" VerticalAlignment="Center" Foreground="White"/>
+                            <TextBlock Text="Partenaires" FontSize="30" FontWeight="Light" Foreground="White"/>
+                        </StackPanel>
+                    </Button>
+                </ListBoxItem>
+                <ListBoxItem x:Name="ViewEmploye">
+                    <Button BorderThickness="0" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewEmploye" Click="Btn_ViewEmploye_Click">
+                        <StackPanel Style="{StaticResource StackPanelStyle}">
+                            <iconPacks:PackIconFontAwesome Kind="UserCircleSolid"  Width="30" Height="30" VerticalAlignment="Center" Foreground="White"/>
+                            <TextBlock Text="Employés" FontSize="30" FontWeight="Light" Foreground="White"/>
+                        </StackPanel>
+                    </Button>
+                </ListBoxItem>
+                <ListBoxItem x:Name="ViewGroupe" >
+                    <Button BorderThickness="0" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewGroupe" Click="Btn_ViewGroupe_Click">
+                        <StackPanel Style="{StaticResource StackPanelStyle}">
+                            <iconPacks:PackIconFontAwesome Kind="LayerGroupSolid"  Width="30" Height="30" VerticalAlignment="Center" Foreground="White"/>
+                            <TextBlock Text="Groupes" FontSize="30" FontWeight="Light" Foreground="White"/>
+                        </StackPanel>
+                    </Button>
+                </ListBoxItem>
+            </ListBox>
+
+
+
+            <DockPanel x:Name="DockPanelView" Grid.Row="1" Grid.Column="3" >
+                <view:ViewMain></view:ViewMain>
+            </DockPanel>
+
+        </Grid>
     </Grid>
-</Window>
+
+    <!--<materialDesign:Card Padding="32" Margin="16" Grid.Column="2" Grid.Row="4">
+        <TextBlock Style="{DynamicResource MaterialDesignTitleTextBlock}">YEAHHHHHHH</TextBlock>
+    </materialDesign:Card>-->
+</Controls:MetroWindow>
