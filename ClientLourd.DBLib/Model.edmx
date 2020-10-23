@@ -1,0 +1,839 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MegaCastingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Civilite">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Libelle" Type="varchar" MaxLength="4" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Contrat">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdTypeContrat" Type="int" Nullable="false" />
+          <Property Name="DebutContrat" Type="date" Nullable="false" />
+          <Property Name="DureContrat" Type="int" Nullable="false" />
+          <Property Name="CodeContrat" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FichierContrat" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IdOffre" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DomaineMetier">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Libelle" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Employe">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nom" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Prenom" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IdCivilite" Type="int" Nullable="false" />
+          <Property Name="IdGroupeEmployes" Type="int" Nullable="false" />
+          <Property Name="Login" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GroupeEmploye">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Libelle" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Internaute">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nom" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Prenom" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DateNaissance" Type="date" Nullable="false" />
+          <Property Name="DateInscription" Type="date" Nullable="false" />
+          <Property Name="IdCivilite" Type="int" Nullable="false" />
+          <Property Name="LienGoogle" Type="varchar" MaxLength="200" />
+          <Property Name="Login" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="Cv" Type="varchar(max)" />
+          <Property Name="Email" Type="varchar" MaxLength="254" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Metier">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdLibelle" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IdDomaineMetier" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Offre">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdStudio" Type="int" Nullable="false" />
+          <Property Name="Intitule" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="IdMetier" Type="int" Nullable="false" />
+          <Property Name="DatePublication" Type="date" Nullable="false" />
+          <Property Name="Dure_Diffusion" Type="int" Nullable="false" />
+          <Property Name="NombrePostes" Type="int" Nullable="false" />
+          <Property Name="DescriptionPoste" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="DescriptionProfile" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="IdEmploye" Type="int" Nullable="false" />
+          <Property Name="Localisation" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CodeOffre" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OffresInternaute">
+          <Key>
+            <PropertyRef Name="IdInternaute" />
+            <PropertyRef Name="IdOffre" />
+          </Key>
+          <Property Name="IdInternaute" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdOffre" Type="int" Nullable="false" />
+          <Property Name="DatePostulation" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Partenaire">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Siret" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Adresse" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="NumeroAdresse" Type="int" Nullable="false" />
+          <Property Name="Libelle" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Telephone" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Login" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Studio">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Siret" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Adresse" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Numero_adresse" Type="int" Nullable="false" />
+          <Property Name="Libelle" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="254" Nullable="false" />
+          <Property Name="Telephone" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TypeContrat">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Libelle" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Contrat_Offres">
+          <End Role="Offre" Type="Self.Offre" Multiplicity="1" />
+          <End Role="Contrat" Type="Self.Contrat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Offre">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Contrat">
+              <PropertyRef Name="IdOffre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contrat_TypeContrat">
+          <End Role="TypeContrat" Type="Self.TypeContrat" Multiplicity="1" />
+          <End Role="Contrat" Type="Self.Contrat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeContrat">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Contrat">
+              <PropertyRef Name="IdTypeContrat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employes_Civilite">
+          <End Role="Civilite" Type="Self.Civilite" Multiplicity="1" />
+          <End Role="Employe" Type="Self.Employe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Civilite">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Employe">
+              <PropertyRef Name="IdCivilite" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employes_GroupeEmployes">
+          <End Role="GroupeEmploye" Type="Self.GroupeEmploye" Multiplicity="1" />
+          <End Role="Employe" Type="Self.Employe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GroupeEmploye">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Employe">
+              <PropertyRef Name="IdGroupeEmployes" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Internautes_Civilite">
+          <End Role="Civilite" Type="Self.Civilite" Multiplicity="1" />
+          <End Role="Internaute" Type="Self.Internaute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Civilite">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Internaute">
+              <PropertyRef Name="IdCivilite" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Metier_DomaineMetier">
+          <End Role="DomaineMetier" Type="Self.DomaineMetier" Multiplicity="1" />
+          <End Role="Metier" Type="Self.Metier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DomaineMetier">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Metier">
+              <PropertyRef Name="IdDomaineMetier" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Offres_Employes">
+          <End Role="Employe" Type="Self.Employe" Multiplicity="1" />
+          <End Role="Offre" Type="Self.Offre" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employe">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Offre">
+              <PropertyRef Name="IdEmploye" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Offres_Metier">
+          <End Role="Metier" Type="Self.Metier" Multiplicity="1" />
+          <End Role="Offre" Type="Self.Offre" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Metier">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Offre">
+              <PropertyRef Name="IdMetier" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Offres_Studios">
+          <End Role="Studio" Type="Self.Studio" Multiplicity="1" />
+          <End Role="Offre" Type="Self.Offre" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Studio">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Offre">
+              <PropertyRef Name="IdStudio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OffresInternautes_Internautes">
+          <End Role="Internaute" Type="Self.Internaute" Multiplicity="1" />
+          <End Role="OffresInternaute" Type="Self.OffresInternaute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Internaute">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OffresInternaute">
+              <PropertyRef Name="IdInternaute" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OffresInternautes_Offres">
+          <End Role="Offre" Type="Self.Offre" Multiplicity="1" />
+          <End Role="OffresInternaute" Type="Self.OffresInternaute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Offre">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OffresInternaute">
+              <PropertyRef Name="IdOffre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MegaCastingModelStoreContainer">
+          <EntitySet Name="Civilite" EntityType="Self.Civilite" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contrat" EntityType="Self.Contrat" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DomaineMetier" EntityType="Self.DomaineMetier" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employe" EntityType="Self.Employe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GroupeEmploye" EntityType="Self.GroupeEmploye" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Internaute" EntityType="Self.Internaute" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Metier" EntityType="Self.Metier" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Offre" EntityType="Self.Offre" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OffresInternaute" EntityType="Self.OffresInternaute" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Partenaire" EntityType="Self.Partenaire" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Studio" EntityType="Self.Studio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TypeContrat" EntityType="Self.TypeContrat" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Contrat_Offres" Association="Self.FK_Contrat_Offres">
+            <End Role="Offre" EntitySet="Offre" />
+            <End Role="Contrat" EntitySet="Contrat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contrat_TypeContrat" Association="Self.FK_Contrat_TypeContrat">
+            <End Role="TypeContrat" EntitySet="TypeContrat" />
+            <End Role="Contrat" EntitySet="Contrat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employes_Civilite" Association="Self.FK_Employes_Civilite">
+            <End Role="Civilite" EntitySet="Civilite" />
+            <End Role="Employe" EntitySet="Employe" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employes_GroupeEmployes" Association="Self.FK_Employes_GroupeEmployes">
+            <End Role="GroupeEmploye" EntitySet="GroupeEmploye" />
+            <End Role="Employe" EntitySet="Employe" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Internautes_Civilite" Association="Self.FK_Internautes_Civilite">
+            <End Role="Civilite" EntitySet="Civilite" />
+            <End Role="Internaute" EntitySet="Internaute" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Metier_DomaineMetier" Association="Self.FK_Metier_DomaineMetier">
+            <End Role="DomaineMetier" EntitySet="DomaineMetier" />
+            <End Role="Metier" EntitySet="Metier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Offres_Employes" Association="Self.FK_Offres_Employes">
+            <End Role="Employe" EntitySet="Employe" />
+            <End Role="Offre" EntitySet="Offre" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Offres_Metier" Association="Self.FK_Offres_Metier">
+            <End Role="Metier" EntitySet="Metier" />
+            <End Role="Offre" EntitySet="Offre" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Offres_Studios" Association="Self.FK_Offres_Studios">
+            <End Role="Studio" EntitySet="Studio" />
+            <End Role="Offre" EntitySet="Offre" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OffresInternautes_Internautes" Association="Self.FK_OffresInternautes_Internautes">
+            <End Role="Internaute" EntitySet="Internaute" />
+            <End Role="OffresInternaute" EntitySet="OffresInternaute" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OffresInternautes_Offres" Association="Self.FK_OffresInternautes_Offres">
+            <End Role="Offre" EntitySet="Offre" />
+            <End Role="OffresInternaute" EntitySet="OffresInternaute" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MegaCastingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Civilite">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Libelle" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Employe" Relationship="Self.FK_Employes_Civilite" FromRole="Civilite" ToRole="Employe" />
+          <NavigationProperty Name="Internaute" Relationship="Self.FK_Internautes_Civilite" FromRole="Civilite" ToRole="Internaute" />
+        </EntityType>
+        <EntityType Name="Contrat">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdTypeContrat" Type="Int32" Nullable="false" />
+          <Property Name="DebutContrat" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DureContrat" Type="Int32" Nullable="false" />
+          <Property Name="CodeContrat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FichierContrat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdOffre" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Offre" Relationship="Self.FK_Contrat_Offres" FromRole="Contrat" ToRole="Offre" />
+          <NavigationProperty Name="TypeContrat" Relationship="Self.FK_Contrat_TypeContrat" FromRole="Contrat" ToRole="TypeContrat" />
+        </EntityType>
+        <EntityType Name="DomaineMetier">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Metier" Relationship="Self.FK_Metier_DomaineMetier" FromRole="DomaineMetier" ToRole="Metier" />
+        </EntityType>
+        <EntityType Name="Employe">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Prenom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IdCivilite" Type="Int32" Nullable="false" />
+          <Property Name="IdGroupeEmployes" Type="Int32" Nullable="false" />
+          <Property Name="Login" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Civilite" Relationship="Self.FK_Employes_Civilite" FromRole="Employe" ToRole="Civilite" />
+          <NavigationProperty Name="GroupeEmploye" Relationship="Self.FK_Employes_GroupeEmployes" FromRole="Employe" ToRole="GroupeEmploye" />
+          <NavigationProperty Name="Offre" Relationship="Self.FK_Offres_Employes" FromRole="Employe" ToRole="Offre" />
+        </EntityType>
+        <EntityType Name="GroupeEmploye">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Libelle" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Employe" Relationship="Self.FK_Employes_GroupeEmployes" FromRole="GroupeEmploye" ToRole="Employe" />
+        </EntityType>
+        <EntityType Name="Internaute">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Prenom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DateNaissance" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DateInscription" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IdCivilite" Type="Int32" Nullable="false" />
+          <Property Name="LienGoogle" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Login" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cv" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="254" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Civilite" Relationship="Self.FK_Internautes_Civilite" FromRole="Internaute" ToRole="Civilite" />
+          <NavigationProperty Name="OffresInternaute" Relationship="Self.FK_OffresInternautes_Internautes" FromRole="Internaute" ToRole="OffresInternaute" />
+        </EntityType>
+        <EntityType Name="Metier">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdLibelle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IdDomaineMetier" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DomaineMetier" Relationship="Self.FK_Metier_DomaineMetier" FromRole="Metier" ToRole="DomaineMetier" />
+          <NavigationProperty Name="Offre" Relationship="Self.FK_Offres_Metier" FromRole="Metier" ToRole="Offre" />
+        </EntityType>
+        <EntityType Name="Offre">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdStudio" Type="Int32" Nullable="false" />
+          <Property Name="Intitule" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IdMetier" Type="Int32" Nullable="false" />
+          <Property Name="DatePublication" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Dure_Diffusion" Type="Int32" Nullable="false" />
+          <Property Name="NombrePostes" Type="Int32" Nullable="false" />
+          <Property Name="DescriptionPoste" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DescriptionProfile" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IdEmploye" Type="Int32" Nullable="false" />
+          <Property Name="Localisation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CodeOffre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Contrat" Relationship="Self.FK_Contrat_Offres" FromRole="Offre" ToRole="Contrat" />
+          <NavigationProperty Name="Employe" Relationship="Self.FK_Offres_Employes" FromRole="Offre" ToRole="Employe" />
+          <NavigationProperty Name="Metier" Relationship="Self.FK_Offres_Metier" FromRole="Offre" ToRole="Metier" />
+          <NavigationProperty Name="Studio" Relationship="Self.FK_Offres_Studios" FromRole="Offre" ToRole="Studio" />
+          <NavigationProperty Name="OffresInternaute" Relationship="Self.FK_OffresInternautes_Offres" FromRole="Offre" ToRole="OffresInternaute" />
+        </EntityType>
+        <EntityType Name="OffresInternaute">
+          <Key>
+            <PropertyRef Name="IdInternaute" />
+            <PropertyRef Name="IdOffre" />
+          </Key>
+          <Property Name="IdInternaute" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdOffre" Type="Int32" Nullable="false" />
+          <Property Name="DatePostulation" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Internaute" Relationship="Self.FK_OffresInternautes_Internautes" FromRole="OffresInternaute" ToRole="Internaute" />
+          <NavigationProperty Name="Offre" Relationship="Self.FK_OffresInternautes_Offres" FromRole="OffresInternaute" ToRole="Offre" />
+        </EntityType>
+        <EntityType Name="Partenaire">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Siret" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Adresse" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NumeroAdresse" Type="Int32" Nullable="false" />
+          <Property Name="Libelle" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Telephone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Login" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Studio">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Siret" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Adresse" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Numero_adresse" Type="Int32" Nullable="false" />
+          <Property Name="Libelle" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="254" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Telephone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Offre" Relationship="Self.FK_Offres_Studios" FromRole="Studio" ToRole="Offre" />
+        </EntityType>
+        <EntityType Name="TypeContrat">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Libelle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Contrat" Relationship="Self.FK_Contrat_TypeContrat" FromRole="TypeContrat" ToRole="Contrat" />
+        </EntityType>
+        <Association Name="FK_Employes_Civilite">
+          <End Role="Civilite" Type="Self.Civilite" Multiplicity="1" />
+          <End Role="Employe" Type="Self.Employe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Civilite">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Employe">
+              <PropertyRef Name="IdCivilite" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Internautes_Civilite">
+          <End Role="Civilite" Type="Self.Civilite" Multiplicity="1" />
+          <End Role="Internaute" Type="Self.Internaute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Civilite">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Internaute">
+              <PropertyRef Name="IdCivilite" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contrat_Offres">
+          <End Role="Offre" Type="Self.Offre" Multiplicity="1" />
+          <End Role="Contrat" Type="Self.Contrat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Offre">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Contrat">
+              <PropertyRef Name="IdOffre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contrat_TypeContrat">
+          <End Role="TypeContrat" Type="Self.TypeContrat" Multiplicity="1" />
+          <End Role="Contrat" Type="Self.Contrat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeContrat">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Contrat">
+              <PropertyRef Name="IdTypeContrat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Metier_DomaineMetier">
+          <End Role="DomaineMetier" Type="Self.DomaineMetier" Multiplicity="1" />
+          <End Role="Metier" Type="Self.Metier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DomaineMetier">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Metier">
+              <PropertyRef Name="IdDomaineMetier" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employes_GroupeEmployes">
+          <End Role="GroupeEmploye" Type="Self.GroupeEmploye" Multiplicity="1" />
+          <End Role="Employe" Type="Self.Employe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GroupeEmploye">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Employe">
+              <PropertyRef Name="IdGroupeEmployes" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Offres_Employes">
+          <End Role="Employe" Type="Self.Employe" Multiplicity="1" />
+          <End Role="Offre" Type="Self.Offre" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employe">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Offre">
+              <PropertyRef Name="IdEmploye" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OffresInternautes_Internautes">
+          <End Role="Internaute" Type="Self.Internaute" Multiplicity="1" />
+          <End Role="OffresInternaute" Type="Self.OffresInternaute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Internaute">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OffresInternaute">
+              <PropertyRef Name="IdInternaute" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Offres_Metier">
+          <End Role="Metier" Type="Self.Metier" Multiplicity="1" />
+          <End Role="Offre" Type="Self.Offre" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Metier">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Offre">
+              <PropertyRef Name="IdMetier" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Offres_Studios">
+          <End Role="Studio" Type="Self.Studio" Multiplicity="1" />
+          <End Role="Offre" Type="Self.Offre" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Studio">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Offre">
+              <PropertyRef Name="IdStudio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OffresInternautes_Offres">
+          <End Role="Offre" Type="Self.Offre" Multiplicity="1" />
+          <End Role="OffresInternaute" Type="Self.OffresInternaute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Offre">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OffresInternaute">
+              <PropertyRef Name="IdOffre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MegaCastingEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Civilite" EntityType="Self.Civilite" />
+          <EntitySet Name="Contrat" EntityType="Self.Contrat" />
+          <EntitySet Name="DomaineMetier" EntityType="Self.DomaineMetier" />
+          <EntitySet Name="Employe" EntityType="Self.Employe" />
+          <EntitySet Name="GroupeEmploye" EntityType="Self.GroupeEmploye" />
+          <EntitySet Name="Internaute" EntityType="Self.Internaute" />
+          <EntitySet Name="Metier" EntityType="Self.Metier" />
+          <EntitySet Name="Offre" EntityType="Self.Offre" />
+          <EntitySet Name="OffresInternaute" EntityType="Self.OffresInternaute" />
+          <EntitySet Name="Partenaire" EntityType="Self.Partenaire" />
+          <EntitySet Name="Studio" EntityType="Self.Studio" />
+          <EntitySet Name="TypeContrat" EntityType="Self.TypeContrat" />
+          <AssociationSet Name="FK_Employes_Civilite" Association="Self.FK_Employes_Civilite">
+            <End Role="Civilite" EntitySet="Civilite" />
+            <End Role="Employe" EntitySet="Employe" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Internautes_Civilite" Association="Self.FK_Internautes_Civilite">
+            <End Role="Civilite" EntitySet="Civilite" />
+            <End Role="Internaute" EntitySet="Internaute" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contrat_Offres" Association="Self.FK_Contrat_Offres">
+            <End Role="Offre" EntitySet="Offre" />
+            <End Role="Contrat" EntitySet="Contrat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contrat_TypeContrat" Association="Self.FK_Contrat_TypeContrat">
+            <End Role="TypeContrat" EntitySet="TypeContrat" />
+            <End Role="Contrat" EntitySet="Contrat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Metier_DomaineMetier" Association="Self.FK_Metier_DomaineMetier">
+            <End Role="DomaineMetier" EntitySet="DomaineMetier" />
+            <End Role="Metier" EntitySet="Metier" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employes_GroupeEmployes" Association="Self.FK_Employes_GroupeEmployes">
+            <End Role="GroupeEmploye" EntitySet="GroupeEmploye" />
+            <End Role="Employe" EntitySet="Employe" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Offres_Employes" Association="Self.FK_Offres_Employes">
+            <End Role="Employe" EntitySet="Employe" />
+            <End Role="Offre" EntitySet="Offre" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OffresInternautes_Internautes" Association="Self.FK_OffresInternautes_Internautes">
+            <End Role="Internaute" EntitySet="Internaute" />
+            <End Role="OffresInternaute" EntitySet="OffresInternaute" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Offres_Metier" Association="Self.FK_Offres_Metier">
+            <End Role="Metier" EntitySet="Metier" />
+            <End Role="Offre" EntitySet="Offre" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Offres_Studios" Association="Self.FK_Offres_Studios">
+            <End Role="Studio" EntitySet="Studio" />
+            <End Role="Offre" EntitySet="Offre" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OffresInternautes_Offres" Association="Self.FK_OffresInternautes_Offres">
+            <End Role="Offre" EntitySet="Offre" />
+            <End Role="OffresInternaute" EntitySet="OffresInternaute" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MegaCastingModelStoreContainer" CdmEntityContainer="MegaCastingEntities">
+          <EntitySetMapping Name="Civilite">
+            <EntityTypeMapping TypeName="MegaCastingModel.Civilite">
+              <MappingFragment StoreEntitySet="Civilite">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contrat">
+            <EntityTypeMapping TypeName="MegaCastingModel.Contrat">
+              <MappingFragment StoreEntitySet="Contrat">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdTypeContrat" ColumnName="IdTypeContrat" />
+                <ScalarProperty Name="DebutContrat" ColumnName="DebutContrat" />
+                <ScalarProperty Name="DureContrat" ColumnName="DureContrat" />
+                <ScalarProperty Name="CodeContrat" ColumnName="CodeContrat" />
+                <ScalarProperty Name="FichierContrat" ColumnName="FichierContrat" />
+                <ScalarProperty Name="IdOffre" ColumnName="IdOffre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DomaineMetier">
+            <EntityTypeMapping TypeName="MegaCastingModel.DomaineMetier">
+              <MappingFragment StoreEntitySet="DomaineMetier">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employe">
+            <EntityTypeMapping TypeName="MegaCastingModel.Employe">
+              <MappingFragment StoreEntitySet="Employe">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nom" ColumnName="Nom" />
+                <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+                <ScalarProperty Name="IdCivilite" ColumnName="IdCivilite" />
+                <ScalarProperty Name="IdGroupeEmployes" ColumnName="IdGroupeEmployes" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GroupeEmploye">
+            <EntityTypeMapping TypeName="MegaCastingModel.GroupeEmploye">
+              <MappingFragment StoreEntitySet="GroupeEmploye">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Internaute">
+            <EntityTypeMapping TypeName="MegaCastingModel.Internaute">
+              <MappingFragment StoreEntitySet="Internaute">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nom" ColumnName="Nom" />
+                <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+                <ScalarProperty Name="DateNaissance" ColumnName="DateNaissance" />
+                <ScalarProperty Name="DateInscription" ColumnName="DateInscription" />
+                <ScalarProperty Name="IdCivilite" ColumnName="IdCivilite" />
+                <ScalarProperty Name="LienGoogle" ColumnName="LienGoogle" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Cv" ColumnName="Cv" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Metier">
+            <EntityTypeMapping TypeName="MegaCastingModel.Metier">
+              <MappingFragment StoreEntitySet="Metier">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdLibelle" ColumnName="IdLibelle" />
+                <ScalarProperty Name="IdDomaineMetier" ColumnName="IdDomaineMetier" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Offre">
+            <EntityTypeMapping TypeName="MegaCastingModel.Offre">
+              <MappingFragment StoreEntitySet="Offre">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdStudio" ColumnName="IdStudio" />
+                <ScalarProperty Name="Intitule" ColumnName="Intitule" />
+                <ScalarProperty Name="IdMetier" ColumnName="IdMetier" />
+                <ScalarProperty Name="DatePublication" ColumnName="DatePublication" />
+                <ScalarProperty Name="Dure_Diffusion" ColumnName="Dure_Diffusion" />
+                <ScalarProperty Name="NombrePostes" ColumnName="NombrePostes" />
+                <ScalarProperty Name="DescriptionPoste" ColumnName="DescriptionPoste" />
+                <ScalarProperty Name="DescriptionProfile" ColumnName="DescriptionProfile" />
+                <ScalarProperty Name="IdEmploye" ColumnName="IdEmploye" />
+                <ScalarProperty Name="Localisation" ColumnName="Localisation" />
+                <ScalarProperty Name="CodeOffre" ColumnName="CodeOffre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OffresInternaute">
+            <EntityTypeMapping TypeName="MegaCastingModel.OffresInternaute">
+              <MappingFragment StoreEntitySet="OffresInternaute">
+                <ScalarProperty Name="IdInternaute" ColumnName="IdInternaute" />
+                <ScalarProperty Name="IdOffre" ColumnName="IdOffre" />
+                <ScalarProperty Name="DatePostulation" ColumnName="DatePostulation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Partenaire">
+            <EntityTypeMapping TypeName="MegaCastingModel.Partenaire">
+              <MappingFragment StoreEntitySet="Partenaire">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Siret" ColumnName="Siret" />
+                <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+                <ScalarProperty Name="NumeroAdresse" ColumnName="NumeroAdresse" />
+                <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Studio">
+            <EntityTypeMapping TypeName="MegaCastingModel.Studio">
+              <MappingFragment StoreEntitySet="Studio">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Siret" ColumnName="Siret" />
+                <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+                <ScalarProperty Name="Numero_adresse" ColumnName="Numero_adresse" />
+                <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypeContrat">
+            <EntityTypeMapping TypeName="MegaCastingModel.TypeContrat">
+              <MappingFragment StoreEntitySet="TypeContrat">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

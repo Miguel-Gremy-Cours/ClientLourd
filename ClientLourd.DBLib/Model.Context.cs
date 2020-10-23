@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MegaCasting.DBLib
+namespace ClientLourd.DBLib
 {
     using System;
     using System.Data.Entity;
@@ -25,17 +25,17 @@ namespace MegaCasting.DBLib
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Civilite> Civilites { get; set; }
-        public virtual DbSet<Contrat> Contrats { get; set; }
-        public virtual DbSet<DomaineMetier> DomaineMetiers { get; set; }
-        public virtual DbSet<Employe> Employes { get; set; }
-        public virtual DbSet<GroupeEmploye> GroupeEmployes { get; set; }
-        public virtual DbSet<Internaute> Internautes { get; set; }
-        public virtual DbSet<Metier> Metiers { get; set; }
-        public virtual DbSet<Offre> Offres { get; set; }
-        public virtual DbSet<OffresInternaute> OffresInternautes { get; set; }
-        public virtual DbSet<Partenaire> Partenaires { get; set; }
-        public virtual DbSet<Studio> Studios { get; set; }
-        public virtual DbSet<TypeContrat> TypeContrats { get; set; }
+        public virtual DbSet<Civilite> Civilite { get; set; }
+        public virtual DbSet<Contrat> Contrat { get; set; }
+        public virtual DbSet<DomaineMetier> DomaineMetier { get; set; }
+        public virtual DbSet<Employe> Employe { get; set; }
+        public virtual DbSet<GroupeEmploye> GroupeEmploye { get; set; }
+        public virtual DbSet<Internaute> Internaute { get; set; }
+        public virtual DbSet<Metier> Metier { get; set; }
+        public virtual DbSet<Offre> Offre { get; set; }
+        public virtual DbSet<OffresInternaute> OffresInternaute { get; set; }
+        public virtual DbSet<Partenaire> Partenaire { get; set; }
+        public virtual DbSet<Studio> Studio { get; set; }
+        public virtual DbSet<TypeContrat> TypeContrat { get; set; }
     }
 }

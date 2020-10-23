@@ -7,23 +7,26 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MegaCasting.DBLib
+namespace ClientLourd.DBLib
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class GroupeEmploye
+    public partial class Civilite
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public GroupeEmploye()
+        public Civilite()
         {
-            this.Employes = new HashSet<Employe>();
+            this.Employe = new HashSet<Employe>();
+            this.Internaute = new HashSet<Internaute>();
         }
     
-        public int id { get; set; }
-        public string libelle { get; set; }
+        public int Id { get; set; }
+        public string Libelle { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Employe> Employes { get; set; }
+        public virtual ICollection<Employe> Employe { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Internaute> Internaute { get; set; }
     }
 }

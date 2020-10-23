@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Les informations générales relatives à un assembly dépendent de
 // l'ensemble d'attributs suivant. Changez les valeurs de ces attributs pour modifier les informations
 // associées à un assembly.
-[assembly: AssemblyTitle("MegaCasting.DBLib")]
+[assembly: AssemblyTitle("ClientLourd.DBLib")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MegaCasting.DBLib")]
+[assembly: AssemblyProduct("ClientLourd.DBLib")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Le GUID suivant est pour l'ID de la typelib si ce projet est exposé à COM
-[assembly: Guid("43017f47-3e14-44a7-a71a-eb0b47a4e6ea")]
+[assembly: Guid("fc72bfae-3f5e-4778-b8bc-14a87aae699c")]
 
 // Les informations de version pour un assembly se composent des quatre valeurs suivantes :
 //

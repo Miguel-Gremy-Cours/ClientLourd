@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MegaCasting.DBLib
+namespace ClientLourd.DBLib
 {
     using System;
     using System.Collections.Generic;
     
     public partial class OffresInternaute
     {
-        public int id_internaute { get; set; }
-        public int id_offre { get; set; }
-        public System.DateTime date_postulation { get; set; }
+        public int IdInternaute { get; set; }
+        public int IdOffre { get; set; }
+        public System.DateTime DatePostulation { get; set; }
     
         public virtual Internaute Internaute { get; set; }
         public virtual Offre Offre { get; set; }

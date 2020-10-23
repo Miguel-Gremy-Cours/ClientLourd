@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MegaCasting.DBLib
+namespace ClientLourd.DBLib
 {
     using System;
     using System.Collections.Generic;
@@ -15,13 +15,13 @@ namespace MegaCasting.DBLib
     public partial class Partenaire
     {
         public int id { get; set; }
-        public string siret { get; set; }
-        public string adresse { get; set; }
-        public int numero_adresse { get; set; }
-        public string libelle { get; set; }
-        public string email { get; set; }
-        public string telephone { get; set; }
-        public string login { get; set; }
-        public string password { get; set; }
+        public string Siret { get; set; }
+        public string Adresse { get; set; }
+        public int NumeroAdresse { get; set; }
+        public string Libelle { get; set; }
+        public string Email { get; set; }
+        public string Telephone { get; set; }
+        public string Login { get; set; }
+        public string Password { get; set; }
     }
 }

@@ -7,26 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MegaCasting.DBLib
+namespace ClientLourd.DBLib
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Contrat
+    public partial class GroupeEmploye
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Contrat()
+        public GroupeEmploye()
         {
-            this.Offres = new HashSet<Offre>();
+            this.Employe = new HashSet<Employe>();
         }
     
-        public int id { get; set; }
-        public int type_contrat { get; set; }
-        public System.DateTime debut_contrat { get; set; }
-        public int dure_contrat { get; set; }
+        public int Id { get; set; }
+        public string Libelle { get; set; }
     
-        public virtual TypeContrat TypeContrat { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Offre> Offres { get; set; }
+        public virtual ICollection<Employe> Employe { get; set; }
     }
 }

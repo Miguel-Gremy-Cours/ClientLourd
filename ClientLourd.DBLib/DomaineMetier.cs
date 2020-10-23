@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MegaCasting.DBLib
+namespace ClientLourd.DBLib
 {
     using System;
     using System.Collections.Generic;
@@ -17,13 +17,13 @@ namespace MegaCasting.DBLib
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public DomaineMetier()
         {
-            this.Metiers = new HashSet<Metier>();
+            this.Metier = new HashSet<Metier>();
         }
     
-        public int id { get; set; }
-        public string libelle { get; set; }
+        public int Id { get; set; }
+        public string Libelle { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Metier> Metiers { get; set; }
+        public virtual ICollection<Metier> Metier { get; set; }
     }
 }

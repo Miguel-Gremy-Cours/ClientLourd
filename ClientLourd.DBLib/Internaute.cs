@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MegaCasting.DBLib
+namespace ClientLourd.DBLib
 {
     using System;
     using System.Collections.Generic;
@@ -17,23 +17,23 @@ namespace MegaCasting.DBLib
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Internaute()
         {
-            this.OffresInternautes = new HashSet<OffresInternaute>();
+            this.OffresInternaute = new HashSet<OffresInternaute>();
         }
     
-        public int id { get; set; }
-        public string nom { get; set; }
-        public string prenom { get; set; }
-        public System.DateTime date_naissance { get; set; }
-        public System.DateTime date_inscription { get; set; }
-        public int civilite { get; set; }
-        public string lien_google { get; set; }
-        public string login { get; set; }
-        public string password { get; set; }
-        public string cv_name { get; set; }
-        public string email { get; set; }
+        public int Id { get; set; }
+        public string Nom { get; set; }
+        public string Prenom { get; set; }
+        public System.DateTime DateNaissance { get; set; }
+        public System.DateTime DateInscription { get; set; }
+        public int IdCivilite { get; set; }
+        public string LienGoogle { get; set; }
+        public string Login { get; set; }
+        public string Password { get; set; }
+        public string Cv { get; set; }
+        public string Email { get; set; }
     
         public virtual Civilite Civilite { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OffresInternaute> OffresInternautes { get; set; }
+        public virtual ICollection<OffresInternaute> OffresInternaute { get; set; }
     }
 }

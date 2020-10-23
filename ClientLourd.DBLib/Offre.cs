@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MegaCasting.DBLib
+namespace ClientLourd.DBLib
 {
     using System;
     using System.Collections.Generic;
@@ -17,27 +17,29 @@ namespace MegaCasting.DBLib
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Offre()
         {
-            this.OffresInternautes = new HashSet<OffresInternaute>();
+            this.Contrat = new HashSet<Contrat>();
+            this.OffresInternaute = new HashSet<OffresInternaute>();
         }
     
-        public int id { get; set; }
-        public int studio { get; set; }
-        public string intitule { get; set; }
-        public int metier { get; set; }
-        public int contrat { get; set; }
-        public System.DateTime date_publication { get; set; }
-        public int dure_diffusion { get; set; }
-        public int nombre_postes { get; set; }
-        public string description_poste { get; set; }
-        public string description_profile { get; set; }
-        public int numero_employe { get; set; }
-        public string localisation { get; set; }
+        public int Id { get; set; }
+        public int IdStudio { get; set; }
+        public string Intitule { get; set; }
+        public int IdMetier { get; set; }
+        public System.DateTime DatePublication { get; set; }
+        public int Dure_Diffusion { get; set; }
+        public int NombrePostes { get; set; }
+        public string DescriptionPoste { get; set; }
+        public string DescriptionProfile { get; set; }
+        public int IdEmploye { get; set; }
+        public string Localisation { get; set; }
+        public string CodeOffre { get; set; }
     
-        public virtual Contrat Contrat { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Contrat> Contrat { get; set; }
         public virtual Employe Employe { get; set; }
         public virtual Metier Metier { get; set; }
         public virtual Studio Studio { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OffresInternaute> OffresInternautes { get; set; }
+        public virtual ICollection<OffresInternaute> OffresInternaute { get; set; }
     }
 }
