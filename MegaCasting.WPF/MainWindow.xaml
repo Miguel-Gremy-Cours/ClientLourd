@@ -89,7 +89,7 @@
             </Grid>
             <Grid Grid.Column="0">
                 <Button x:Name="ButtonOpen" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Width="60" Height="60" Padding="0">
-                    <materialDesign:PackIcon Kind="Menu" Foreground="White"/>
+                    <materialDesign:PackIcon Kind="Menu" Foreground="White" Width="50" Height="50"/>
                 </Button>
             </Grid>
             <Grid Grid.Column="0" Name="GridMenu" Width="300" HorizontalAlignment="Left" Margin="-300 0 0 0" Background="Coral" RenderTransformOrigin="0.5,0.5">
@@ -166,15 +166,15 @@
 
                         <Button x:Name="ButtonClose" HorizontalAlignment="Right" VerticalAlignment="Top" Background="{x:Null}" Foreground="White" BorderBrush="{x:Null}" Width="240" >
 
-                            <StackPanel>
-                                <materialDesign:PackIcon Kind="ArrowCollapseLeft" Width="30" Height="30" Margin="200,0,0,0"/>
+                            <StackPanel >
+                                <materialDesign:PackIcon Kind="ArrowCollapseLeft" Width="50" Height="50" Margin="200,0,0,0"/>
                             </StackPanel>
                         </Button>
 
                     </ListBoxItem>
                     <ListBoxItem x:Name="ViewMain" Tag="ViewMain">
                         <Button BorderThickness="0" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewMain" Click="Btn_ViewMain_Click">
-                            <StackPanel Style="{StaticResource StackPanelStyle}">
+                            <StackPanel Style="{StaticResource StackPanelStyle}" >
                                 <iconPacks:PackIconFontAwesome Kind="HomeSolid" Width="30" Height="30" VerticalAlignment="Center" Foreground="White"/>
                                 <TextBlock Text="Home" FontSize="30" FontWeight="Light" Foreground="White" />
                             </StackPanel>

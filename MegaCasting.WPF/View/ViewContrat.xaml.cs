@@ -24,5 +24,22 @@ namespace MegaCasting.WPF.View
         {
             InitializeComponent();
         }
+
+        private void _New_Contrat_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void _Delete_Contrat_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
+        private void _Save_Contrat_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
     }
 }
