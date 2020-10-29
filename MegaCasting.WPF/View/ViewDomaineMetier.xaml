@@ -1,24 +1,25 @@
 ﻿<UserControl x:Class="MegaCasting.WPF.View.ViewDomaineMetier"
-             xmlns:local="clr-namespace:MegaCasting.WPF.View"
+            xmlns:local="clr-namespace:MegaCasting.WPF.View"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:metro="http://metro.mahapps.com/winfx/xaml/iconpacks"
+            xmlns:metro="http://metro.mahapps.com/winfx/xaml/iconpacks"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
-             d:DesignHeight="750" d:DesignWidth="800">
+             d:DesignHeight="750" d:DesignWidth="800"  Background="Transparent" >
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="5*" />
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"/>
+
         </Grid.RowDefinitions>
-        <Border CornerRadius="15"
-                Grid.RowSpan="2">
+        <Border CornerRadius="15" Grid.RowSpan="2">
             <Border.Background>
                 <LinearGradientBrush>
-                    <GradientStop Color="Crimson" Offset="0.9" />
-                    <GradientStop Color="#FF6666" Offset="0.0" />
+                    <GradientStop Color="Crimson" Offset="0.9"/>
+                    <GradientStop Color="#FF6666" Offset="0.0"/>
+
                 </LinearGradientBrush>
             </Border.Background>
         </Border>
@@ -37,7 +38,7 @@
                     <Button Visibility="Visible">
                         <StackPanel Orientation="Horizontal" >
                             <materialDesign:PackIcon Kind="Add" Width="35" Height="35" VerticalAlignment="Center"/>
-                            <TextBlock Text="Nouveau Domaine" Style="{StaticResource ButtonTextBlockStyle}" />
+                            <TextBlock Text="Nouveau domaine" Style="{StaticResource ButtonTextBlockStyle}" />
                         </StackPanel>
                     </Button>
                     <Button Visibility="Visible">
@@ -59,13 +60,62 @@
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="40"/>
+                <RowDefinition Height="2*"/>
                 <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
+
             </Grid.RowDefinitions>
-            <Label Grid.Column="0" Grid.Row="0" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light">Gestion des contrats</Label>
-            <ListBox Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" x:Name="_ListBoxContrat" ItemsSource="{Binding Contrat}" DisplayMemberPath="libelle" SelectedItem="{Binding SelectedContrat}" />
-            <TextBox Visibility="{Binding SelectedContrat, Converter={StaticResource _SharedObjectToVisibilityConverter}}" Grid.Column="0" Grid.Row="2" Text="{Binding SelectedContrat.libelle}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
+
+
+            <Label Grid.Column="0" Grid.Row="0" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light">Gestion de domaine</Label>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                <ListBox Grid.Column="0"  x:Name="_ListBoxDomaine" ItemsSource="{Binding DomaineMetiers}" DisplayMemberPath="Libelle" SelectedItem="{Binding SelectedDomaineMetier}" >
+                </ListBox>
+
+                <!--Grid avec des champs types textbox se traouve à droit-->
+                <Grid Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="10"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition  Height="1*"/>
+                        <RowDefinition  Height="auto"/>
+                        <RowDefinition  Height="10"/>
+                        <RowDefinition  Height="auto"/>
+                        <RowDefinition  Height="3*"/>
+                    </Grid.RowDefinitions>
+
+
+                    <TextBlock Grid.Column="1" Grid.Row="1" Text="ID" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    </TextBlock>
+                    <TextBlock Grid.Column="1" Grid.Row="3" Text="Libellé" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    </TextBlock>
+
+                    <!--DataBinding de ViewModel-->
+                    <TextBox Grid.Column="3" Grid.Row="1" Visibility="{Binding SelectedDomaineMetier, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedDomaineMetier.Id, Mode=OneWay}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" >
+                    </TextBox>
+
+                    <TextBox Grid.Column="3" Grid.Row="3" Visibility="{Binding SelectedDomaineMetier, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedDomaineMetier.Libelle}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
+
+
+
+
+
+
+                </Grid>
+
+            </Grid>
+
         </Grid>
+
     </Grid>
+
 </UserControl>

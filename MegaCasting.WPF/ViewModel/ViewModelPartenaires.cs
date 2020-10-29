@@ -1,4 +1,5 @@
 ﻿
+using Caliburn.Micro;
 using MegaCasting.DBLib;
 using System;
 using System.Collections.Generic;
@@ -18,9 +19,12 @@ namespace ClientLourd.ViewModel
         #region Attributes
         private Partenaire _SelectedPartenaire;
         private ObservableCollection<Partenaire> _Partenaires;
+ 
         #endregion
 
         #region Properties
+
+     
 
         public ObservableCollection<Partenaire> Partenaires
         {
@@ -41,6 +45,8 @@ namespace ClientLourd.ViewModel
 
             this.Entities.Partenaires.ToList();
             this.Partenaires = this.Entities.Partenaires.Local;
+           
+            
         }
         #endregion
 

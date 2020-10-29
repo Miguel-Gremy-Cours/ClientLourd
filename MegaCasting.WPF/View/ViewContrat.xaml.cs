@@ -25,19 +25,21 @@ namespace MegaCasting.WPF.View
             InitializeComponent();
         }
 
-        private void Btn_Add_Contract_Click(object sender, RoutedEventArgs e)
+        private void _New_Contrat_Click(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("Btn_Add_Contract");
+
         }
 
-        private void Btn_Del_Contract_Click(object sender, RoutedEventArgs e)
+        private void _Delete_Contrat_Click(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("Btn_Del_Contract");
+
         }
 
-        private void Btn_Save_Contract_Click(object sender, RoutedEventArgs e)
+
+        private void _Save_Contrat_Click(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("Btn_Save_Contract");
+
         }
+
     }
 }

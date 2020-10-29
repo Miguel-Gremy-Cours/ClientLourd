@@ -1,10 +1,10 @@
 ﻿<UserControl x:Class="MegaCasting.WPF.View.ViewContrat"
-             xmlns:local="clr-namespace:MegaCasting.WPF.View"
+              xmlns:local="clr-namespace:MegaCasting.WPF.View"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:metro="http://metro.mahapps.com/winfx/xaml/iconpacks"
+            xmlns:metro="http://metro.mahapps.com/winfx/xaml/iconpacks"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="750" d:DesignWidth="800"  Background="Transparent" >
@@ -19,6 +19,7 @@
                 <LinearGradientBrush>
                     <GradientStop Color="Crimson" Offset="0.9"/>
                     <GradientStop Color="#FF6666" Offset="0.0"/>
+
                 </LinearGradientBrush>
             </Border.Background>
         </Border>
@@ -34,27 +35,21 @@
             <Grid Grid.Column="2">
 
                 <StackPanel Orientation="Horizontal" >
-                    <Button Visibility="Visible"
-                            x:Name="Btn_Add_Contract"
-                            Click="Btn_Add_Contract_Click">
+                    <Button Visibility="Visible" x:Name="_New_Contrat" Click="_New_Contrat_Click">
                         <StackPanel Orientation="Horizontal" >
                             <materialDesign:PackIcon Kind="Add" Width="35" Height="35" VerticalAlignment="Center"/>
-                            <TextBlock Text="Nouveau Type" Style="{StaticResource ButtonTextBlockStyle}" />
+                            <TextBlock Text="Nouveau contrat" Style="{StaticResource ButtonTextBlockStyle}" />
                         </StackPanel>
                     </Button>
-                    <Button Visibility="Visible"
-                            x:Name="Btn_Del_Contract"
-                            Click="Btn_Del_Contract_Click">
+                    <Button Visibility="Visible" x:Name="_Delete_Contrat" Click="_Delete_Contrat_Click">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="TrashCan" Width="35" Height="35" VerticalAlignment="Center"   />
                             <TextBlock Text="Supprimer"  Style="{StaticResource ButtonTextBlockStyle}"/>
                         </StackPanel>
                     </Button>
 
-                    <Button Visibility="Visible"
-                            x:Name="Btn_Save_Contract"
-                            Click="Btn_Save_Contract_Click">
-                        <StackPanel Orientation="Horizontal">
+                    <Button Visibility="Visible" x:Name="_Save_Contrat" Click="_Save_Contrat_Click">
+                        <StackPanel Orientation="Horizontal"  >
                             <materialDesign:PackIcon Kind="ContentSave" Width="35" Height="35" VerticalAlignment="Center" />
                             <TextBlock Text="Sauvegarder"  Style="{StaticResource ButtonTextBlockStyle}"/>
                         </StackPanel>
@@ -70,9 +65,88 @@
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
             <Label Grid.Column="0" Grid.Row="0" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light">Gestion des contrats</Label>
-            <ListBox Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" x:Name="_ListBoxContrat" ItemsSource="{Binding Contrat}" DisplayMemberPath="libelle" SelectedItem="{Binding SelectedContrat}" />
-            <TextBox Visibility="{Binding SelectedContrat, Converter={StaticResource _SharedObjectToVisibilityConverter}}" Grid.Column="0" Grid.Row="2" Text="{Binding SelectedContrat.libelle}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                <ListBox Grid.Column="0"  x:Name="_ListBoxContrat" ItemsSource="{Binding Contrats}" DisplayMemberPath="CodeContrat" SelectedItem="{Binding SelectedContrat}" Foreground="White">
+                </ListBox>
+
+                <!--Grid avec des champs types textbox se traouve à droit-->
+                <Grid Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition  Height="1*"/>
+                        
+                        <RowDefinition  Height="auto"/>
+                        <RowDefinition  Height="10"/>
+                        
+                        <RowDefinition  Height="auto"/>
+                        <RowDefinition  Height="10"/>
+                        
+                        <RowDefinition  Height="auto"/>
+                        <RowDefinition  Height="10"/>
+                        
+                        <RowDefinition  Height="auto"/>
+                        <RowDefinition  Height="10"/>
+
+                        <RowDefinition  Height="auto"/>
+                        <RowDefinition  Height="10"/>
+
+                        <RowDefinition  Height="auto"/>
+                        <RowDefinition  Height="3*"/>
+                    </Grid.RowDefinitions>
+
+
+                    <TextBlock Grid.Column="1" Grid.Row="1" Text="ID" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    </TextBlock>
+                    <TextBlock Grid.Column="1" Grid.Row="3" Text="Code" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    </TextBlock>
+                    <TextBlock Grid.Column="1" Grid.Row="5" Text="Début du contrat" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    </TextBlock>
+                    <TextBlock Grid.Column="1" Grid.Row="7" Text="Durée du contrat" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    </TextBlock>
+                    <TextBlock Grid.Column="1" Grid.Row="9" Text="Code Offre" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    </TextBlock>
+
+                    <TextBlock Grid.Column="1" Grid.Row="11" Text="Type du contrat" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    </TextBlock>
+
+                    <!--DataBinding de ViewModel-->
+                    <TextBox Grid.Column="3" Grid.Row="1" Visibility="{Binding SelectedContrat, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedContrat.Id, Mode=OneWay}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" >
+                    </TextBox>
+
+                    <TextBox Grid.Column="3" Grid.Row="3" Visibility="{Binding SelectedContrat, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedContrat.CodeContrat}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
+
+                    <TextBox Grid.Column="3" Grid.Row="5" Visibility="{Binding SelectedContrat, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedContrat.DebutContrat}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
+                    
+                    <TextBox Grid.Column="3" Grid.Row="7" Visibility="{Binding SelectedContrat, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedContrat.DureContrat}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
+
+                    <TextBox Grid.Column="3" Grid.Row="9" Visibility="{Binding SelectedContrat, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedContrat.CodeOffre}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
+
+                    <TextBox Grid.Column="3" Grid.Row="11" Visibility="{Binding SelectedContrat, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedContrat.TypeContrat}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
+
+
+
+
+
+
+                </Grid>
+
+            </Grid>
+
+
+
         </Grid>
+
     </Grid>
 
 </UserControl>

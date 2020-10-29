@@ -14,7 +14,7 @@ namespace ClientLourd.ViewModel
 
 
         #region Attributes
-        private DomaineMetier _SelectdDomaineMetier;
+        private DomaineMetier _SelectedDomaineMetier;
         private ObservableCollection<DomaineMetier> _DomaineMetiers;
 
         #endregion
@@ -25,10 +25,10 @@ namespace ClientLourd.ViewModel
             get { return _DomaineMetiers; }
             set { _DomaineMetiers = value; }
         }
-        public DomaineMetier SelectdDomaineMetier
+        public DomaineMetier SelectedDomaineMetier
         {
-            get { return _SelectdDomaineMetier; }
-            set { _SelectdDomaineMetier = value; }
+            get { return _SelectedDomaineMetier; }
+            set { _SelectedDomaineMetier = value; }
         }
 
         #endregion
@@ -62,7 +62,7 @@ namespace ClientLourd.ViewModel
                 domaineMetier.Libelle = "Nouveau domaine";
                 this.DomaineMetiers.Add(domaineMetier);
                 this.SaveChanges();
-                this.SelectdDomaineMetier = domaineMetier;
+                this.SelectedDomaineMetier = domaineMetier;
 
             }
 
@@ -79,7 +79,7 @@ namespace ClientLourd.ViewModel
             // vérification de droit de suppression, table liée à Metier
 
             //suppression d'élément
-            this.DomaineMetiers.Remove(SelectdDomaineMetier);
+            this.DomaineMetiers.Remove(SelectedDomaineMetier);
             this.SaveChanges();
         }
         #endregion
