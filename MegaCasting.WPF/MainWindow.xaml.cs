@@ -257,5 +257,65 @@ namespace MegaCasting.WPF
 
             PointOffset.BeginAnimation(TranslateTransform.YProperty, animation);
         }
+
+        private void _Btn_ViewMain_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void _Btn_ViewTypeContrat_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void _Btn_ViewContrat_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void _Btn_ViewOffre_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void _Btn_ViewOffreInternaute_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void _Btn_ViewInternaute_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void _Btn_ViewMetier_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void _Btn_ViewStudio_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void _Btn_ViewStudio_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void _Btn_ViewPartenaire_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void _Btn_ViewEmploye_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void _Btn_ViewGroupe_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
