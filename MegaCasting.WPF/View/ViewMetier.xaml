@@ -111,7 +111,14 @@
 
                     <TextBox Grid.Column="3" Grid.Row="3" Visibility="{Binding SelectedMetier, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedMetier.Libelle}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
 
-                    <ComboBox Grid.Column="3" Grid.Row="5" x:Name="_CmBox_Domaine"  ItemsSource="{Binding DomaineMetiers }">
+                    <ComboBox Grid.Column="3"
+                              Grid.Row="5"
+                              x:Name="_CmBox_Domaine"
+                              ItemsSource="{Binding DomaineMetier}"
+                              DisplayMemberPath="Libelle"
+                              SelectedItem="{Binding SelectedDomaineMetier}">
+                        
+                        <!--
                         <ComboBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
@@ -120,6 +127,7 @@
                                 </StackPanel>
                             </DataTemplate>
                         </ComboBox.ItemTemplate>
+                        -->
                     </ComboBox>
 
 

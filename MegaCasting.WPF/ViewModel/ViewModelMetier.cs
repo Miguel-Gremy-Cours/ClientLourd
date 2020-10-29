@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ClientLourd.ViewModel
 {
-    class ViewModelMetier:ViewModelBase
+    class ViewModelMetier : ViewModelBase
     {
 
 
@@ -17,6 +17,24 @@ namespace ClientLourd.ViewModel
         #region Attributes
         private ObservableCollection<Metier> _Metiers;
         private Metier _SelectedMetier;
+        private ObservableCollection<DomaineMetier> _DomaineMetier;
+        private DomaineMetier _SelectedDomaineMetier;
+
+        public DomaineMetier SelectedDomaineMetier
+        {
+            get { return _SelectedDomaineMetier; }
+            set { _SelectedDomaineMetier = value; }
+        }
+
+
+
+        public ObservableCollection<DomaineMetier> DomaineMetier
+        {
+            get { return _DomaineMetier; }
+            set { _DomaineMetier = value; }
+        }
+
+
 
         #endregion
 
@@ -39,10 +57,13 @@ namespace ClientLourd.ViewModel
 
         #region Constructor
 
-        public ViewModelMetier(MegaCastingEntities entities):base(entities)
+        public ViewModelMetier(MegaCastingEntities entities) : base(entities)
         {
             this.Entities.Metiers.ToList();
             this.Metiers = this.Entities.Metiers.Local;
+
+            this.Entities.DomaineMetiers.ToList();
+            this.DomaineMetier = this.Entities.DomaineMetiers.Local;
         }
 
         #endregion
@@ -53,10 +74,10 @@ namespace ClientLourd.ViewModel
         /// <summary>
         /// ajouter un métier
         /// </summary>
-       public void InsertMetier()
+        public void InsertMetier()
         {
 
-            if(this.Entities.Metiers.Any(m=>m.Libelle=="Nouveau métier"))
+            if (this.Entities.Metiers.Any(m => m.Libelle == "Nouveau métier"))
             {
                 Metier metier = new Metier();
                 metier.Libelle = "Nouveau métier";
