@@ -43,6 +43,7 @@ namespace ClientLourd.ViewModel
         {
             this.Entities.Contrats.ToList();
             this.Contrats = this.Entities.Contrats.Local;
+
         }
         #endregion
 

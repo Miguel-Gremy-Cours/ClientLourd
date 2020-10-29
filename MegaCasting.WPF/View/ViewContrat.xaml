@@ -132,10 +132,7 @@
 
                     <TextBox Grid.Column="3" Grid.Row="9" Visibility="{Binding SelectedContrat, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedContrat.CodeOffre}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
 
-                    <TextBox Grid.Column="3" Grid.Row="11" Visibility="{Binding SelectedContrat, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedContrat.TypeContrat}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
-
-
-
+                    <TextBox Grid.Column="3" Grid.Row="11" Visibility="{Binding SelectedContrat, Converter={StaticResource _SharedObjectToVisibilityConverter}}" Text="{Binding SelectedContrat.TypeContrat.Libelle}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
 
 
 
