@@ -13,18 +13,29 @@ namespace ClientLourd.ViewModel
     {
 
 
-    
 
-      
+
 
 
 
         #region Attributes
+        private Civilite _SelectedCivilite;
+        private ObservableCollection<Civilite> _Civilites;
         private Internaute _SelectedInternaute;
         private ObservableCollection<Internaute> _Internautes;
         #endregion
 
         #region Properties
+        public ObservableCollection<Civilite> Civilites
+        {
+            get { return _Civilites; }
+            set { _Civilites = value; }
+        }
+        public Civilite SelectedCivilite
+        {
+            get { return _SelectedCivilite; }
+            set { _SelectedCivilite = value; }
+        }
         public Internaute SelectedInternaute
         {
             get { return _SelectedInternaute; }
@@ -42,6 +53,9 @@ namespace ClientLourd.ViewModel
         {
             this.Entities.Internautes.ToList();
             this.Internautes = this.Entities.Internautes.Local;
+
+            this.Entities.Civilites.ToList();
+            this.Civilites = this.Entities.Civilites.Local;
         }
         #endregion
 

@@ -20,19 +20,7 @@ namespace ClientLourd.ViewModel
         private ObservableCollection<DomaineMetier> _DomaineMetier;
         private DomaineMetier _SelectedDomaineMetier;
 
-        public DomaineMetier SelectedDomaineMetier
-        {
-            get { return _SelectedDomaineMetier; }
-            set { _SelectedDomaineMetier = value; }
-        }
-
-
-
-        public ObservableCollection<DomaineMetier> DomaineMetier
-        {
-            get { return _DomaineMetier; }
-            set { _DomaineMetier = value; }
-        }
+       
 
 
 
@@ -50,7 +38,19 @@ namespace ClientLourd.ViewModel
 
             set { _Metiers = value; }
         }
+        public DomaineMetier SelectedDomaineMetier
+        {
+            get { return _SelectedDomaineMetier; }
+            set { _SelectedDomaineMetier = value; }
+        }
 
+
+
+        public ObservableCollection<DomaineMetier> DomaineMetiers
+        {
+            get { return _DomaineMetier; }
+            set { _DomaineMetier = value; }
+        }
 
         #endregion
 
@@ -63,7 +63,7 @@ namespace ClientLourd.ViewModel
             this.Metiers = this.Entities.Metiers.Local;
 
             this.Entities.DomaineMetiers.ToList();
-            this.DomaineMetier = this.Entities.DomaineMetiers.Local;
+            this.DomaineMetiers = this.Entities.DomaineMetiers.Local;
         }
 
         #endregion

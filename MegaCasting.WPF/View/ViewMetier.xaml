@@ -183,7 +183,7 @@
                     <ComboBox Grid.Column="3"
                               Grid.Row="5"
                               x:Name="_CmBox_Domaine"
-                              ItemsSource="{Binding DomaineMetier}"
+                              ItemsSource="{Binding DomaineMetiers}"
                               DisplayMemberPath="Libelle"
                               SelectedItem="{Binding SelectedDomaineMetier}" 
                               Visibility="{Binding SelectedMetier, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  

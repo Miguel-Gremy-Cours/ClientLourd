@@ -9,7 +9,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="750" d:DesignWidth="800"  Background="Transparent" >
 
-    <UserControl.Resources>
+    <!--<UserControl.Resources>
         <Storyboard x:Key="ListBoxItem_MouseDown">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="_Btn_Delete">
                 <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
@@ -20,7 +20,7 @@
                 <DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="{x:Static Visibility.Collapsed}"/>
             </ObjectAnimationUsingKeyFrames>
         </Storyboard>
-    </UserControl.Resources>
+    </UserControl.Resources>-->
     
     <Grid>
         <Grid.RowDefinitions>
@@ -85,7 +85,7 @@
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
 
-                <ListBox Grid.Column="0"  x:Name="_ListBoxEmployes" ItemsSource="{Binding Employes}" DisplayMemberPath="CodeContrat" SelectedItem="{Binding SelectedEmploye}" Foreground="White">
+                <ListBox Grid.Column="0"  x:Name="_ListBoxEmployes" ItemsSource="{Binding Employes}" DisplayMemberPath="Nom" SelectedItem="{Binding SelectedEmploye}" Foreground="White">
                 </ListBox>
 
                 <!--Grid avec des champs types textbox se traouve à droit-->
@@ -140,16 +140,37 @@
                     </TextBlock>
 
                     <!--DataBinding de ViewModel-->
-                    <TextBox Grid.Column="3" Grid.Row="1" Visibility="{Binding SelectedEmploye, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedEmploye.Id, Mode=OneWay}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" >
-                    </TextBox>
+                    <Label Grid.Column="3" Grid.Row="1" Visibility="{Binding SelectedEmploye, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Content="{Binding SelectedEmploye.Id, Mode=OneWay}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" >
+                    </Label>
 
                     <TextBox Grid.Column="3" Grid.Row="3" Visibility="{Binding SelectedEmploye, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedEmploye.Nom}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
 
                     <TextBox Grid.Column="3" Grid.Row="5" Visibility="{Binding SelectedEmploye, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedEmploye.Prenom}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
 
-                    <TextBox Grid.Column="3" Grid.Row="7" Visibility="{Binding SelectedEmploye, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedEmploye.Civilite}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
+                    <ComboBox Grid.Column="3" 
+                              Grid.Row="7" 
+                              x:Name="_CmBox_Civilite"
+                              ItemsSource="{Binding Civilites}"
+                              DisplayMemberPath="Libelle"
+                              SelectedItem="{Binding SelectedCivilite}"
+                              Visibility="{Binding SelectedEmploye, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  
+                              Text="{Binding SelectedEmploye.Civilite.Libelle}" 
+                              Foreground="White" 
+                              FontFamily="Helvitica" 
+                              FontSize="30" 
+                              FontWeight="Light" >
+                        <ComboBox.ItemContainerStyle>
+                            <Style TargetType="ComboBoxItem">
+                                <Setter Property="Background" 
+                                        Value="Crimson" />
+                                <Setter Property="Foreground" 
+                                        Value="DarkGray"/>
+                            </Style>
+                        </ComboBox.ItemContainerStyle>
+                        
+                    </ComboBox>
 
-                    <TextBox Grid.Column="3" Grid.Row="9" Visibility="{Binding SelectedEmploye, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedEmploye.Groupe}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
+                    <TextBox Grid.Column="3" Grid.Row="9" Visibility="{Binding SelectedEmploye, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedEmploye.GroupeEmploye.Libelle}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
 
                     <TextBox Grid.Column="3" Grid.Row="11" Visibility="{Binding SelectedEmploye, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedEmploye.Login}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
 

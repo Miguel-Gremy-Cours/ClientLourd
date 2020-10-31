@@ -13,23 +13,50 @@ namespace ClientLourd.ViewModel
    public  class ViewModelOffres:ViewModelBase
     {
 
-     
 
-      
+
+
+
+
+
 
         #region Attributes
+        private ObservableCollection<Metier> _Metiers;
+        private Metier _SelectedMetier;
+        private ObservableCollection<Studio> _Studios;
+        private Studio _SelectedStudio;
         private ObservableCollection<Offre> _Offres;
         private Offre _SelectedOffres;
         #endregion
 
         #region Properties
+        public Metier SelectedMetier
+        {
+            get { return _SelectedMetier; }
+            set { _SelectedMetier = value; }
+        }
+        public ObservableCollection<Metier> Metiers
+        {
+            get { return _Metiers; }
+
+            set { _Metiers = value; }
+        }
+        public ObservableCollection<Studio> Studios
+        {
+            get { return _Studios; }
+            set { _Studios = value; }
+        }
         public ObservableCollection<Offre> Offres
         {
             get { return _Offres; }
             set { _Offres = value; }
         }
 
-
+        public Studio SelectedStudio
+        {
+            get { return _SelectedStudio; }
+            set { _SelectedStudio = value; }
+        }
 
         public Offre SelectedOffre
         {
@@ -44,6 +71,10 @@ namespace ClientLourd.ViewModel
         {
             this.Entities.Offres.ToList();
             this.Offres = this.Entities.Offres.Local;
+            this.Entities.Studios.ToList();
+            this.Studios = this.Entities.Studios.Local;
+            this.Entities.Metiers.ToList();
+            this.Metiers = this.Entities.Metiers.Local;
         }
         #endregion
 

@@ -12,18 +12,35 @@ namespace ClientLourd.ViewModel
 
     {
 
-       
+      
 
        
+
+
 
 
 
         #region Attributes
+        private ObservableCollection<GroupeEmploye> _GroupeEmployes;
+        private GroupeEmploye _SelectedGroupeEmploye;
+        private Civilite _SelectedCivilite;
+        private ObservableCollection<Civilite> _Civilites;
         private Employe _SelectedEmploye;
         private ObservableCollection<Employe> _Employes;
         #endregion
 
         #region Properties
+        public ObservableCollection<GroupeEmploye> GroupeEmployes
+        {
+            get { return _GroupeEmployes; }
+            set { _GroupeEmployes = value; }
+        }
+        public GroupeEmploye SelectedGroupeEmploye
+        {
+            get { return _SelectedGroupeEmploye; }
+            set { _SelectedGroupeEmploye = value; }
+        }
+
         public ObservableCollection<Employe> Employes
         {
             get { return _Employes; }
@@ -31,12 +48,22 @@ namespace ClientLourd.ViewModel
         }
 
 
-
         public Employe SelectedEmploye
         {
             get { return _SelectedEmploye; }
             set { _SelectedEmploye = value; }
         }
+        public ObservableCollection<Civilite> Civilites
+        {
+            get { return _Civilites; }
+            set { _Civilites = value; }
+        }
+        public Civilite SelectedCivilite
+        {
+            get { return _SelectedCivilite; }
+            set { _SelectedCivilite = value; }
+        }
+
         #endregion
         #region constrcutor
 
@@ -44,6 +71,12 @@ namespace ClientLourd.ViewModel
         {
             this.Entities.Employes.ToList();
             this.Employes = this.Entities.Employes.Local;
+
+            this.Entities.Civilites.ToList();
+            this.Civilites = this.Entities.Civilites.Local;
+
+            this.Entities.GroupeEmployes.ToList();
+            this.GroupeEmployes = this.Entities.GroupeEmployes.Local;
         }
         #endregion
         /// <summary>

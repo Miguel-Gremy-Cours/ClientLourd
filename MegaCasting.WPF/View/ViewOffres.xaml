@@ -85,7 +85,7 @@
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
 
-                <ListBox Grid.Column="0"  x:Name="_ListBoxContrat" ItemsSource="{Binding Contrats}" DisplayMemberPath="CodeContrat" SelectedItem="{Binding SelectedContrat}" Foreground="White">
+                <ListBox Grid.Column="0"  x:Name="_ListBoxContrat" ItemsSource="{Binding Offres}" DisplayMemberPath="Intitule" SelectedItem="{Binding SelectedOffre}" Foreground="White">
                 </ListBox>
 
                 <!--Grid avec des champs types textbox se traouve à droit-->
@@ -311,7 +311,7 @@
                               DisplayMemberPath="Libelle"
                               SelectedItem="{Binding SelectedMetier}"
                               Visibility="{Binding SelectedOffre, Converter={StaticResource _SharedObjectToVisibilityConverter}}" 
-                             Text="{Binding SelectedOffre.Metier.Libelle}" 
+                             Text="{Binding SelectedOffre.Metiers.Libelle}" 
                              
                              Foreground="White" 
                              FontFamily="Helvitica"
@@ -330,22 +330,13 @@
                     <TextBox Grid.Column="5" 
                              Grid.Row="5" 
                              Visibility="{Binding SelectedOffre, Converter={StaticResource _SharedObjectToVisibilityConverter}}" 
-                             Text="{Binding SelectedOffre.Dateublication}" 
+                             Text="{Binding SelectedOffre.DatePublication}" 
                              Foreground="White" 
                              FontFamily="Helvitica" 
                              FontSize="30" 
                              FontWeight="Light" 
                              Grid.ColumnSpan="3"></TextBox>
 
-                    <TextBox Grid.Column="5" 
-                             Grid.Row="5" 
-                             Visibility="{Binding SelectedOffre, Converter={StaticResource _SharedObjectToVisibilityConverter}}"
-                             Text="{Binding SelectedOffre.DureContrat}"
-                             Foreground="White"
-                             FontFamily="Helvitica" 
-                             FontSize="30" 
-                             FontWeight="Light" 
-                             Grid.ColumnSpan="3"></TextBox>
                     
                     <TextBox Grid.Column="5" 
                              Grid.Row="7" 
@@ -360,7 +351,7 @@
                     <TextBox Grid.Column="5"
                              Grid.Row="9" 
                              Visibility="{Binding SelectedOffre, Converter={StaticResource _SharedObjectToVisibilityConverter}}" 
-                             Text="{Binding SelectedOffre.NombrePoste}" 
+                             Text="{Binding SelectedOffre.NombrePostes}" 
                              Foreground="White" 
                              FontFamily="Helvitica" 
                              FontSize="30"
@@ -397,7 +388,7 @@
                               DisplayMemberPath="Libelle"
                               SelectedItem="{Binding SelectedMetier}"
                               Visibility="{Binding SelectedOffre, Converter={StaticResource _SharedObjectToVisibilityConverter}}" 
-                             Text="{Binding SelectedOffre.Studio.Libelle}" 
+                             Text="{Binding SelectedOffre.Studios.Libelle}" 
                              
                              Foreground="White" 
                              FontFamily="Helvitica"
@@ -415,11 +406,11 @@
                     <ComboBox Grid.Column="7" 
                               Grid.Row="15"
                               x:Name="_Cmbox_Employe"
-                              ItemsSource="{Binding Metier}"
+                              ItemsSource="{Binding Metiers}"
                               DisplayMemberPath="Libelle"
                               SelectedItem="{Binding SelectedMetier}"
                               Visibility="{Binding SelectedOffre, Converter={StaticResource _SharedObjectToVisibilityConverter}}" 
-                             Text="{Binding SelectedOffre.Metier.Libelle}" 
+                             Text="{Binding SelectedOffre.Employe.Id}" 
                              
                              Foreground="White" 
                              FontFamily="Helvitica"

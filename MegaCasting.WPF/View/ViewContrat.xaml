@@ -221,7 +221,7 @@
                               Grid.Row="11" 
                               x:Name="_CmBox_TypeContrat"
                               
-                              ItemsSource="{Binding TypeContrat}"
+                              ItemsSource="{Binding TypeContrats}"
                               DisplayMemberPath="Libelle"
                               SelectedItem="{Binding SelectedTypeContrat}"
                               
@@ -241,15 +241,7 @@
                             </Style>
                         </ComboBox.ItemContainerStyle>
                     </ComboBox>
-                    <TextBox Grid.Column="3" 
-                                Grid.Row="13"
-                                 Visibility="{Binding SelectedContrat, Converter={StaticResource _SharedObjectToVisibilityConverter}}" 
-                             Text="{Binding SelectedContrat.TypeContrat.Libelle}" 
-                             
-                             Foreground="White" 
-                             FontFamily="Helvitica"
-                             FontSize="30"
-                             FontWeight="Light" ></TextBox>
+                    
 
 
                 </Grid>
