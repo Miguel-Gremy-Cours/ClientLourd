@@ -73,7 +73,7 @@
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
 
-                <ListBox Grid.Column="0"  x:Name="_ListBoxGroupe" ItemsSource="{Binding GroupeEmployes}" DisplayMemberPath="Libelle" SelectedItem="{Binding SelectedGroupeEmploye}" >
+                <ListBox Grid.Column="0"  x:Name="_ListBoxGroupe" ItemsSource="{Binding GroupeEmployes}" DisplayMemberPath="Libelle" SelectedItem="{Binding SelectedGroupeEmploye}" Foreground="White" FontFamily="Helvitica" FontSize="15" FontWeight="Light" >
                 </ListBox>
 
                 <!--Grid avec des champs types textbox se traouve à droit-->

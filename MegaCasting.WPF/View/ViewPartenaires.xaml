@@ -71,7 +71,7 @@
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
 
-                <ListBox Grid.Column="0"  x:Name="_ListBoxPartenaire" ItemsSource="{Binding Partenaires}" DisplayMemberPath="Intitule" SelectedItem="{Binding SelectedPartenaire}" Foreground="White">
+                <ListBox Grid.Column="0"  x:Name="_ListBoxPartenaire" ItemsSource="{Binding Partenaires}" DisplayMemberPath="Libelle" SelectedItem="{Binding SelectedPartenaire}" Foreground="White">
                 </ListBox>
 
                 <!--Grid avec des champs types textbox se traouve à droit-->
