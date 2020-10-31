@@ -78,7 +78,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="45"/>
                 <RowDefinition Height="2*"/>
-                <RowDefinition Height="auto"/>
+                <RowDefinition Height="0.5*"/>
 
             </Grid.RowDefinitions>
 
@@ -94,6 +94,7 @@
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="5"/>
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
 
@@ -104,9 +105,9 @@
                          SelectedItem="{Binding SelectedMetier}"
                          Foreground="White" FontFamily="Helvitica" FontSize="15" FontWeight="Light">
                 </ListBox>
-
+                <Rectangle Grid.Column="1" Fill="White"/>
                 <!--Grid avec des champs types textbox se traouve à droit-->
-                <Grid Grid.Column="1">
+                <Grid Grid.Column="2">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="10"/>
                         <ColumnDefinition/>
