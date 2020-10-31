@@ -31,27 +31,44 @@
 
             </Grid.ColumnDefinitions>
 
-            <metro:PackIconMaterialDesign Grid.Column="0" Kind="Videocam" Foreground="White" Width="50" Height="50" Margin="10,40,0,0"></metro:PackIconMaterialDesign>
+            <metro:PackIconMaterialDesign Grid.Column="0" 
+                                          Kind="Videocam" 
+                                          Foreground="White" 
+                                          Width="50" 
+                                          Height="50" 
+                                          Margin="10,40,0,0"></metro:PackIconMaterialDesign>
             <Grid Grid.Column="2">
 
                 <StackPanel Orientation="Horizontal" >
                     <Button Visibility="Visible">
                         <StackPanel Orientation="Horizontal" >
-                            <materialDesign:PackIcon Kind="Add" Width="35" Height="35" VerticalAlignment="Center"/>
-                            <TextBlock Text="Nouveau métier" Style="{StaticResource ButtonTextBlockStyle}" />
+                            <materialDesign:PackIcon Kind="Add"
+                                                     
+                                                     Width="35" 
+                                                     Height="35" 
+                                                     VerticalAlignment="Center"/>
+                            <TextBlock Text="Nouveau métier" 
+                                       Style="{StaticResource ButtonTextBlockStyle}" />
                         </StackPanel>
                     </Button>
                     <Button Visibility="Visible">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="TrashCan" Width="35" Height="35" VerticalAlignment="Center"   />
-                            <TextBlock Text="Supprimer"  Style="{StaticResource ButtonTextBlockStyle}"/>
+                            <materialDesign:PackIcon Kind="TrashCan"
+                                                     Width="35" 
+                                                     Height="35" 
+                                                     VerticalAlignment="Center"   />
+                            <TextBlock Text="Supprimer"  
+                                       Style="{StaticResource ButtonTextBlockStyle}"/>
                         </StackPanel>
                     </Button>
 
                     <Button Visibility="Visible">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="ContentSave" Width="35" Height="35" VerticalAlignment="Center" />
-                            <TextBlock Text="Sauvegarder"  Style="{StaticResource ButtonTextBlockStyle}"/>
+                            <materialDesign:PackIcon Kind="ContentSave" 
+                                                     Width="35" Height="35"
+                                                     VerticalAlignment="Center" />
+                            <TextBlock Text="Sauvegarder"  
+                                       Style="{StaticResource ButtonTextBlockStyle}"/>
                         </StackPanel>
                     </Button>
                 </StackPanel>
@@ -66,14 +83,26 @@
             </Grid.RowDefinitions>
 
 
-            <Label Grid.Column="0" Grid.Row="0" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light">Gestion de métier</Label>
+            <Label Grid.Column="0" 
+                   Grid.Row="0"
+                   Foreground="White"
+                   FontFamily="Helvitica" 
+                   FontSize="30" 
+                   FontWeight="Light">
+                Gestion de métier
+            </Label>
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
 
-                <ListBox Grid.Column="0"  x:Name="_ListBoxMetier" ItemsSource="{Binding Metiers}" DisplayMemberPath="Libelle" SelectedItem="{Binding SelectedMetier}" >
+                <ListBox Grid.Column="0"  
+                         x:Name="_ListBoxMetier" 
+                         ItemsSource="{Binding Metiers}"
+                         DisplayMemberPath="Libelle"
+                         SelectedItem="{Binding SelectedMetier}"
+                         Foreground="White">
                 </ListBox>
 
                 <!--Grid avec des champs types textbox se traouve à droit-->
@@ -98,42 +127,101 @@
                     </Grid.RowDefinitions>
 
 
-                    <TextBlock Grid.Column="1" Grid.Row="1" Text="ID" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Grid.Column="1" 
+                               Grid.Row="1" 
+                               Text="ID" 
+                               Foreground="White"
+                               FontFamily="Helvitica"
+                               FontSize="30" 
+                               FontWeight="Light" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center">
                     </TextBlock>
-                    <TextBlock Grid.Column="1" Grid.Row="3" Text="Libellé" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Grid.Column="1" 
+                               Grid.Row="3" 
+                               Text="Libellé"
+                               Foreground="White" 
+                               FontFamily="Helvitica"
+                               FontSize="30" 
+                               FontWeight="Light" 
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center">
                     </TextBlock>
-                    <TextBlock Grid.Column="1" Grid.Row="5" Text="Domaine" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Grid.Column="1" 
+                               Grid.Row="5" 
+                               Text="Domaine" 
+                               Foreground="White" 
+                               FontFamily="Helvitica" 
+                               FontSize="30" 
+                               FontWeight="Light"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center">
                     </TextBlock>
 
                     <!--DataBinding de ViewModel-->
-                    <TextBox Grid.Column="3" Grid.Row="1" Visibility="{Binding SelectedMetier, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedMetier.Id, Mode=OneWay}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" >
-                    </TextBox>
+                    <Label Grid.Column="3" 
+                             Grid.Row="1" 
+                             Visibility="{Binding SelectedMetier, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  
+                             Content="{Binding SelectedMetier.Id, Mode=OneWay}" 
+                             Foreground="White" 
+                             FontFamily="Helvitica" 
+                             FontSize="30" 
+                             FontWeight="Light" >
+                    </Label>
 
-                    <TextBox Grid.Column="3" Grid.Row="3" Visibility="{Binding SelectedMetier, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedMetier.Libelle}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
+                    <TextBox Grid.Column="3" 
+                             Grid.Row="3" 
+                             Visibility="{Binding SelectedMetier, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  
+                             Text="{Binding SelectedMetier.Libelle}" 
+                             Foreground="White" 
+                             FontFamily="Helvitica" 
+                             FontSize="30" 
+                             FontWeight="Light" >
+                        
+                    </TextBox>
 
                     <ComboBox Grid.Column="3"
                               Grid.Row="5"
                               x:Name="_CmBox_Domaine"
                               ItemsSource="{Binding DomaineMetier}"
                               DisplayMemberPath="Libelle"
-                              SelectedItem="{Binding SelectedDomaineMetier}">
-                        
-                        <!--
-                        <ComboBox.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <Rectangle Fill="{Binding DomaineMetiers.Libelle}" Width="16" Height="16" Margin="0,2,5,2" />
-                                    <TextBlock Text="{Binding DomaineMetiers.Libelle}" />
-                                </StackPanel>
-                            </DataTemplate>
-                        </ComboBox.ItemTemplate>
-                        -->
+                              SelectedItem="{Binding SelectedDomaineMetier}" 
+                              Visibility="{Binding SelectedMetier, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  
+                              Text="{Binding SelectedMetier.DomaineMetier.Libelle}" 
+                              Foreground="White"
+                              FontFamily="Helvitica"
+                             FontSize="30"
+                             FontWeight="Light"
+                              >
+                        <ComboBox.ItemContainerStyle>
+                            <Style TargetType="ComboBoxItem">
+                                <Setter Property="Background" 
+                                        Value="Crimson" />
+                                <Setter Property="Foreground" 
+                                        Value="DarkGray"/>
+                            </Style>
+                        </ComboBox.ItemContainerStyle>
+
+
                     </ComboBox>
 
 
 
+                    <!--<ComboBox Grid.Column="3" Grid.Row="7" ItemsSource="{Binding Metier}" SelectedItem="{Binding SelectedMetier}" >
+                        
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Rectangle Fill="{Binding DomaineMetiers.Libelle}" Width="16" Height="16" Margin="0,2,5,2" />
+                                    <TextBlock Visibility="{Binding SelectedMetier, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedMetier.DomaineMetier.Libelle}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                        
 
+                    </ComboBox>-->
 
+                  
 
                 </Grid>
 

@@ -72,9 +72,385 @@
             </Grid>
         </Grid>
         <Grid Grid.Row="1">
-            <DataGrid x:Name="OffresData" Background="Transparent">
-                
-            </DataGrid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Grid.Row="0" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light">Gestion des offres</Label>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                <ListBox Grid.Column="0"  x:Name="_ListBoxContrat" ItemsSource="{Binding Contrats}" DisplayMemberPath="CodeContrat" SelectedItem="{Binding SelectedContrat}" Foreground="White">
+                </ListBox>
+
+                <!--Grid avec des champs types textbox se traouve à droit-->
+                <Grid Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition  Height="1*"/>
+
+                        <RowDefinition  Height="auto"/>
+                        <RowDefinition  Height="10"/>
+
+                        <RowDefinition  Height="auto"/>
+                        <RowDefinition  Height="10"/>
+
+                        <RowDefinition  Height="auto"/>
+                        <RowDefinition  Height="10"/>
+
+                        <RowDefinition  Height="auto"/>
+                        <RowDefinition  Height="10"/>
+
+                        <RowDefinition  Height="auto"/>
+                        <RowDefinition  Height="10"/>
+
+                        <RowDefinition  Height="auto"/>
+                        <RowDefinition  Height="10"/>
+                        
+                        <RowDefinition  Height="auto"/>
+                        <RowDefinition  Height="10"/>
+
+                        <RowDefinition  Height="auto"/>
+                        <RowDefinition  Height="10"/>
+                        
+                        <RowDefinition  Height="auto"/>
+                        <RowDefinition  Height="10"/>
+                        
+                        <RowDefinition  Height="auto"/>
+                        <RowDefinition  Height="10"/>
+                        
+                        <RowDefinition  Height="auto"/>
+                        <RowDefinition  Height="3*"/>
+                    </Grid.RowDefinitions>
+
+
+                    <TextBlock Grid.Column="1"
+                               Grid.Row="1" 
+                               Text="ID"
+                               Foreground="White"
+                               FontFamily="Helvitica" 
+                               FontSize="30" 
+                               FontWeight="Light" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center">
+                    </TextBlock>
+                    <TextBlock Grid.Column="5" 
+                               Grid.Row="1" 
+                               Text="Code"
+                               Foreground="White"
+                               FontFamily="Helvitica"
+                               FontSize="30" 
+                               FontWeight="Light" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center">
+                    </TextBlock>
+                    <TextBlock Grid.Column="1" 
+                               Grid.Row="3" 
+                               Text="Intitulé"
+                               Foreground="White"
+                               FontFamily="Helvitica"
+                               FontSize="30" 
+                               FontWeight="Light" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center">
+                    </TextBlock>
+                    <TextBlock Grid.Column="5" 
+                               Grid.Row="3"
+                               Text="Métier" 
+                               Foreground="White"
+                               FontFamily="Helvitica"
+                               FontSize="30" 
+                               FontWeight="Light"
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center">
+                    </TextBlock>
+                    <TextBlock Grid.Column="1" 
+                               Grid.Row="5"
+                               Text="Date de publication"
+                               Foreground="White" 
+                               FontFamily="Helvitica" 
+                               FontSize="30" 
+                               FontWeight="Light" 
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Grid.ColumnSpan="3">
+                    </TextBlock>
+
+                    <TextBlock Grid.Column="1" 
+                               Grid.Row="7"
+                               Text="Durée de diffusion" 
+                               
+                               Foreground="White"
+                               FontFamily="Helvitica" 
+                               FontSize="30" 
+                               FontWeight="Light" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center"
+                               Grid.ColumnSpan="3">
+                    </TextBlock>
+                    <TextBlock Grid.Column="1" 
+                               Grid.Row="9"
+                               Text="Nombre de poste" 
+                               
+                               Foreground="White"
+                               FontFamily="Helvitica" 
+                               FontSize="30" 
+                               FontWeight="Light" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center"
+                               Grid.ColumnSpan="3">
+                    </TextBlock>
+                    <TextBlock Grid.Column="1" 
+                               Grid.Row="11"
+                               Text="Description poste" 
+                               
+                               Foreground="White"
+                               FontFamily="Helvitica" 
+                               FontSize="30" 
+                               FontWeight="Light" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center"
+                               Grid.ColumnSpan="3">
+                    </TextBlock>
+                    <TextBlock Grid.Column="1" 
+                               Grid.Row="13"
+                               Text="Description profile" 
+                               
+                               Foreground="White"
+                               FontFamily="Helvitica" 
+                               FontSize="30" 
+                               FontWeight="Light" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center"
+                               Grid.ColumnSpan="3">
+                    </TextBlock>
+                    <TextBlock Grid.Column="1" 
+                               Grid.Row="15"
+                               Text="Studio" 
+                               
+                               Foreground="White"
+                               FontFamily="Helvitica" 
+                               FontSize="30" 
+                               FontWeight="Light" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center">
+                    </TextBlock>
+                    <TextBlock Grid.Column="5" 
+                               Grid.Row="15"
+                               Text="Employé" 
+                               
+                               Foreground="White"
+                               FontFamily="Helvitica" 
+                               FontSize="30" 
+                               FontWeight="Light" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center">
+                    </TextBlock>
+                    <TextBlock Grid.Column="1" 
+                               Grid.Row="17"
+                               Text="Localisation" 
+                               
+                               Foreground="White"
+                               FontFamily="Helvitica" 
+                               FontSize="30" 
+                               FontWeight="Light" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center"
+                               Grid.ColumnSpan="3">
+                    </TextBlock>
+
+                    <!--DataBinding de ViewModel-->
+                    <Label  Grid.Column="3"
+                             Grid.Row="1" 
+                             Visibility="{Binding SelectedOffre, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  
+                             Content="{Binding SelectedOffre.Id, Mode=OneWay}" 
+                             Foreground="White"
+                             FontFamily="Helvitica" 
+                             FontSize="30" 
+                             FontWeight="Light" >
+                    </Label>
+
+                    <TextBox Grid.Column="7" 
+                             Grid.Row="1" 
+                             Visibility="{Binding SelectedOffre, Converter={StaticResource _SharedObjectToVisibilityConverter}}" 
+                             Text="{Binding SelectedOffre.CodeOffre}" 
+                             Foreground="White" 
+                             FontFamily="Helvitica"
+                             FontSize="30"
+                             FontWeight="Light" ></TextBox>
+                    
+                    <TextBox Grid.Column="3" 
+                             Grid.Row="3" 
+                             Visibility="{Binding SelectedOffre, Converter={StaticResource _SharedObjectToVisibilityConverter}}" 
+                             Text="{Binding SelectedOffre.Intitule}" 
+                             Foreground="White" 
+                             FontFamily="Helvitica" 
+                             FontSize="30" 
+                             FontWeight="Light" 
+                             ></TextBox>
+
+                    <ComboBox Grid.Column="7" 
+                              Grid.Row="3"
+                              x:Name="_Cmbox_Metier"
+                              ItemsSource="{Binding Metier}"
+                              DisplayMemberPath="Libelle"
+                              SelectedItem="{Binding SelectedMetier}"
+                              Visibility="{Binding SelectedOffre, Converter={StaticResource _SharedObjectToVisibilityConverter}}" 
+                             Text="{Binding SelectedOffre.Metier.Libelle}" 
+                             
+                             Foreground="White" 
+                             FontFamily="Helvitica"
+                             FontSize="30"
+                             FontWeight="Light" >
+                        <ComboBox.ItemContainerStyle>
+                            <Style TargetType="ComboBoxItem">
+                                <Setter Property="Background" 
+                                        Value="Crimson" />
+                                <Setter Property="Foreground" 
+                                        Value="DarkGray"/>
+                            </Style>
+                        </ComboBox.ItemContainerStyle>
+                    </ComboBox>
+                    
+                    <TextBox Grid.Column="5" 
+                             Grid.Row="5" 
+                             Visibility="{Binding SelectedOffre, Converter={StaticResource _SharedObjectToVisibilityConverter}}" 
+                             Text="{Binding SelectedOffre.Dateublication}" 
+                             Foreground="White" 
+                             FontFamily="Helvitica" 
+                             FontSize="30" 
+                             FontWeight="Light" 
+                             Grid.ColumnSpan="3"></TextBox>
+
+                    <TextBox Grid.Column="5" 
+                             Grid.Row="5" 
+                             Visibility="{Binding SelectedOffre, Converter={StaticResource _SharedObjectToVisibilityConverter}}"
+                             Text="{Binding SelectedOffre.DureContrat}"
+                             Foreground="White"
+                             FontFamily="Helvitica" 
+                             FontSize="30" 
+                             FontWeight="Light" 
+                             Grid.ColumnSpan="3"></TextBox>
+                    
+                    <TextBox Grid.Column="5" 
+                             Grid.Row="7" 
+                             Visibility="{Binding SelectedOffre, Converter={StaticResource _SharedObjectToVisibilityConverter}}"
+                             Text="{Binding SelectedOffre.DureDiffusion}"
+                             Foreground="White"
+                             FontFamily="Helvitica" 
+                             FontSize="30" 
+                             FontWeight="Light" 
+                             Grid.ColumnSpan="3"></TextBox>
+                    
+                    <TextBox Grid.Column="5"
+                             Grid.Row="9" 
+                             Visibility="{Binding SelectedOffre, Converter={StaticResource _SharedObjectToVisibilityConverter}}" 
+                             Text="{Binding SelectedOffre.NombrePoste}" 
+                             Foreground="White" 
+                             FontFamily="Helvitica" 
+                             FontSize="30"
+                             FontWeight="Light" 
+                             Grid.ColumnSpan="3"></TextBox>
+
+
+                    <TextBox Grid.Column="5" 
+                                Grid.Row="11"
+                                 Visibility="{Binding SelectedOffre, Converter={StaticResource _SharedObjectToVisibilityConverter}}" 
+                             Text="{Binding SelectedOffre.DescriptionPoste}" 
+                             
+                             Foreground="White" 
+                             FontFamily="Helvitica"
+                             FontSize="30"
+                             FontWeight="Light" 
+                             Grid.ColumnSpan="3"></TextBox>
+                    
+                    <TextBox Grid.Column="5" 
+                                Grid.Row="13"
+                                 Visibility="{Binding SelectedOffre, Converter={StaticResource _SharedObjectToVisibilityConverter}}" 
+                             Text="{Binding SelectedOffre.DescriptionProfile}" 
+                             
+                             Foreground="White" 
+                             FontFamily="Helvitica"
+                             FontSize="30"
+                             FontWeight="Light" 
+                             Grid.ColumnSpan="3"></TextBox>
+
+                    <ComboBox Grid.Column="3" 
+                              Grid.Row="15"
+                              x:Name="_Cmbox_Studio"
+                              ItemsSource="{Binding Metier}"
+                              DisplayMemberPath="Libelle"
+                              SelectedItem="{Binding SelectedMetier}"
+                              Visibility="{Binding SelectedOffre, Converter={StaticResource _SharedObjectToVisibilityConverter}}" 
+                             Text="{Binding SelectedOffre.Studio.Libelle}" 
+                             
+                             Foreground="White" 
+                             FontFamily="Helvitica"
+                             FontSize="30"
+                             FontWeight="Light" >
+                        <ComboBox.ItemContainerStyle>
+                            <Style TargetType="ComboBoxItem">
+                                <Setter Property="Background" 
+                                        Value="Crimson" />
+                                <Setter Property="Foreground" 
+                                        Value="DarkGray"/>
+                            </Style>
+                        </ComboBox.ItemContainerStyle>
+                    </ComboBox>
+                    <ComboBox Grid.Column="7" 
+                              Grid.Row="15"
+                              x:Name="_Cmbox_Employe"
+                              ItemsSource="{Binding Metier}"
+                              DisplayMemberPath="Libelle"
+                              SelectedItem="{Binding SelectedMetier}"
+                              Visibility="{Binding SelectedOffre, Converter={StaticResource _SharedObjectToVisibilityConverter}}" 
+                             Text="{Binding SelectedOffre.Metier.Libelle}" 
+                             
+                             Foreground="White" 
+                             FontFamily="Helvitica"
+                             FontSize="30"
+                             FontWeight="Light" >
+                        <ComboBox.ItemContainerStyle>
+                            <Style TargetType="ComboBoxItem">
+                                <Setter Property="Background" 
+                                        Value="Crimson" />
+                                <Setter Property="Foreground" 
+                                        Value="DarkGray"/>
+                            </Style>
+                        </ComboBox.ItemContainerStyle>
+                    </ComboBox>
+                    <TextBox Grid.Column="5" 
+                                Grid.Row="17"
+                                 Visibility="{Binding SelectedOffre, Converter={StaticResource _SharedObjectToVisibilityConverter}}" 
+                             Text="{Binding SelectedOffre.Localisation}" 
+                             
+                             Foreground="White" 
+                             FontFamily="Helvitica"
+                             FontSize="30"
+                             FontWeight="Light" 
+                             Grid.ColumnSpan="3"></TextBox>
+
+                </Grid>
+
+            </Grid>
+
+
+
         </Grid>
 
     </Grid>

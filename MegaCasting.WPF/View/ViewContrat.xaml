@@ -106,34 +106,150 @@
                     </Grid.RowDefinitions>
 
 
-                    <TextBlock Grid.Column="1" Grid.Row="1" Text="ID" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Grid.Column="1"
+                               Grid.Row="1" 
+                               Text="ID"
+                               Foreground="White"
+                               FontFamily="Helvitica" 
+                               FontSize="30" 
+                               FontWeight="Light" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center">
                     </TextBlock>
-                    <TextBlock Grid.Column="1" Grid.Row="3" Text="Code" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Grid.Column="1" 
+                               Grid.Row="3" 
+                               Text="Code"
+                               Foreground="White"
+                               FontFamily="Helvitica"
+                               FontSize="30" 
+                               FontWeight="Light" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center">
                     </TextBlock>
-                    <TextBlock Grid.Column="1" Grid.Row="5" Text="Début du contrat" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Grid.Column="1" 
+                               Grid.Row="5" 
+                               Text="Début du contrat"
+                               Foreground="White"
+                               FontFamily="Helvitica"
+                               FontSize="30" 
+                               FontWeight="Light" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center">
                     </TextBlock>
-                    <TextBlock Grid.Column="1" Grid.Row="7" Text="Durée du contrat" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Grid.Column="1" 
+                               Grid.Row="7"
+                               Text="Durée du contrat" 
+                               Foreground="White"
+                               FontFamily="Helvitica"
+                               FontSize="30" 
+                               FontWeight="Light"
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center">
                     </TextBlock>
-                    <TextBlock Grid.Column="1" Grid.Row="9" Text="Code Offre" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Grid.Column="1" 
+                               Grid.Row="9"
+                               Text="Code Offre"
+                               Foreground="White" 
+                               FontFamily="Helvitica" 
+                               FontSize="30" 
+                               FontWeight="Light" 
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center">
                     </TextBlock>
 
-                    <TextBlock Grid.Column="1" Grid.Row="11" Text="Type du contrat" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Grid.Column="1" 
+                               Grid.Row="11"
+                               Text="Type du contrat" 
+                               
+                               Foreground="White"
+                               FontFamily="Helvitica" 
+                               FontSize="30" 
+                               FontWeight="Light" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center">
                     </TextBlock>
 
                     <!--DataBinding de ViewModel-->
-                    <TextBox Grid.Column="3" Grid.Row="1" Visibility="{Binding SelectedContrat, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedContrat.Id, Mode=OneWay}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" >
-                    </TextBox>
+                    <Label  Grid.Column="3"
+                             Grid.Row="1" 
+                             Visibility="{Binding SelectedContrat, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  
+                             Content="{Binding SelectedContrat.Id, Mode=OneWay}" 
+                             Foreground="White"
+                             FontFamily="Helvitica" 
+                             FontSize="30" 
+                             FontWeight="Light" >
+                    </Label>
 
-                    <TextBox Grid.Column="3" Grid.Row="3" Visibility="{Binding SelectedContrat, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedContrat.CodeContrat}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
+                    <TextBox Grid.Column="3" 
+                             Grid.Row="3" 
+                             Visibility="{Binding SelectedContrat, Converter={StaticResource _SharedObjectToVisibilityConverter}}" 
+                             Text="{Binding SelectedContrat.CodeContrat}" 
+                             Foreground="White" 
+                             FontFamily="Helvitica"
+                             FontSize="30"
+                             FontWeight="Light" ></TextBox>
 
-                    <TextBox Grid.Column="3" Grid.Row="5" Visibility="{Binding SelectedContrat, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedContrat.DebutContrat}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
+                    <TextBox Grid.Column="3" 
+                             Grid.Row="5" 
+                             Visibility="{Binding SelectedContrat, Converter={StaticResource _SharedObjectToVisibilityConverter}}" 
+                             Text="{Binding SelectedContrat.DebutContrat}" 
+                             Foreground="White" 
+                             FontFamily="Helvitica" 
+                             FontSize="30" 
+                             FontWeight="Light" ></TextBox>
                     
-                    <TextBox Grid.Column="3" Grid.Row="7" Visibility="{Binding SelectedContrat, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedContrat.DureContrat}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
+                    <TextBox Grid.Column="3" 
+                             Grid.Row="7" 
+                             Visibility="{Binding SelectedContrat, Converter={StaticResource _SharedObjectToVisibilityConverter}}"
+                             Text="{Binding SelectedContrat.DureContrat}"
+                             Foreground="White"
+                             FontFamily="Helvitica" 
+                             FontSize="30" 
+                             FontWeight="Light" ></TextBox>
 
-                    <TextBox Grid.Column="3" Grid.Row="9" Visibility="{Binding SelectedContrat, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedContrat.Offre.CodeOffre}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
+                    <Label Grid.Column="3"
+                             Grid.Row="9" 
+                             Visibility="{Binding SelectedContrat, Converter={StaticResource _SharedObjectToVisibilityConverter}}" 
+                             Content="{Binding SelectedContrat.Offre.CodeOffre}" 
+                             Foreground="White" 
+                             FontFamily="Helvitica" 
+                             FontSize="30"
+                             FontWeight="Light" ></Label>
 
-                    <TextBox Grid.Column="3" Grid.Row="11" Visibility="{Binding SelectedContrat, Converter={StaticResource _SharedObjectToVisibilityConverter}}" Text="{Binding SelectedContrat.TypeContrat.Libelle}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
-
+                    
+                    <ComboBox Grid.Column="3" 
+                              Grid.Row="11" 
+                              x:Name="_CmBox_TypeContrat"
+                              
+                              ItemsSource="{Binding TypeContrat}"
+                              DisplayMemberPath="Libelle"
+                              SelectedItem="{Binding SelectedTypeContrat}"
+                              
+                              Visibility="{Binding SelectedContrat, Converter={StaticResource _SharedObjectToVisibilityConverter}}" 
+                             Text="{Binding SelectedContrat.TypeContrat.Libelle}" 
+                             
+                             Foreground="White" 
+                             FontFamily="Helvitica"
+                             FontSize="30"
+                             FontWeight="Light" >
+                        <ComboBox.ItemContainerStyle>
+                            <Style TargetType="ComboBoxItem">
+                                <Setter Property="Background" 
+                                        Value="Crimson" />
+                                <Setter Property="Foreground" 
+                                        Value="DarkGray"/>
+                            </Style>
+                        </ComboBox.ItemContainerStyle>
+                    </ComboBox>
+                    <TextBox Grid.Column="3" 
+                                Grid.Row="13"
+                                 Visibility="{Binding SelectedContrat, Converter={StaticResource _SharedObjectToVisibilityConverter}}" 
+                             Text="{Binding SelectedContrat.TypeContrat.Libelle}" 
+                             
+                             Foreground="White" 
+                             FontFamily="Helvitica"
+                             FontSize="30"
+                             FontWeight="Light" ></TextBox>
 
 
                 </Grid>
