@@ -102,7 +102,7 @@
                          ItemsSource="{Binding Metiers}"
                          DisplayMemberPath="Libelle"
                          SelectedItem="{Binding SelectedMetier}"
-                         Foreground="White">
+                         Foreground="White" FontFamily="Helvitica" FontSize="15" FontWeight="Light">
                 </ListBox>
 
                 <!--Grid avec des champs types textbox se traouve à droit-->

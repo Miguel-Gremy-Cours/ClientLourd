@@ -78,14 +78,14 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
-            <Label Grid.Column="0" Grid.Row="0" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light">Gestion des employés</Label>
+            <Label Grid.Column="0" Grid.Row="0" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light">Gestion des internautes</Label>
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
 
-                <ListBox Grid.Column="0"  x:Name="_ListBoxEmployes" ItemsSource="{Binding Employes}" DisplayMemberPath="CodeContrat" SelectedItem="{Binding SelectedEmploye}" Foreground="White">
+                <ListBox Grid.Column="0"  x:Name="_ListBoxInternaute" ItemsSource="{Binding Internautes}" DisplayMemberPath="Nom,Prenom" SelectedItem="{Binding SelectedInternaute}" Foreground="White">
                 </ListBox>
 
                 <!--Grid avec des champs types textbox se traouve à droit-->
@@ -161,26 +161,47 @@
                     </TextBlock>
 
                     <!--DataBinding de ViewModel-->
-                    <TextBox Grid.Column="3" Grid.Row="1" Visibility="{Binding SelectedEmploye, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedEmploye.Id, Mode=OneWay}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" >
-                    </TextBox>
+                    <Label Grid.Column="3" Grid.Row="1" Visibility="{Binding SelectedInternaute, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Content="{Binding SelectedInternaute.Id, Mode=OneWay}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" >
+                    </Label>
 
-                    <TextBox Grid.Column="3" Grid.Row="3" Visibility="{Binding SelectedEmploye, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedEmploye.Nom}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
+                    <TextBox Grid.Column="3" Grid.Row="3" Visibility="{Binding SelectedInternaute, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedInternaute.Nom}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
 
-                    <TextBox Grid.Column="3" Grid.Row="5" Visibility="{Binding SelectedEmploye, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedEmploye.Prenom}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
+                    <TextBox Grid.Column="3" Grid.Row="5" Visibility="{Binding SelectedInternaute, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedInternaute.Prenom}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
 
-                    <TextBox Grid.Column="3" Grid.Row="7" Visibility="{Binding SelectedEmploye, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedEmploye.Civilite}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
+                    <ComboBox Grid.Column="3" 
+                              Grid.Row="7" 
+                              x:Name="_CmBox_Civilite"
+                              ItemsSource="{Binding Civilites}"
+                              DisplayMemberPath="Libelle"
+                              SelectedItem="{Binding SelectedCivilite}"
+                              Visibility="{Binding SelectedInternaute, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  
+                              Text="{Binding SelectedInternaute.Civilite.Libelle}" 
+                              Foreground="White" 
+                              FontFamily="Helvitica" 
+                              FontSize="30" 
+                              FontWeight="Light" >
+                        <ComboBox.ItemContainerStyle>
+                            <Style TargetType="ComboBoxItem">
+                                <Setter Property="Background" 
+                                        Value="Crimson" />
+                                <Setter Property="Foreground" 
+                                        Value="DarkGray"/>
+                            </Style>
+                        </ComboBox.ItemContainerStyle>
 
-                    <TextBox Grid.Column="3" Grid.Row="9" Visibility="{Binding SelectedEmploye, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedEmploye.DateNaissance}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
+                    </ComboBox>
 
-                    <TextBox Grid.Column="3" Grid.Row="11" Visibility="{Binding SelectedEmploye, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedEmploye.DateInscription}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
+                    <TextBox Grid.Column="3" Grid.Row="9" Visibility="{Binding SelectedInternaute, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedInternaute.DateNaissance}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
 
-                    <TextBox Grid.Column="3" Grid.Row="13" Visibility="{Binding SelectedEmploye, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedEmploye.Login}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
+                    <TextBox Grid.Column="3" Grid.Row="11" Visibility="{Binding SelectedInternaute, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedInternaute.DateInscription}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
 
-                    <TextBox Grid.Column="3" Grid.Row="15" Visibility="{Binding SelectedEmploye, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedEmploye.Password}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
-                    
-                    <TextBox Grid.Column="3" Grid.Row="17" Visibility="{Binding SelectedEmploye, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedEmploye.Email}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
-                    
-                    <TextBox Grid.Column="3" Grid.Row="19" Visibility="{Binding SelectedEmploye, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedEmploye.Cv}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
+                    <TextBox Grid.Column="3" Grid.Row="13" Visibility="{Binding SelectedInternaute, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedInternaute.Login}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
+
+                    <TextBox Grid.Column="3" Grid.Row="15" Visibility="{Binding SelectedInternaute, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedInternaute.Password}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
+
+                    <TextBox Grid.Column="3" Grid.Row="17" Visibility="{Binding SelectedInternaute, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedInternaute.Email}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
+
+                    <TextBox Grid.Column="3" Grid.Row="19" Visibility="{Binding SelectedInternaute, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedInternaute.Cv}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
 
 
 

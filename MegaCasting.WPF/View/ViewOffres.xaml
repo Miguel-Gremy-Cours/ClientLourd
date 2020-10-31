@@ -10,7 +10,7 @@
              d:DesignHeight="750" d:DesignWidth="800"  Background="Transparent" >
 
     <UserControl.Resources>
-        <Storyboard x:Key="ListBoxItem_MouseDown">
+        <Storyboard x:Key="ListBoxItem_DoubleClick">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="_Btn_Delete">
                 <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
@@ -85,7 +85,7 @@
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
 
-                <ListBox Grid.Column="0"  x:Name="_ListBoxContrat" ItemsSource="{Binding Offres}" DisplayMemberPath="Intitule" SelectedItem="{Binding SelectedOffre}" Foreground="White">
+                <ListBox Grid.Column="0"  x:Name="_ListBoxOffres" ItemsSource="{Binding Offres}" DisplayMemberPath="Intitule" SelectedItem="{Binding SelectedOffre}" Foreground="White" FontFamily="Helvitica" FontSize="15" FontWeight="Light">
                 </ListBox>
 
                 <!--Grid avec des champs types textbox se traouve à droit-->
@@ -307,11 +307,11 @@
                     <ComboBox Grid.Column="7" 
                               Grid.Row="3"
                               x:Name="_Cmbox_Metier"
-                              ItemsSource="{Binding Metier}"
+                              ItemsSource="{Binding Metiers}"
                               DisplayMemberPath="Libelle"
                               SelectedItem="{Binding SelectedMetier}"
                               Visibility="{Binding SelectedOffre, Converter={StaticResource _SharedObjectToVisibilityConverter}}" 
-                             Text="{Binding SelectedOffre.Metiers.Libelle}" 
+                             Text="{Binding SelectedOffre.Metier.Libelle}" 
                              
                              Foreground="White" 
                              FontFamily="Helvitica"
@@ -384,11 +384,11 @@
                     <ComboBox Grid.Column="3" 
                               Grid.Row="15"
                               x:Name="_Cmbox_Studio"
-                              ItemsSource="{Binding Metier}"
+                              ItemsSource="{Binding Studios}"
                               DisplayMemberPath="Libelle"
-                              SelectedItem="{Binding SelectedMetier}"
+                              SelectedItem="{Binding SelectedStudio}"
                               Visibility="{Binding SelectedOffre, Converter={StaticResource _SharedObjectToVisibilityConverter}}" 
-                             Text="{Binding SelectedOffre.Studios.Libelle}" 
+                             Text="{Binding SelectedOffre.Studio.Libelle}" 
                              
                              Foreground="White" 
                              FontFamily="Helvitica"
@@ -406,11 +406,11 @@
                     <ComboBox Grid.Column="7" 
                               Grid.Row="15"
                               x:Name="_Cmbox_Employe"
-                              ItemsSource="{Binding Metiers}"
-                              DisplayMemberPath="Libelle"
-                              SelectedItem="{Binding SelectedMetier}"
+                              ItemsSource="{Binding Employes}"
+                              DisplayMemberPath="Nom"
+                              SelectedItem="{Binding SelectedEmploye}"
                               Visibility="{Binding SelectedOffre, Converter={StaticResource _SharedObjectToVisibilityConverter}}" 
-                             Text="{Binding SelectedOffre.Employe.Id}" 
+                             Text="{Binding SelectedOffre.Employe.Nom}" 
                              
                              Foreground="White" 
                              FontFamily="Helvitica"

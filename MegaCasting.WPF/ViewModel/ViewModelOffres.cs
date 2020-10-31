@@ -27,9 +27,23 @@ namespace ClientLourd.ViewModel
         private Studio _SelectedStudio;
         private ObservableCollection<Offre> _Offres;
         private Offre _SelectedOffres;
+        private ObservableCollection<Employe> _Employes;
+        private Employe _SelectedEmploye;
         #endregion
 
         #region Properties
+        public ObservableCollection<Employe> Employes
+        {
+            get { return _Employes; }
+            set { _Employes = value; }
+        }
+
+
+        public Employe SelectedEmploye
+        {
+            get { return _SelectedEmploye; }
+            set { _SelectedEmploye = value; }
+        }
         public Metier SelectedMetier
         {
             get { return _SelectedMetier; }
