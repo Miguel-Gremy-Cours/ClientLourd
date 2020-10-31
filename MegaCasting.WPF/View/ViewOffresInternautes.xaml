@@ -1,12 +1,127 @@
 ﻿<UserControl x:Class="MegaCasting.WPF.View.ViewOffresInternautes"
+             xmlns:local="clr-namespace:MegaCasting.WPF.View"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:MegaCasting.WPF.View"
+            xmlns:metro="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="750" d:DesignWidth="800"  Background="Transparent" >
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"/>
+
+        </Grid.RowDefinitions>
+        <Border CornerRadius="15" Grid.RowSpan="2">
+            <Border.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Crimson" Offset="0.9"/>
+                    <GradientStop Color="#FF6666" Offset="0.0"/>
+
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="auto"/>
+
+            </Grid.ColumnDefinitions>
+
+            <metro:PackIconMaterialDesign Grid.Column="0" Kind="Videocam" Foreground="White" Width="50" Height="50" Margin="10,40,0,0"></metro:PackIconMaterialDesign>
+            <Grid Grid.Column="2">
+
+                <!--<StackPanel Orientation="Horizontal" >
+                    <Button Visibility="Visible" Background="Transparent">
+                        <StackPanel Orientation="Horizontal" >
+                            <materialDesign:PackIcon Kind="Add" Width="35" Height="35" VerticalAlignment="Center"/>
+                            <TextBlock Text="Nouveau Type" Style="{StaticResource ButtonTextBlockStyle}" />
+                        </StackPanel>
+                    </Button>
+                    <Button Visibility="Visible">
+                        <StackPanel Orientation="Horizontal" Background="Transparent">
+                            <materialDesign:PackIcon Kind="TrashCan" Width="35" Height="35" VerticalAlignment="Center"   />
+                            <TextBlock Text="Supprimer"  Style="{StaticResource ButtonTextBlockStyle}"/>
+                        </StackPanel>
+                    </Button>
+
+                    <Button Visibility="Visible">
+                        <StackPanel Orientation="Horizontal" Background="Transparent">
+                            <materialDesign:PackIcon Kind="ContentSave" Width="35" Height="35" VerticalAlignment="Center" />
+                            <TextBlock Text="Sauvegarder"  Style="{StaticResource ButtonTextBlockStyle}"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>-->
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="auto"/>
+
+            </Grid.RowDefinitions>
+
+
+            <Label Grid.Column="0" Grid.Row="0" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light">Offre Internaute</Label>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                <ListBox Grid.Column="0"  x:Name="_ListBoxOffreInternaute" ItemsSource="{Binding OffresInternautes}" DisplayMemberPath="IdInternaute" SelectedItem="{Binding SelectedOffresInternaute}" Foreground="White" FontFamily="Helvitica" FontSize="15" FontWeight="Light">
+                </ListBox>
+
+                <!--Grid avec des champs types textbox se traouve à droit-->
+                <Grid Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="10"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition  Height="1*"/>
+                        <RowDefinition  Height="auto"/>
+                        <RowDefinition  Height="10"/>
+                        <RowDefinition  Height="auto"/>
+                        <RowDefinition  Height="10"/>
+                        <RowDefinition  Height="auto"/>
+                        <RowDefinition  Height="3*"/>
+                    </Grid.RowDefinitions>
+
+
+                    <TextBlock Grid.Column="1" Grid.Row="1" Text="ID Internaute" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    </TextBlock>
+                    <TextBlock Grid.Column="1" Grid.Row="3" Text="ID Offre" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    </TextBlock>
+                    <TextBlock Grid.Column="1" Grid.Row="5" Text="Date de postulation" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    </TextBlock>
+
+                    <!--DataBinding de ViewModel-->
+                    <Label Grid.Column="3" Grid.Row="1" Visibility="{Binding SelectedOffresInternaute, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Content="{Binding SelectedOffresInternaute.IdInternaute, Mode=OneWay}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" >
+                    </Label>
+                    <Label Grid.Column="3" Grid.Row="3" Visibility="{Binding SelectedOffresInternaute, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Content="{Binding SelectedOffresInternaute.IdOffre, Mode=OneWay}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" >
+                    </Label>
+
+                    <TextBox Grid.Column="3" Grid.Row="5" Visibility="{Binding SelectedOffresInternaute, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedOffresInternaute.DatePostulation}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
+
+
+
+
+
+
+                </Grid>
+
+            </Grid>
+
+        </Grid>
+
     </Grid>
+
 </UserControl>

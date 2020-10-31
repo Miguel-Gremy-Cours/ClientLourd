@@ -35,20 +35,20 @@
             <Grid Grid.Column="2">
 
                 <StackPanel Orientation="Horizontal" >
-                    <Button Visibility="Visible" x:Name="_New_Contrat" Click="_New_Contrat_Click">
+                    <Button Visibility="Visible" x:Name="_New_Contrat" Click="_New_Contrat_Click" Background="Transparent">
                         <StackPanel Orientation="Horizontal" >
                             <materialDesign:PackIcon Kind="Add" Width="35" Height="35" VerticalAlignment="Center"/>
                             <TextBlock Text="Nouveau contrat" Style="{StaticResource ButtonTextBlockStyle}" />
                         </StackPanel>
                     </Button>
-                    <Button Visibility="Visible" x:Name="_Delete_Contrat" Click="_Delete_Contrat_Click">
+                    <Button Visibility="Visible" x:Name="_Delete_Contrat" Click="_Delete_Contrat_Click" Background="Transparent">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="TrashCan" Width="35" Height="35" VerticalAlignment="Center"   />
                             <TextBlock Text="Supprimer"  Style="{StaticResource ButtonTextBlockStyle}"/>
                         </StackPanel>
                     </Button>
 
-                    <Button Visibility="Visible" x:Name="_Save_Contrat" Click="_Save_Contrat_Click">
+                    <Button Visibility="Visible" x:Name="_Save_Contrat" Click="_Save_Contrat_Click" Background="Transparent">
                         <StackPanel Orientation="Horizontal"  >
                             <materialDesign:PackIcon Kind="ContentSave" Width="35" Height="35" VerticalAlignment="Center" />
                             <TextBlock Text="Sauvegarder"  Style="{StaticResource ButtonTextBlockStyle}"/>

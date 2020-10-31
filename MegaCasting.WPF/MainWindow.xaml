@@ -115,7 +115,7 @@
                 <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="100,0,0,0">
                     <materialDesign:PackIcon Kind="Videocam" Foreground="White" Width="75" Height="75"  VerticalAlignment="Center"  HorizontalAlignment="Left"/>
                     <TextBlock  Text="MegaCasting" Foreground="White" FontFamily="Helvitica" FontSize="60" FontWeight="Light" VerticalAlignment="Center"/>
-                    <Button Margin="620,0,0,0" x:Name="Btn_Close" Click="Btn_Close_Click" BorderThickness="0">
+                    <Button Margin="620,0,0,0" x:Name="Btn_Close" Click="Btn_Close_Click" BorderThickness="0" Background="Transparent">
                         <materialDesign:PackIcon Grid.Column="2" Kind="ExitToApp" Foreground="White" Width="50" Height="50"  VerticalAlignment="Center"  HorizontalAlignment="Center" />
                     </Button>
                 </StackPanel>
@@ -124,8 +124,8 @@
                 </DockPanel>
             </Grid>
             <Grid Grid.Column="0">
-                <Button x:Name="ButtonOpen" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Width="60" Height="60" Padding="0">
-                    <materialDesign:PackIcon Kind="PlayArrow" Foreground="White" Width="50" Height="50"/>
+                <Button x:Name="ButtonOpen" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Transparent" BorderBrush="{x:Null}" Width="70" Height="70" Padding="0">
+                    <materialDesign:PackIcon Kind="Menu" Foreground="White" Width="70" Height="70"/>
                 </Button>
             </Grid>
             <Grid Grid.Column="0" Name="GridMenu" Width="300" HorizontalAlignment="Left" Margin="-300 0 0 0" Background="Coral" RenderTransformOrigin="0.5,0.5">
@@ -200,7 +200,7 @@
                     </ListBox.ItemContainerStyle>
                     <ListBoxItem x:Name="Cancel">
 
-                        <Button x:Name="ButtonClose" HorizontalAlignment="Right" VerticalAlignment="Top" Background="{x:Null}" Foreground="White" BorderBrush="{x:Null}" Width="240" >
+                        <Button x:Name="ButtonClose" HorizontalAlignment="Right" VerticalAlignment="Top" Background="Transparent" Foreground="White" BorderBrush="{x:Null}" Width="240" >
 
                             <StackPanel >
                                 <materialDesign:PackIcon Kind="ArrowCollapseLeft" Width="50" Height="50" Margin="200,0,0,0"/>
@@ -209,7 +209,7 @@
 
                     </ListBoxItem>
                     <ListBoxItem x:Name="ViewMain" Tag="ViewMain">
-                        <Button BorderThickness="0" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewMain" Click="Btn_ViewMain_Click">
+                        <Button BorderThickness="0" Background="Transparent" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewMain" Click="Btn_ViewMain_Click">
                             <StackPanel Style="{StaticResource StackPanelStyle}" >
                                 <iconPacks:PackIconFontAwesome Kind="HomeSolid" Width="30" Height="30" VerticalAlignment="Center" Foreground="White"/>
                                 <TextBlock Text="Home" FontSize="30" FontWeight="Light" Foreground="White" />
@@ -217,7 +217,7 @@
                         </Button>
                     </ListBoxItem>
                     <ListBoxItem x:Name="ViewTypeContrat">
-                        <Button BorderThickness="0" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewTypeContrat" Click="Btn_ViewTypeContrat_Click">
+                        <Button BorderThickness="0" Background="Transparent" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewTypeContrat" Click="Btn_ViewTypeContrat_Click">
                             <StackPanel Style="{StaticResource StackPanelStyle}">
                                 <iconPacks:PackIconMaterialDesign Kind="MergeType" Width="30" Height="30" VerticalAlignment="Center" Foreground="White"/>
                                 <TextBlock Text="Type contrat" FontSize="30" FontWeight="Light" Foreground="White"/>
@@ -225,7 +225,7 @@
                         </Button>
                     </ListBoxItem>
                     <ListBoxItem x:Name="ViewContrat">
-                        <Button BorderThickness="0" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewContrat" Click="Btn_ViewContrat_Click">
+                        <Button BorderThickness="0" Background="Transparent" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewContrat" Click="Btn_ViewContrat_Click">
                             <StackPanel Style="{StaticResource StackPanelStyle}">
                                 <iconPacks:PackIconMaterialDesign Kind="Book"  Width="30" Height="30" VerticalAlignment="Center" Foreground="White"/>
                                 <TextBlock Text="Contrats" FontSize="30" FontWeight="Light" Foreground="White"/>
@@ -233,7 +233,7 @@
                         </Button>
                     </ListBoxItem>
                     <ListBoxItem x:Name="ViewOfrre">
-                        <Button BorderThickness="0" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewOffre" Click="Btn_ViewOffre_Click">
+                        <Button BorderThickness="0" Background="Transparent" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewOffre" Click="Btn_ViewOffre_Click">
                             <StackPanel Style="{StaticResource StackPanelStyle}">
                                 <iconPacks:PackIconFontAwesome Kind="GiftSolid"  Width="30" Height="30" VerticalAlignment="Center" Foreground="White"/>
                                 <TextBlock Text="Offres" FontSize="30" FontWeight="Light" Foreground="White"/>
@@ -241,7 +241,7 @@
                         </Button>
                     </ListBoxItem>
                     <ListBoxItem x:Name="ViewOffreInternaute">
-                        <Button BorderThickness="0" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewOffreInternaute" Click="Btn_ViewOffreInternaute_Click">
+                        <Button BorderThickness="0" Background="Transparent" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewOffreInternaute" Click="Btn_ViewOffreInternaute_Click">
                             <StackPanel Style="{StaticResource StackPanelStyle}">
                                 <iconPacks:PackIconFontAwesome Kind="LinkSolid"  Width="30" Height="30" VerticalAlignment="Center" Foreground="White"/>
                                 <TextBlock Text="Offre Internaute" FontSize="30" FontWeight="Light" Foreground="White"/>
@@ -249,7 +249,7 @@
                         </Button>
                     </ListBoxItem>
                     <ListBoxItem x:Name="ViewInternaute">
-                        <Button BorderThickness="0" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewInternaute" Click="Btn_ViewInternaute_Click">
+                        <Button BorderThickness="0" Background="Transparent" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewInternaute" Click="Btn_ViewInternaute_Click">
                             <StackPanel Style="{StaticResource StackPanelStyle}">
                                 <iconPacks:PackIconFontAwesome Kind="UserCheckSolid"  Width="30" Height="30" VerticalAlignment="Center" Foreground="White"/>
                                 <TextBlock Text="Internautes" FontSize="30" FontWeight="Light" Foreground="White"/>
@@ -257,7 +257,7 @@
                         </Button>
                     </ListBoxItem>
                     <ListBoxItem x:Name="ViewMetier">
-                        <Button BorderThickness="0" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewMetier" Click="Btn_ViewMetier_Click">
+                        <Button BorderThickness="0" Background="Transparent" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewMetier" Click="Btn_ViewMetier_Click">
                             <StackPanel Style="{StaticResource StackPanelStyle}">
                                 <iconPacks:PackIconFontAwesome Kind="JointSolid"  Width="30" Height="30" VerticalAlignment="Center" Foreground="White"/>
                                 <TextBlock Text="Métiers" FontSize="30" FontWeight="Light" Foreground="White"/>
@@ -265,7 +265,7 @@
                         </Button>
                     </ListBoxItem>
                     <ListBoxItem x:Name="ViewDomaineMetier">
-                        <Button BorderThickness="0" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewDomaineMetier" Click="Btn_ViewDomaineMetier_Click">
+                        <Button BorderThickness="0" Background="Transparent" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewDomaineMetier" Click="Btn_ViewDomaineMetier_Click">
                             <StackPanel Style="{StaticResource StackPanelStyle}">
                                 <iconPacks:PackIconFontAwesome Kind="PagelinesBrands"  Width="30" Height="30" VerticalAlignment="Center" Foreground="White"/>
                                 <TextBlock Text="Domaines" FontSize="30" FontWeight="Light" Foreground="White"/>
@@ -273,7 +273,7 @@
                         </Button>
                     </ListBoxItem>
                     <ListBoxItem x:Name="ViewStudio">
-                        <Button BorderThickness="0" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewStudio" Click="Btn_ViewStudio_Click">
+                        <Button BorderThickness="0" Background="Transparent" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewStudio" Click="Btn_ViewStudio_Click">
                             <StackPanel Style="{StaticResource StackPanelStyle}">
                                 <iconPacks:PackIconFontAwesome Kind="FilmSolid"  Width="30" Height="30" VerticalAlignment="Center" Foreground="White"/>
                                 <TextBlock Text="Studios" FontSize="30" FontWeight="Light" Foreground="White"/>
@@ -281,7 +281,7 @@
                         </Button>
                     </ListBoxItem>
                     <ListBoxItem x:Name="ViewPartenaire">
-                        <Button BorderThickness="0" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewPartenaire" Click="Btn_ViewPartenaire_Click" >
+                        <Button BorderThickness="0" Background="Transparent" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewPartenaire" Click="Btn_ViewPartenaire_Click" >
                             <StackPanel Style="{StaticResource StackPanelStyle}">
                                 <iconPacks:PackIconFontAwesome Kind="HandHoldingHeartSolid"  Width="30" Height="30" VerticalAlignment="Center" Foreground="White"/>
                                 <TextBlock Text="Partenaires" FontSize="30" FontWeight="Light" Foreground="White"/>
@@ -289,7 +289,7 @@
                         </Button>
                     </ListBoxItem>
                     <ListBoxItem x:Name="ViewEmploye">
-                        <Button BorderThickness="0" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewEmploye" Click="Btn_ViewEmploye_Click">
+                        <Button BorderThickness="0" Background="Transparent" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewEmploye" Click="Btn_ViewEmploye_Click">
                             <StackPanel Style="{StaticResource StackPanelStyle}">
                                 <iconPacks:PackIconFontAwesome Kind="UserCircleSolid"  Width="30" Height="30" VerticalAlignment="Center" Foreground="White"/>
                                 <TextBlock Text="Employés" FontSize="30" FontWeight="Light" Foreground="White"/>
@@ -297,7 +297,7 @@
                         </Button>
                     </ListBoxItem>
                     <ListBoxItem x:Name="ViewGroupe" >
-                        <Button BorderThickness="0" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewGroupe" Click="Btn_ViewGroupe_Click">
+                        <Button BorderThickness="0" Background="Transparent" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewGroupe" Click="Btn_ViewGroupe_Click">
                             <StackPanel Style="{StaticResource StackPanelStyle}">
                                 <iconPacks:PackIconFontAwesome Kind="LayerGroupSolid"  Width="30" Height="30" VerticalAlignment="Center" Foreground="White"/>
                                 <TextBlock Text="Groupes" FontSize="30" FontWeight="Light" Foreground="White"/>

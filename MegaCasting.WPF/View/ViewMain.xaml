@@ -35,13 +35,13 @@
 
             <StackPanel Grid.Row="1" Background="Transparent" HorizontalAlignment="Center">
 
-                <Button x:Name="Btn_Logout" Click="Btn_Logout_Click" >
+                <Button x:Name="Btn_Logout" Click="Btn_Logout_Click" Background="Transparent">
                     <StackPanel Orientation="Horizontal" Background="Transparent" >
                         <materialDesign:PackIcon Kind="LogoutVariant" Width="100" Height="100" Foreground="White" Background="Transparent" HorizontalAlignment="Left"/>
                         <TextBlock Text="Changer de session" Foreground="White" FontSize="50" FontWeight="Light" FontFamily="Helvitica" VerticalAlignment="Center" Background="Transparent"/>
                     </StackPanel>
                 </Button>
-                <Button x:Name="Btn_Site" Click="Btn_Site_Click">
+                <Button x:Name="Btn_Site" Click="Btn_Site_Click" Background="Transparent">
                     <StackPanel Orientation="Horizontal" Background="Transparent" >
                         <materialDesign:PackIcon Kind="Web" Width="100" Height="100" Foreground="White" Background="Transparent" Margin="-130,0,0,0"/>
                         <TextBlock Text="Client léger" Foreground="White" FontSize="50" FontWeight="Light" FontFamily="Helvitica" VerticalAlignment="Center" Background="Transparent" HorizontalAlignment="Left"/>

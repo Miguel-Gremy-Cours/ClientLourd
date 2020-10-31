@@ -13,14 +13,39 @@ namespace ClientLourd.ViewModel
    public    class ViewModelOffresInternautes:ViewModelBase
     {
 
-       
+
 
         #region Attributes
+        private Internaute _SelectedInternaute;
+        private ObservableCollection<Internaute> _Internautes;
         private ObservableCollection<OffresInternaute> _OffresInternautes;
         private OffresInternaute _SelectedOffresInternaute;
+        private ObservableCollection<Offre> _Offres;
+        private Offre _SelectedOffres;
         #endregion
 
         #region Properties
+        public Offre SelectedOffre
+        {
+            get { return _SelectedOffres; }
+            set { _SelectedOffres = value; }
+        }
+
+        public ObservableCollection<Offre> Offres
+        {
+            get { return _Offres; }
+            set { _Offres = value; }
+        }
+        public Internaute SelectedInternaute
+        {
+            get { return _SelectedInternaute; }
+            set { _SelectedInternaute = value; }
+        }
+        public ObservableCollection<Internaute> Internautes
+        {
+            get { return _Internautes; }
+            set { _Internautes = value; }
+        }
         public ObservableCollection<OffresInternaute> OffresInternautes
         {
             get { return _OffresInternautes; }
@@ -41,6 +66,12 @@ namespace ClientLourd.ViewModel
 
             this.Entities.OffresInternautes.ToList();
             this.OffresInternautes = this.Entities.OffresInternautes.Local;
+
+            this.Entities.Offres.ToList();
+            this.Offres = this.Entities.Offres.Local;
+
+            this.Entities.Internautes.ToList();
+            this.Internautes = this.Entities.Internautes.Local;
         }
         #endregion
 
