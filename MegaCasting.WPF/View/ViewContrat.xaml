@@ -8,6 +8,9 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="750" d:DesignWidth="800"  Background="Transparent" >
+
+
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
@@ -190,14 +193,17 @@
                              FontSize="30"
                              FontWeight="Light" ></TextBox>
 
-                    <TextBox Grid.Column="3" 
+                    <DatePicker Grid.Column="3" 
                              Grid.Row="5" 
                              Visibility="{Binding SelectedContrat, Converter={StaticResource _SharedObjectToVisibilityConverter}}" 
                              Text="{Binding SelectedContrat.DebutContrat}" 
                              Foreground="White" 
                              FontFamily="Helvitica" 
                              FontSize="30" 
-                             FontWeight="Light" ></TextBox>
+                             FontWeight="Light" >
+
+                        
+                    </DatePicker>
                     
                     <TextBox Grid.Column="3" 
                              Grid.Row="7" 

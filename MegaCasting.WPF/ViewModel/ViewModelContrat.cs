@@ -71,13 +71,13 @@ namespace ClientLourd.ViewModel
         /// </summary>
         public void InsertContrat()
         {
-            if (this.Entities.TypeContrats.Any(type => type.Libelle== "Nouveau contrat"))
+            if (this.Entities.Contrats.Any(type => type.CodeContrat== "New"))
             {
                 Contrat Contrat = new Contrat();
 
                 Contrat.DureContrat = 1;
 
-                // remarque: ajouter un champ code de contrat pour faciliter administration de contrat car impossible de gérer sans une value unique mise à part id.
+                
                 this.Contrats.Add(Contrat);
                 this.SaveChanges();
                 this.SelectedContrat = Contrat;
