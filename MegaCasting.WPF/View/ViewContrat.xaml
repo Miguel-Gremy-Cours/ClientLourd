@@ -214,14 +214,30 @@
                              FontSize="30" 
                              FontWeight="Light" ></TextBox>
 
-                    <Label Grid.Column="3"
+                    <ComboBox Grid.Column="3"
                              Grid.Row="9" 
+                              x:Name="_Cmbox_CodeOffre"
+                              
+                              ItemsSource="{Binding Offres}"
+                              DisplayMemberPath="CodeOffre"
+                              SelectedItem="{Binding SelectedOffre}"
+                              
                              Visibility="{Binding SelectedContrat, Converter={StaticResource _SharedObjectToVisibilityConverter}}" 
-                             Content="{Binding SelectedContrat.Offre.CodeOffre}" 
+                             Text="{Binding SelectedContrat.Offre.CodeOffre}" 
+                              
                              Foreground="White" 
                              FontFamily="Helvitica" 
                              FontSize="30"
-                             FontWeight="Light" ></Label>
+                             FontWeight="Light" >
+                        <ComboBox.ItemContainerStyle>
+                            <Style TargetType="ComboBoxItem">
+                                <Setter Property="Background" 
+                                        Value="Crimson" />
+                                <Setter Property="Foreground" 
+                                        Value="DarkGray"/>
+                            </Style>
+                        </ComboBox.ItemContainerStyle>
+                    </ComboBox>
 
                     
                     <ComboBox Grid.Column="3" 
@@ -239,6 +255,7 @@
                              FontFamily="Helvitica"
                              FontSize="30"
                              FontWeight="Light" >
+                        
                         <ComboBox.ItemContainerStyle>
                             <Style TargetType="ComboBoxItem">
                                 <Setter Property="Background" 

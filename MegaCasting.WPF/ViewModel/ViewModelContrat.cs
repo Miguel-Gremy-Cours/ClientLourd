@@ -76,6 +76,9 @@ namespace ClientLourd.ViewModel
 
             this.Entities.TypeContrats.ToList();
             this.TypeContrats = this.Entities.TypeContrats.Local;
+
+            this.Entities.Offres.ToList();
+            this.Offres = this.Entities.Offres.Local;
         }
         #endregion
 
