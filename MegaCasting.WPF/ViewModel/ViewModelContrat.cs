@@ -9,18 +9,8 @@ using System.Threading.Tasks;
 
 namespace ClientLourd.ViewModel
 {
-    public class ViewModelContrat:ViewModelBase
+    public class ViewModelContrat : ViewModelBase
     {
-
-
-        
-
-
-
-
-
-
-
         #region Attributes
         private ObservableCollection<TypeContrat> _TypeContrats;
         private ObservableCollection<Contrat> _Contrats;
@@ -69,7 +59,7 @@ namespace ClientLourd.ViewModel
 
 
         #region Constructor
-        public ViewModelContrat(MegaCastingEntities entities):base(entities)
+        public ViewModelContrat(MegaCastingEntities entities) : base(entities)
         {
             this.Entities.Contrats.ToList();
             this.Contrats = this.Entities.Contrats.Local;
@@ -89,16 +79,15 @@ namespace ClientLourd.ViewModel
         /// </summary>
         public void InsertContrat()
         {
-            if (this.Entities.Contrats.Any(type => type.CodeContrat== "New"))
+            if (this.Entities.Contrats.Any(type => type.CodeContrat == "New"))
             {
                 Contrat Contrat = new Contrat();
 
-                Contrat.DureContrat = 1;
                 Contrat.DebutContrat = DateTime.UtcNow;
-                Contrat.Offre.CodeOffre = this.Entities.Offres.FirstOrDefault().ToString();
-                Contrat.TypeContrat.Libelle = "CDD";
+                Contrat.Offre = this._SelectedOffre;
+                Contrat.TypeContrat = this._SelectedTypeContrat;
                 this.Contrats.Add(Contrat);
-                this.SaveChanges();
+                //this.SaveChanges();
                 this.SelectedContrat = Contrat;
 
             }
