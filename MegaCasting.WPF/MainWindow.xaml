@@ -10,9 +10,10 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver" 
         xmlns:view="clr-namespace:MegaCasting.WPF.View"
-            Title="Bienvenu à la gestion de MegaCasting" Height="850" Width="1400" AllowsTransparency="True" Background="Transparent" WindowStyle="None" ResizeMode="NoResize" 
-                     WindowStartupLocation="CenterScreen" Visibility="Visible" MouseDown="WindowX_MouseDown">
-  
+        Title="Bienvenu à la gestion de MegaCasting"
+        Height="850" Width="1400" AllowsTransparency="True" Background="Transparent" WindowStyle="None" ResizeMode="NoResize" 
+        WindowStartupLocation="CenterScreen" Visibility="Visible" MouseDown="WindowX_MouseDown">
+
 
     <Window.Resources>
         <Storyboard x:Key="CloseMenu">
@@ -84,8 +85,8 @@
             <BeginStoryboard Storyboard="{StaticResource OpenMenu}"/>
         </EventTrigger>
     </Window.Triggers>
-    
-    
+
+
     <Grid >
         <Grid Name="BackgroundColorLayer">
             <Grid.ColumnDefinitions>
@@ -101,9 +102,9 @@
                 </Border.Background>
             </Border>
         </Grid>
-            <!--TopLayer est superposé en BackgroundColorLayer-->
+        <!--TopLayer est superposé en BackgroundColorLayer-->
         <Grid Name="TopLayer">
-            
+
 
             <Grid Grid.Column="1" x:Name="GridBackground">
                 <Grid.RowDefinitions>
@@ -132,10 +133,14 @@
                 <!--la grid qui contient le menu et la barre d'indication se trouve à l'extérier grâce à la valaur valeur left 300-->
                 <Grid.RenderTransform>
                     <TransformGroup>
-                        <ScaleTransform/> <!--0-->
-                        <SkewTransform/> <!--1-->
-                        <RotateTransform/> <!--2-->
-                        <TranslateTransform/> <!--3-->
+                        <ScaleTransform/>
+                        <!--0-->
+                        <SkewTransform/>
+                        <!--1-->
+                        <RotateTransform/>
+                        <!--2-->
+                        <TranslateTransform/>
+                        <!--3-->
                     </TransformGroup>
                 </Grid.RenderTransform>
 
@@ -144,7 +149,7 @@
                     <ColumnDefinition/>
 
                 </Grid.ColumnDefinitions>
-                
+
                 <Rectangle Grid.Column="0" Grid.Row="1" Fill="AliceBlue" Height="{Binding ElementName=MenuListBox, Path=ActualHeight}" Name="PointerRail"/>
                 <Rectangle Grid.Column="0" Grid.Row="1" Fill="DarkRed" Height="60" VerticalAlignment="Top" Name="Pointer">
                     <!--la barre rouge est superposée sur la barre grise-->
@@ -153,7 +158,7 @@
                     </Rectangle.RenderTransform>
                 </Rectangle>
                 <Rectangle Grid.Row="1"/>
-                
+
                 <ListBox Grid.Row="1" Grid.Column="1" Name="MenuListBox" >
 
                     <ListBox.Resources>

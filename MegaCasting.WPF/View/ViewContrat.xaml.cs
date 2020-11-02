@@ -1,4 +1,9 @@
-﻿using System;
+﻿using ClientLourd.ViewModel;
+using MaterialDesignThemes.Wpf;
+using MegaCasting.DBLib;
+using MegaCasting.WPF.View.Add;
+using MegaCasting.WPF.ViewModel.Add;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,7 +32,11 @@ namespace MegaCasting.WPF.View
 
         private void _New_Contrat_Click(object sender, RoutedEventArgs e)
         {
-
+            ViewAddContrat viewAddContrat = new ViewAddContrat();
+            viewAddContrat.DataContext = new ViewModelAddContrat((
+                (ViewModelContrat)this.DataContext)
+                .Entities);
+            viewAddContrat.ShowDialog();
         }
 
         private void _Delete_Contrat_Click(object sender, RoutedEventArgs e)

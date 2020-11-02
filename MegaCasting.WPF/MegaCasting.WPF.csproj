@@ -194,6 +194,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModel\Add\ViewModelAddContrat.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="ViewModel\ViewModelCivilite.cs" />
     <Compile Include="ViewModel\ViewModelConnexion.cs" />
@@ -209,6 +210,9 @@
     <Compile Include="ViewModel\ViewModelPartenaires.cs" />
     <Compile Include="ViewModel\ViewModelStudios.cs" />
     <Compile Include="ViewModel\ViewModelTypeContrat.cs" />
+    <Compile Include="View\Add\ViewAddContrat.xaml.cs">
+      <DependentUpon>ViewAddContrat.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ViewContrat.xaml.cs">
       <DependentUpon>ViewContrat.xaml</DependentUpon>
     </Compile>
@@ -277,6 +281,10 @@
     <Page Include="Styles\IconFontDictionary.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Add\ViewAddContrat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ViewContrat.xaml">
       <SubType>Designer</SubType>
