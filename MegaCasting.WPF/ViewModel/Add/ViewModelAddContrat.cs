@@ -14,19 +14,19 @@ namespace MegaCasting.WPF.ViewModel.Add
     class ViewModelAddContrat : ViewModelBase
     {
         #region Attribute
-        private ObservableCollection<TypeContrat> _TypeContrat;
+        private ObservableCollection<TypeContrat> _TypeContrats;
         private TypeContrat _SelectedTypeContrat;
         private ObservableCollection<Offre> _Offres;
         private Offre _SelectedOffre;
-        private ObservableCollection<Contrat> _Contrat;
+        private ObservableCollection<Contrat> _Contrats;
         private Contrat _SelectedContrat;
 
         #endregion
         #region Accesseurs
-        public ObservableCollection<TypeContrat> TypeContrat
+        public ObservableCollection<TypeContrat> TypeContrats
         {
-            get { return _TypeContrat; }
-            set { _TypeContrat = value; }
+            get { return _TypeContrats; }
+            set { _TypeContrats = value; }
         }
         public TypeContrat SelectedTypeContrat
         {
@@ -48,23 +48,23 @@ namespace MegaCasting.WPF.ViewModel.Add
             get { return _SelectedOffre; }
             set { _SelectedOffre = value; }
         }
-        public ObservableCollection<Contrat> Contrat
+        public ObservableCollection<Contrat> Contrats
         {
-            get { return _Contrat; }
-            set { _Contrat = value; }
+            get { return _Contrats; }
+            set { _Contrats = value; }
         }
         #endregion
         #region Constructor
         public ViewModelAddContrat(MegaCastingEntities entities) : base(entities)
         {
             this.Entities.TypeContrats.ToList();
-            this.TypeContrat = this.Entities.TypeContrats.Local;
+            this.TypeContrats = this.Entities.TypeContrats.Local;
 
             this.Entities.Offres.ToList();
             this.Offres = this.Entities.Offres.Local;
 
             this.Entities.Contrats.ToList();
-            this.Contrat = this.Entities.Contrats.Local;
+            this.Contrats = this.Entities.Contrats.Local;
         }
         #endregion
     }
