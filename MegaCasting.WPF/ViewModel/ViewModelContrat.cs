@@ -13,6 +13,9 @@ namespace ClientLourd.ViewModel
     {
 
 
+        
+
+
 
 
 
@@ -21,12 +24,24 @@ namespace ClientLourd.ViewModel
         #region Attributes
         private ObservableCollection<TypeContrat> _TypeContrats;
         private ObservableCollection<Contrat> _Contrats;
+        private ObservableCollection<Offre> _Offres;
+        private Offre _SelectedOffre;
         private Contrat _SelectedContrat;
         private TypeContrat _SelectedTypeContrat;
         #endregion
 
 
         #region Properties
+        public Offre SelectedOffre
+        {
+            get { return _SelectedOffre; }
+            set { _SelectedOffre = value; }
+        }
+        public ObservableCollection<Offre> Offres
+        {
+            get { return _Offres; }
+            set { _Offres = value; }
+        }
         public ObservableCollection<TypeContrat> TypeContrats
         {
             get { return _TypeContrats; }
