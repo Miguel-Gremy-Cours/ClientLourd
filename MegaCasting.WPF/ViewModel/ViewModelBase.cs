@@ -49,6 +49,9 @@ namespace ClientLourd.ViewModel
         {
             this.Entities.SaveChanges();
         }
+
+        public string ToDateValue(DateTime? pValue)
+            => pValue == null ? "NULL" : $"'{pValue.Value.ToString("yyyyMMdd")}'";
         #endregion
     }
 }

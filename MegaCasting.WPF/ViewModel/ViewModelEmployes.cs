@@ -88,7 +88,7 @@ namespace ClientLourd.ViewModel
             {
                 Employe employe = new Employe();
                 employe.Nom = "Nouveau Nom";
-                employe.Prenom = "Nouveau préNom";
+                employe.Prenom = "Nouveau prénom";
                 this.Employes.Add(employe);
                 this.SaveChanges();
                 this.SelectedEmploye = employe;

@@ -76,8 +76,9 @@ namespace ClientLourd.ViewModel
                 Contrat Contrat = new Contrat();
 
                 Contrat.DureContrat = 1;
-
-                
+                Contrat.DebutContrat = DateTime.UtcNow;
+                Contrat.Offre.CodeOffre = this.Entities.Offres.FirstOrDefault().ToString();
+                Contrat.TypeContrat.Libelle = "CDD";
                 this.Contrats.Add(Contrat);
                 this.SaveChanges();
                 this.SelectedContrat = Contrat;
