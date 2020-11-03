@@ -89,6 +89,8 @@ namespace ClientLourd.ViewModel
             this.Studios = this.Entities.Studios.Local;
             this.Entities.Metiers.ToList();
             this.Metiers = this.Entities.Metiers.Local;
+            this.Entities.Employes.ToList();
+            this.Employes = this.Entities.Employes.Local;
         }
         #endregion
 

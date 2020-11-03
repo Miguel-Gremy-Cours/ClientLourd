@@ -221,9 +221,6 @@
     <Compile Include="ViewModel\ViewModelPartenaires.cs" />
     <Compile Include="ViewModel\ViewModelStudios.cs" />
     <Compile Include="ViewModel\ViewModelTypeContrat.cs" />
-    <Compile Include="View\Add\ViewAddContrat.xaml.cs">
-      <DependentUpon>ViewAddContrat.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\ViewContrat.xaml.cs">
       <DependentUpon>ViewContrat.xaml</DependentUpon>
     </Compile>
@@ -260,6 +257,15 @@
     <Compile Include="View\ViewTypeContrat.xaml.cs">
       <DependentUpon>ViewTypeContrat.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Add\WindowAddContrat.xaml.cs" />
+    <Compile Include="Windows\Add\WindowAddDomaineMetier.xaml.cs" />
+    <Compile Include="Windows\Add\WindowAddEmploye.xaml.cs" />
+    <Compile Include="Windows\Add\WindowAddGroupeEmploye.xaml.cs" />
+    <Compile Include="Windows\Add\WindowAddMetier.xaml.cs" />
+    <Compile Include="Windows\Add\WindowAddOffre.xaml.cs" />
+    <Compile Include="Windows\Add\WindowAddPartenaire.xaml.cs" />
+    <Compile Include="Windows\Add\WindowAddStudio.xaml.cs" />
+    <Compile Include="Windows\Add\WindowAddTypeContrat.xaml.cs" />
     <Compile Include="Windows\Connexion.xaml.cs">
       <DependentUpon>Connexion.xaml</DependentUpon>
     </Compile>
@@ -292,10 +298,6 @@
     <Page Include="Styles\IconFontDictionary.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\Add\ViewAddContrat.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ViewContrat.xaml">
       <SubType>Designer</SubType>
@@ -344,6 +346,42 @@
     <Page Include="View\ViewTypeContrat.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Add\WindowAddContrat.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Add\WindowAddDomaineMetier.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Add\WindowAddEmploye.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Add\WindowAddGroupeEmploye.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Add\WindowAddMetier.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Add\WindowAddOffre.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Add\WindowAddPartenaire.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Add\WindowAddStudio.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Add\WindowAddTypeContrat.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Windows\Connexion.xaml">
       <SubType>Designer</SubType>
