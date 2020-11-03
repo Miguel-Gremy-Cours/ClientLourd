@@ -4,6 +4,7 @@ using MegaCasting.DBLib;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,7 +22,6 @@ namespace MegaCasting.WPF.ViewModel.Add
         private Offre _SelectedOffre;
         private ObservableCollection<Contrat> _Contrats;
         private Contrat _SelectedContrat;
-
         #endregion
         #region Accesseurs
         public Contrat Contrat

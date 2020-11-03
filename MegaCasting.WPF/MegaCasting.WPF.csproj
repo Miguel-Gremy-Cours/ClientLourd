@@ -194,7 +194,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModel\Add\ViewModelAddCivilite.cs" />
     <Compile Include="ViewModel\Add\ViewModelAddContrat.cs" />
+    <Compile Include="ViewModel\Add\ViewModelAddEmployes.cs" />
+    <Compile Include="ViewModel\Add\ViewModelAddDomaineMetier.cs" />
+    <Compile Include="ViewModel\Add\ViewModelAddGroupeEmployes.cs" />
+    <Compile Include="ViewModel\Add\ViewModelAddInternautes.cs" />
+    <Compile Include="ViewModel\Add\ViewModelAddMetier.cs" />
+    <Compile Include="ViewModel\Add\ViewModelAddOffres.cs" />
+    <Compile Include="ViewModel\Add\ViewModelAddOffresInternautes.cs" />
+    <Compile Include="ViewModel\Add\ViewModelAddPartenaires.cs" />
+    <Compile Include="ViewModel\Add\ViewModelAddSudios.cs" />
+    <Compile Include="ViewModel\Add\ViewModelAddTypeContrat.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="ViewModel\ViewModelCivilite.cs" />
     <Compile Include="ViewModel\ViewModelConnexion.cs" />
