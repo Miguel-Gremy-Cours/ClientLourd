@@ -1,4 +1,7 @@
-﻿using System;
+﻿using MegaCasting.WPF.ViewModel;
+using MegaCasting.WPF.ViewModel.Add;
+using MegaCasting.WPF.Windows.Add;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +26,23 @@ namespace MegaCasting.WPF.View
         public ViewDomaineMetier()
         {
             InitializeComponent();
+        }
+
+        private void _New_DomaineMetier_Click(object sender, RoutedEventArgs e)
+        {
+            WindowAddDomaineMetier windowAddDomaineMetier = new WindowAddDomaineMetier();
+            windowAddDomaineMetier.DataContext = new ViewModelAddDomaineMetier(((ViewModelDomaineMetier)this.DataContext).Entities);
+            windowAddDomaineMetier.ShowDialog();
+        }
+
+        private void _Delete_DomaineMetier_Click(object sender, RoutedEventArgs e)
+        {
+            ((ViewModelDomaineMetier)this.DataContext).DeleteDomaineMetier();
+        }
+
+        private void _Save_DomaineMetier_Click(object sender, RoutedEventArgs e)
+        {
+            ((ViewModelDomaineMetier)this.DataContext).SaveChanges();
         }
     }
 }

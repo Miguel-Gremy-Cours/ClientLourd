@@ -35,20 +35,20 @@
             <Grid Grid.Column="2">
 
                 <StackPanel Orientation="Horizontal" >
-                    <Button Visibility="Visible" Background="Transparent">
+                    <Button Visibility="Visible" Background="Transparent" x:Name="_New_Studio" Click="_New_Studio_Click">
                         <StackPanel Orientation="Horizontal" >
                             <materialDesign:PackIcon Kind="Add" Width="35" Height="35" VerticalAlignment="Center"/>
                             <TextBlock Text="Nouveau studio" Style="{StaticResource ButtonTextBlockStyle}" />
                         </StackPanel>
                     </Button>
-                    <Button Visibility="Visible" Background="Transparent">
+                    <Button Visibility="Visible" Background="Transparent" x:Name="_Delete_Studio" Click="_Delete_Studio_Click">
                         <StackPanel Orientation="Horizontal" >
                             <materialDesign:PackIcon Kind="TrashCan" Width="35" Height="35" VerticalAlignment="Center"   />
                             <TextBlock Text="Supprimer"  Style="{StaticResource ButtonTextBlockStyle}"/>
                         </StackPanel>
                     </Button>
 
-                    <Button Visibility="Visible" Background="Transparent">
+                    <Button Visibility="Visible" Background="Transparent" x:Name="_Save_Studio" Click="_Save_Studio_Click">
                         <StackPanel Orientation="Horizontal" >
                             <materialDesign:PackIcon Kind="ContentSave" Width="35" Height="35" VerticalAlignment="Center" />
                             <TextBlock Text="Sauvegarder"  Style="{StaticResource ButtonTextBlockStyle}"/>

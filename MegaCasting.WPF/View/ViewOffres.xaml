@@ -49,20 +49,20 @@
             <Grid Grid.Column="2">
 
                 <StackPanel Orientation="Horizontal" >
-                    <Button Visibility="Visible" Background="Transparent">
+                    <Button Visibility="Visible" Background="Transparent" x:Name="_New_Offre" Click="_New_Offre_Click">
                         <StackPanel Orientation="Horizontal" >
                             <materialDesign:PackIcon Kind="Add" Width="35" Height="35" VerticalAlignment="Center"/>
                             <TextBlock Text="Nouvelle offre" Style="{StaticResource ButtonTextBlockStyle}" />
                         </StackPanel>
                     </Button>
-                    <Button Visibility="Visible" x:Name="_Btn_Delete" Background="Transparent">
+                    <Button Visibility="Visible"  Background="Transparent" x:Name="_Delete_Offre" Click="_Btn_Delete_Click">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="TrashCan" Width="35" Height="35" VerticalAlignment="Center"   />
                             <TextBlock Text="Supprimer"  Style="{StaticResource ButtonTextBlockStyle}"/>
                         </StackPanel>
                     </Button>
 
-                    <Button Visibility="Visible" Background="Transparent">
+                    <Button Visibility="Visible" Background="Transparent" x:Name="_Save_Offre" Click="_Save_Offre_Click" >
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="ContentSave" Width="35" Height="35" VerticalAlignment="Center" />
                             <TextBlock Text="Sauvegarder"  Style="{StaticResource ButtonTextBlockStyle}"/>

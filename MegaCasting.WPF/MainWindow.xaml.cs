@@ -1,4 +1,4 @@
-﻿using ClientLourd.ViewModel;
+﻿using MegaCasting.WPF.ViewModel;
 using MahApps.Metro.Controls;
 using MegaCasting.DBLib;
 using MegaCasting.WPF.View;

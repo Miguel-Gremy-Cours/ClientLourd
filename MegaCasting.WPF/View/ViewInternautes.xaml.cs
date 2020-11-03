@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MegaCasting.WPF.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,16 @@ namespace MegaCasting.WPF.View
         public ViewInternautes()
         {
             InitializeComponent();
+        }
+
+        private void _Delete_Internaute_Click(object sender, RoutedEventArgs e)
+        {
+            ((ViewModelInternautes)this.DataContext).DeleteInternaute();
+        }
+
+        private void _Save_internaute_Click(object sender, RoutedEventArgs e)
+        {
+            ((ViewModelInternautes)this.DataContext).SaveChanges();
         }
     }
 }

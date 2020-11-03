@@ -35,20 +35,20 @@
             <Grid Grid.Column="2">
 
                 <StackPanel Orientation="Horizontal" >
-                    <Button Visibility="Visible" Background="Transparent">
+                    <Button Visibility="Visible" Background="Transparent" x:Name="_New_DomaineMetier" Click="_New_DomaineMetier_Click">
                         <StackPanel Orientation="Horizontal" >
                             <materialDesign:PackIcon Kind="Add" Width="35" Height="35" VerticalAlignment="Center"/>
                             <TextBlock Text="Nouveau domaine" Style="{StaticResource ButtonTextBlockStyle}" />
                         </StackPanel>
                     </Button>
-                    <Button Visibility="Visible" Background="Transparent">
+                    <Button Visibility="Visible" Background="Transparent" x:Name="_Delete_DomaineMetier" Click="_Delete_DomaineMetier_Click">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="TrashCan" Width="35" Height="35" VerticalAlignment="Center"   />
                             <TextBlock Text="Supprimer"  Style="{StaticResource ButtonTextBlockStyle}"/>
                         </StackPanel>
                     </Button>
 
-                    <Button Visibility="Visible" Background="Transparent">
+                    <Button Visibility="Visible" Background="Transparent" x:Name="_Save_DomaineMetier" Click="_Save_DomaineMetier_Click">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="ContentSave" Width="35" Height="35" VerticalAlignment="Center" />
                             <TextBlock Text="Sauvegarder"  Style="{StaticResource ButtonTextBlockStyle}"/>

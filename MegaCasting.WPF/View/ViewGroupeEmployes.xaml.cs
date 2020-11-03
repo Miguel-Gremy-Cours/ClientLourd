@@ -1,4 +1,7 @@
-﻿using System;
+﻿using MegaCasting.WPF.ViewModel;
+using MegaCasting.WPF.ViewModel.Add;
+using MegaCasting.WPF.Windows.Add;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +26,23 @@ namespace MegaCasting.WPF.View
         public ViewGroupeEmployes()
         {
             InitializeComponent();
+        }
+
+        private void _New_GroupeEmploye_Click(object sender, RoutedEventArgs e)
+        {
+            WindowAddGroupeEmploye windowAddGroupeEmploye = new WindowAddGroupeEmploye();
+            windowAddGroupeEmploye.DataContext = new ViewModelAddGroupeEmployes(((ViewModelGroupeEmployes)this.DataContext).Entities);
+            windowAddGroupeEmploye.ShowDialog();
+        }
+
+        private void _Delete_GroupeEmploye_Click(object sender, RoutedEventArgs e)
+        {
+            ((ViewModelGroupeEmployes)this.DataContext).DeleteGropue();
+        }
+
+        private void _Save_GroupeEmploye_Click(object sender, RoutedEventArgs e)
+        {
+            ((ViewModelGroupeEmployes)this.DataContext).SaveChanges();
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClientLourd.ViewModel
+namespace MegaCasting.WPF.ViewModel
 {
    public  class ViewModelPartenaires:ViewModelBase
     {

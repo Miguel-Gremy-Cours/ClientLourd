@@ -1,4 +1,7 @@
-﻿using System;
+﻿using MegaCasting.WPF.ViewModel;
+using MegaCasting.WPF.ViewModel.Add;
+using MegaCasting.WPF.Windows.Add;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +26,23 @@ namespace MegaCasting.WPF.View
         public ViewPartenaires()
         {
             InitializeComponent();
+        }
+
+        private void _New_Partenaire_Click(object sender, RoutedEventArgs e)
+        {
+            WindowAddPartenaire windowAddPartenaire = new WindowAddPartenaire();
+            windowAddPartenaire.DataContext = new ViewModelAddPartenaires(((ViewModelPartenaires)this.DataContext).Entities);
+            windowAddPartenaire.ShowDialog();
+        }
+
+        private void _Delete_Partenaire_Click(object sender, RoutedEventArgs e)
+        {
+            ((ViewModelPartenaires)this.DataContext).DeletePartenaire();
+        }
+
+        private void _Save_Partenaire_Click(object sender, RoutedEventArgs e)
+        {
+            ((ViewModelPartenaires)this.DataContext).SaveChanges();
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using ClientLourd.ViewModel;
+﻿using MegaCasting.WPF.ViewModel;
 using MegaCasting.DBLib;
 using Panuon.UI.Silver;
 using System;

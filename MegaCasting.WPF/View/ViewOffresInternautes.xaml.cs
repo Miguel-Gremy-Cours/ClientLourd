@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MegaCasting.WPF.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,11 @@ namespace MegaCasting.WPF.View
         public ViewOffresInternautes()
         {
             InitializeComponent();
+        }
+
+        private void _Save_Changes_Click(object sender, RoutedEventArgs e)
+        {
+            ((ViewModelOffresInternautes)this.DataContext).SaveChanges();
         }
     }
 }

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using MegaCasting.WPF.ViewModel;
+using MegaCasting.WPF.ViewModel.Add;
+using MegaCasting.WPF.Windows.Add;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +26,24 @@ namespace MegaCasting.WPF.View
         public ViewMetier()
         {
             InitializeComponent();
+        }
+
+        private void _New_Metier_Click(object sender, RoutedEventArgs e)
+        {
+            WindowAddMetier windowAddMetier = new WindowAddMetier();
+            windowAddMetier.DataContext = new ViewModelAddMetier(((ViewModelMetier)this.DataContext).Entities);
+            windowAddMetier.ShowDialog();
+        }
+
+        private void _Delete_Metier_Click(object sender, RoutedEventArgs e)
+        {
+            ((ViewModelMetier)this.DataContext).DeleteMetier();
+
+        }
+
+        private void _Save_Metier_Click(object sender, RoutedEventArgs e)
+        {
+            ((ViewModelMetier)this.DataContext).SaveChanges();
         }
     }
 }

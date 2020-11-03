@@ -49,20 +49,20 @@
             <Grid Grid.Column="2">
 
                 <StackPanel Orientation="Horizontal" >
-                    <Button Visibility="Visible" Background="Transparent">
+                    <!--<Button Visibility="Visible" Background="Transparent">
                         <StackPanel Orientation="Horizontal" >
                             <materialDesign:PackIcon Kind="Add" Width="35" Height="35" VerticalAlignment="Center"/>
-                            <TextBlock Text="Nouvel employé" Style="{StaticResource ButtonTextBlockStyle}" />
+                            <TextBlock Text="Nouvel internaute" Style="{StaticResource ButtonTextBlockStyle}" />
                         </StackPanel>
-                    </Button>
-                    <Button Visibility="Visible" x:Name="_Btn_Delete" Background="Transparent">
+                    </Button>-->
+                    <Button Visibility="Visible" Background="Transparent" x:Name="_Delete_Internaute" Click="_Delete_Internaute_Click">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="TrashCan" Width="35" Height="35" VerticalAlignment="Center"   />
                             <TextBlock Text="Supprimer"  Style="{StaticResource ButtonTextBlockStyle}"/>
                         </StackPanel>
                     </Button>
 
-                    <Button Visibility="Visible" Background="Transparent">
+                    <Button Visibility="Visible" Background="Transparent" Name="_Save_internaute" Click="_Save_internaute_Click">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="ContentSave" Width="35" Height="35" VerticalAlignment="Center" />
                             <TextBlock Text="Sauvegarder"  Style="{StaticResource ButtonTextBlockStyle}"/>

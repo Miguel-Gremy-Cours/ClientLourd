@@ -34,29 +34,20 @@
             <metro:PackIconMaterialDesign Grid.Column="0" Kind="Videocam" Foreground="White" Width="50" Height="50" Margin="10,40,0,0"></metro:PackIconMaterialDesign>
             <Grid Grid.Column="2">
 
-                <!--<StackPanel Orientation="Horizontal" >
-                    <Button Visibility="Visible" Background="Transparent">
-                        <StackPanel Orientation="Horizontal" >
-                            <materialDesign:PackIcon Kind="Add" Width="35" Height="35" VerticalAlignment="Center"/>
-                            <TextBlock Text="Nouveau Type" Style="{StaticResource ButtonTextBlockStyle}" />
-                        </StackPanel>
-                    </Button>
-                    <Button Visibility="Visible">
-                        <StackPanel Orientation="Horizontal" Background="Transparent">
-                            <materialDesign:PackIcon Kind="TrashCan" Width="35" Height="35" VerticalAlignment="Center"   />
-                            <TextBlock Text="Supprimer"  Style="{StaticResource ButtonTextBlockStyle}"/>
-                        </StackPanel>
-                    </Button>
+                <StackPanel Orientation="Horizontal" >
 
-                    <Button Visibility="Visible">
-                        <StackPanel Orientation="Horizontal" Background="Transparent">
+
+                    <Button Visibility="Visible" Background="Transparent" x:Name="_Save_Changes" Click="_Save_Changes_Click">
+                        <StackPanel Orientation="Horizontal" >
                             <materialDesign:PackIcon Kind="ContentSave" Width="35" Height="35" VerticalAlignment="Center" />
                             <TextBlock Text="Sauvegarder"  Style="{StaticResource ButtonTextBlockStyle}"/>
                         </StackPanel>
                     </Button>
-                </StackPanel>-->
+                </StackPanel>
             </Grid>
         </Grid>
+        
+        
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="40"/>

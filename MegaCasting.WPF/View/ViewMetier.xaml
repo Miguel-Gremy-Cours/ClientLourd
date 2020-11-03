@@ -40,7 +40,7 @@
             <Grid Grid.Column="2">
 
                 <StackPanel Orientation="Horizontal" >
-                    <Button Visibility="Visible" Background="Transparent">
+                    <Button Visibility="Visible" Background="Transparent" x:Name="_New_Metier" Click="_New_Metier_Click">
                         <StackPanel Orientation="Horizontal" >
                             <materialDesign:PackIcon Kind="Add"
                                                      
@@ -51,7 +51,7 @@
                                        Style="{StaticResource ButtonTextBlockStyle}" />
                         </StackPanel>
                     </Button>
-                    <Button Visibility="Visible" Background="Transparent">
+                    <Button Visibility="Visible" Background="Transparent" x:Name="_Delete_Metier" Click="_Delete_Metier_Click">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="TrashCan"
                                                      Width="35" 
@@ -62,7 +62,7 @@
                         </StackPanel>
                     </Button>
 
-                    <Button Visibility="Visible" Background="Transparent">
+                    <Button Visibility="Visible" Background="Transparent" x:Name="_Save_Metier" Click="_Save_Metier_Click">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="ContentSave" 
                                                      Width="35" Height="35"

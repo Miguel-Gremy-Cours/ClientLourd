@@ -1,4 +1,7 @@
-﻿using System;
+﻿using MegaCasting.WPF.ViewModel;
+using MegaCasting.WPF.ViewModel.Add;
+using MegaCasting.WPF.Windows.Add;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +26,25 @@ namespace MegaCasting.WPF.View
         public ViewOffres()
         {
             InitializeComponent();
+        }
+
+        private void _New_Offre_Click(object sender, RoutedEventArgs e)
+        {
+            WindowAddOffre windowAddOffre = new WindowAddOffre();
+            windowAddOffre.DataContext = new ViewModelAddOffres(((ViewModelOffres)this.DataContext).Entities);
+            windowAddOffre.ShowDialog();
+
+        }
+
+        private void _Btn_Delete_Click(object sender, RoutedEventArgs e)
+        {
+            ((ViewModelOffres)this.DataContext).DeleteOffre();
+
+        }
+
+        private void _Save_Offre_Click(object sender, RoutedEventArgs e)
+        {
+            ((ViewModelOffres)this.DataContext).SaveChanges();
         }
     }
 }
