@@ -29,18 +29,8 @@ namespace MegaCasting.WPF.Windows
 
         private MegaCastingEntities _Entities;
         private Employe _CurrentEmployee;
-
         private bool _IsLogsValids;
-
-        public bool IsLogValids
-        {
-            get { return _IsLogsValids; }
-            set { _IsLogsValids = value; }
-        }
-
-
         #endregion
-
         #region  Properties
         public MegaCastingEntities Entities
         {
@@ -54,8 +44,11 @@ namespace MegaCasting.WPF.Windows
             get { return _CurrentEmployee; }
             set { _CurrentEmployee = value; }
         }
-
-
+        public bool IsLogValids
+        {
+            get { return _IsLogsValids; }
+            set { _IsLogsValids = value; }
+        }
         #endregion
         #region constrcutor
 
@@ -66,6 +59,8 @@ namespace MegaCasting.WPF.Windows
             InitializeComponent();
             //
             //this.ShowDialog();
+            this.Entities = new MegaCastingEntities();
+            this.DataContext = new ViewModelConnexion(Entities);
         }
 
         #endregion
@@ -81,9 +76,7 @@ namespace MegaCasting.WPF.Windows
 
         private void Btn_Login_Click(object sender, RoutedEventArgs e)
         {
-
             CurrentEmployee = ((ViewModelConnexion)this.DataContext).GetEmployeeByLogs(TxtBx_Login.Text, PwBx_Password.Password);
-
 
             if (CurrentEmployee == null)
             {
@@ -95,7 +88,9 @@ namespace MegaCasting.WPF.Windows
             }
             else
             {
+                MainWindow mainWindow = new MainWindow();
                 this.Close();
+                mainWindow.ShowDialog();
             }
 
         }
