@@ -78,7 +78,7 @@
                     <Label Grid.Row="10" Grid.Column="0" Content="Code d'offre"
                            FontFamily="Helvitica" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="20" FontWeight="Light" />
 
-                    <ComboBox Grid.Row="0" Grid.Column="1" x:Name="_ComboBox_Studio" materialDesign:HintAssist.Hint="Sélectionner un studio" ItemsSource="{Binding Stuidos}" DisplayMemberPath="Libelle" SelectedItem="{Binding SelectedStudio}" Text="{Binding Studios.Libelle}" Foreground="White" Background="Transparent" FontFamily="Helvatica" FontSize="20" FontWeight="Light">
+                    <ComboBox Grid.Row="0" Grid.Column="1" x:Name="_ComboBox_Studio" materialDesign:HintAssist.Hint="Sélectionner un studio" ItemsSource="{Binding Stuidos}" DisplayMemberPath="Libelle" SelectedItem="{Binding SelectedStudio}" Foreground="White" Background="Transparent" FontFamily="Helvatica" FontSize="20" FontWeight="Light">
                         <ComboBox.ItemContainerStyle>
                             <Style TargetType="ComboBoxItem">
                                 <Setter Property="Background" 
@@ -100,7 +100,7 @@
                             </Style>
                         </ComboBox.ItemContainerStyle>
                     </ComboBox>
-                    
+
                     <DatePicker Grid.Row="3" Grid.Column="1" x:Name="_DatePicker_DatePublication" materialDesign:HintAssist.Hint="Sélectionner une date"  Text="{Binding Offres.DatePublication}" Foreground="White" FontFamily="Helvatica" FontSize="20" SelectedDateFormat="Short" FirstDayOfWeek="Monday" SelectedDate="{x:Static sys:DateTime.Now}" />
 
 
@@ -113,19 +113,19 @@
 
 
 
-                    <ComboBox Grid.Row="8" Grid.Column="1" x:Name="_ComboBox_Offre" materialDesign:HintAssist.Hint="Sélectionner un code d'offre" ItemsSource="{Binding Employes}"  SelectedItem="{Binding SelectedEmploye}"  Foreground="White" Background="Transparent" FontFamily="Helvatica" FontSize="20" FontWeight="Light" >
-                        <ComboBoxItem>
+                    <ComboBox Grid.Row="8" Grid.Column="1" x:Name="_ComboBox_Offre" materialDesign:HintAssist.Hint="Sélectionner un code d'offre" ItemsSource="{Binding Employes}"  SelectedItem="{Binding SelectedEmploye}"  Foreground="White" Background="Transparent" FontFamily="Helvatica" FontSize="20" FontWeight="Light" DisplayMemberPath="Nom" >
+                        <!--<ComboBoxItem>
                             <DataTemplate>
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition/>
-                                        <ColumnDefinition/>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition />
                                     </Grid.ColumnDefinitions>
                                     <TextBlock Text="{Binding Employe.Nom}" Foreground="White" Background="Transparent" FontFamily="Helvatica" FontSize="20" FontWeight="Light"/>
                                     <TextBlock Text="{Binding Employe.Prenom}" Foreground="White" Background="Transparent" FontFamily="Helvatica" FontSize="20" FontWeight="Light"/>
                                 </Grid>
                             </DataTemplate>
-                        </ComboBoxItem>
+                        </ComboBoxItem>-->
                         <ComboBox.ItemContainerStyle>
                             <Style TargetType="ComboBoxItem">
                                 <Setter Property="Background" 

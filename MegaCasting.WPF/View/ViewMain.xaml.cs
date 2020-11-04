@@ -32,7 +32,8 @@ namespace MegaCasting.WPF.View
 
                 Connexion connexion = new Connexion();
                 connexion.Show();
-
+            var window= Window.GetWindow(this);
+            window.Visibility=Visibility.Collapsed;
             }
 
             private void Btn_Site_Click(object sender, RoutedEventArgs e)
