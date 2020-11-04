@@ -205,7 +205,7 @@
                                 x:Name="_DatePickerDebutContrat"
                                 SelectedDateFormat="Short"
                                 FirstDayOfWeek="Monday"
-                                SelectedDate="{x:Static sys:DateTime.Now}"/>
+                                SelectedDate="{Binding SelectedContrat.DebutContrat}"/>
 
                     <TextBox Grid.Column="3" 
                              Grid.Row="7" 
