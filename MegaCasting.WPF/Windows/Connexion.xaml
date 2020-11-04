@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
         xmlns:metro="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
        
         Title="Connexion" Height="450" Width="380" AllowsTransparency="True" Background="Transparent" WindowStyle="None" ResizeMode="NoResize" MouseDown="WindowX_MouseDown"  WindowStartupLocation="CenterScreen">
     <Grid>
@@ -56,7 +57,7 @@
 
 
 
-                        <TextBox        Text="Identifiant"
+                        <TextBox    materialDesign:HintAssist.Hint="Identifiant"
                                     x:Name="TxtBx_Login"
                                     Background="Transparent" 
                                     FontSize="26"
@@ -88,23 +89,22 @@
                                                 Opacity="0.6"
                                                 Margin="55,60,0,0"
                                                 />
-                        <PasswordBox     
-                                    x:Name="PwBx_Password"
-                                    Grid.ColumnSpan="2"
-                                    FontSize="26"
-                                    FontWeight="Light"
-                                    Opacity="0.6"
-                                    BorderThickness="0"
-                                    BorderBrush="BlanchedAlmond"
-                                    Foreground="Azure"
-                                    Background="Transparent"
-                                    Password="password"
-                                    VerticalAlignment="Center"
-                                    HorizontalContentAlignment="Right"
-                                    pu:PasswordBoxHelper.Watermark="Saisissez votre mots de passe"
-                                    pu:PasswordBoxHelper.CornerRadius="9"
-                                    pu:PasswordBoxHelper.Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
-                                    Margin="65,60,0,0"
+                        <PasswordBox    materialDesign:HintAssist.Hint="Password"
+                                        x:Name="PwBx_Password"
+                                        Grid.ColumnSpan="2"
+                                        FontSize="26"
+                                        FontWeight="Light"
+                                        Opacity="0.6"
+                                        BorderThickness="0"
+                                        BorderBrush="BlanchedAlmond"
+                                        Foreground="Azure"
+                                        Background="Transparent"
+                                        VerticalAlignment="Center"
+                                        HorizontalContentAlignment="Right"
+                                        pu:PasswordBoxHelper.Watermark="Saisissez votre mots de passe"
+                                        pu:PasswordBoxHelper.CornerRadius="9"
+                                        pu:PasswordBoxHelper.Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                        Margin="65,60,0,0"
                     />
                     </StackPanel>
                     <Border Width="250"
