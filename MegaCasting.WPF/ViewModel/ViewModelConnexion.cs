@@ -23,14 +23,13 @@ namespace MegaCasting.WPF.ViewModel
         public Employe GetEmployeeByLogs(string Login, string Password)
         {
             this.Entities.Employes.ToList();
-#if DEBUG
-            Employe employe = this.Entities.Employes.FirstOrDefault(empl => empl.Login == "kstokes1" && empl.Password == "VxfGwVfeF");
-#endif
+            //#if DEBUG
+            //            Employe employe = this.Entities.Employes.FirstOrDefault(empl => empl.Login == "kstokes1" && empl.Password == "VxfGwVfeF");
+            //#endif
 
-#if RELEASE
             Employe employe = this.Entities.Employes.FirstOrDefault(empl => empl.Login == Login && empl.Password == Password);
-           
-#endif
+
+
             return employe;
         }
     }
