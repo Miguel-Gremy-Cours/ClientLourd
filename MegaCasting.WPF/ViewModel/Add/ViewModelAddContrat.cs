@@ -75,5 +75,24 @@ namespace MegaCasting.WPF.ViewModel.Add
             this.Contrats = this.Entities.Contrats.Local;
         }
         #endregion
+
+        #region Method
+        public void InsertContrat(DateTime debutContrat, int dureContrat, string codeContrat, string fichierContrat)
+        {
+            Contrat contrat = new Contrat();
+
+            contrat.TypeContrat = SelectedTypeContrat;
+            contrat.DebutContrat = debutContrat;
+            contrat.DureContrat = dureContrat;
+            contrat.CodeContrat = codeContrat;
+            contrat.FichierContrat = fichierContrat;
+            contrat.Offre = SelectedOffre;
+
+            this.Contrats.Add(contrat);
+            this.SaveChanges();
+            //this.SelectedContrat = contrat;
+        }
+
+        #endregion
     }
 }

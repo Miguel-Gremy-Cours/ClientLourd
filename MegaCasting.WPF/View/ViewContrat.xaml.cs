@@ -33,6 +33,8 @@ namespace MegaCasting.WPF.View
         private void _New_Contrat_Click(object sender, RoutedEventArgs e)
         {
             WindowAddContrat WindowAddContrat = new WindowAddContrat();
+
+
             WindowAddContrat.DataContext = new ViewModelAddContrat(((ViewModelContrat)this.DataContext).Entities);
             WindowAddContrat.ShowDialog();
         }

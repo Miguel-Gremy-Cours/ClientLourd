@@ -17,8 +17,17 @@ namespace MegaCasting.WPF.ViewModel.Add
         private Civilite _SelectedCivilite;
         private ObservableCollection<GroupeEmploye> _GroupeEmployes;
         private GroupeEmploye _SelectedGroupeEmploye;
+        private ObservableCollection<Employe> _Employes;
         #endregion
+
+
         #region Accesseurs
+        public ObservableCollection<Employe> Employes
+        {
+            get { return _Employes; }
+            set { _Employes = value; }
+        }
+
         public Employe Employe
         {
             get { return _Employe; }
@@ -55,6 +64,26 @@ namespace MegaCasting.WPF.ViewModel.Add
 
             this.Entities.GroupeEmployes.ToList();
             this.GroupeEmployes = this.Entities.GroupeEmployes.Local;
+
+            this.Entities.Employes.ToList();
+            this.Employes = this.Entities.Employes.Local;
+        }
+        #endregion
+
+        #region Method
+        public void InsertEmploye(string nom, string prenom, int idCivilite, int idGroupeEmploye, string login, string password)
+        {
+            Employe employe = new Employe();
+            employe.Nom = nom;
+            employe.Prenom = prenom;
+            employe.IdCivilite = idCivilite;
+            employe.IdGroupeEmployes = idGroupeEmploye;
+            employe.Login = login;
+            employe.Password = password;
+
+            this.Employes.Add(employe);
+            this.SaveChanges();
+
         }
         #endregion
     }

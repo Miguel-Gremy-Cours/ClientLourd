@@ -19,8 +19,16 @@ namespace MegaCasting.WPF.ViewModel.Add
         private Metier _SelectedMetier;
         private ObservableCollection<Employe> _Employes;
         private Employe _SelectedEmploye;
+        private ObservableCollection<Offre> _Offres;
         #endregion
+
         #region Accesseurs
+        public ObservableCollection<Offre> Offres
+        {
+            get { return _Offres; }
+            set { _Offres = value; }
+        }
+
         public Offre Offre
         {
             get { return _Offre; }
@@ -70,6 +78,31 @@ namespace MegaCasting.WPF.ViewModel.Add
 
             this.Entities.Employes.ToList();
             this.Employes = this.Entities.Employes.Local;
+
+            this.Entities.Offres.ToList();
+            this.Offres = this.Entities.Offres.Local;
+        }
+        #endregion
+
+        #region Method
+        public void InsertOffre(int idStudio, string intitule, int idMetier, DateTime datePublication, int dureDiffusion, int nombrePoste, string descriptionPoste, string descriptionProfile, int idEmploye, string localisatoin, string codeOffre)
+        {
+            Offre offre = new Offre();
+
+            offre.IdStudio = idStudio;
+            offre.Intitule = intitule;
+            offre.IdMetier = idMetier;
+            offre.DatePublication = datePublication;
+            offre.DescriptionPoste = descriptionPoste;
+            offre.DescriptionProfile = descriptionProfile;
+            offre.DureDiffusion = dureDiffusion;
+            offre.NombrePostes = nombrePoste;
+            offre.IdEmploye = idEmploye;
+            offre.Localisation = localisatoin;
+            offre.CodeOffre = codeOffre;
+
+            this.Offres.Add(offre);
+            this.SaveChanges();
         }
         #endregion
     }

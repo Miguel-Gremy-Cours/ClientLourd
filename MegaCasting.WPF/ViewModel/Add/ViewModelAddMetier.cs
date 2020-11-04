@@ -15,8 +15,16 @@ namespace MegaCasting.WPF.ViewModel.Add
         private Metier _Metier;
         private ObservableCollection<DomaineMetier> _DomaineMetiers;
         private DomaineMetier _SelectedDomaineMetier;
+        private ObservableCollection<Metier> _Metiers;
         #endregion
+
+
         #region Accesseurs
+        public ObservableCollection<Metier> Metiers
+        {
+            get { return _Metiers; }
+            set { _Metiers = value; }
+        }
         public Metier Metier
         {
             get { return _Metier; }
@@ -38,6 +46,18 @@ namespace MegaCasting.WPF.ViewModel.Add
         {
             this.Entities.DomaineMetiers.ToList();
             this.DomaineMetiers = this.Entities.DomaineMetiers.Local;
+            this.Entities.Metiers.ToList();
+            this.Metiers = this.Entities.Metiers.Local;
+        }
+        #endregion
+
+        #region Method
+         public void InsertMetier(string libelle)
+        {
+            Metier metier = new Metier();
+            metier.Libelle = libelle;
+            this.Metiers.Add(metier);
+            this.SaveChanges();
         }
         #endregion
     }

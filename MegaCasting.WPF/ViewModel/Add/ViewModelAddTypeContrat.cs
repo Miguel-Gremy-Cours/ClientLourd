@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 
 namespace MegaCasting.WPF.ViewModel.Add
 {
@@ -13,6 +14,14 @@ namespace MegaCasting.WPF.ViewModel.Add
         #region Attributes
         private TypeContrat _TypeContrat;
         #endregion
+        private ObservableCollection<TypeContrat> _TypeContrats;
+
+        public ObservableCollection<TypeContrat> TypeContrats
+        {
+            get { return _TypeContrats; }
+            set { _TypeContrats = value; }
+        }
+
         #region Accesseurs
         public TypeContrat TypeContrat
         {
@@ -24,7 +33,19 @@ namespace MegaCasting.WPF.ViewModel.Add
         public ViewModelAddTypeContrat(MegaCastingEntities entities) : base(entities)
         {
             this.TypeContrat = new TypeContrat();
+            this.Entities.TypeContrats.ToList();
+            this.TypeContrats = this.Entities.TypeContrats.Local;
         }
         #endregion
+
+        public void InserteTypeContrat(string libelle)
+        {
+            TypeContrat typeContrat = new TypeContrat();
+            typeContrat.Libelle = libelle;
+            this.TypeContrats.Add(typeContrat);
+            this.SaveChanges();
+        }
+
+
     }
 }

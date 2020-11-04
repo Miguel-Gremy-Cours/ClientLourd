@@ -1,4 +1,6 @@
 ﻿using MahApps.Metro.Controls;
+using MegaCasting.WPF.ViewModel.Add;
+using Panuon.UI.Silver;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +25,19 @@ namespace MegaCasting.WPF.Windows.Add
         public WindowAddContrat()
         {
             InitializeComponent();
+        }
+
+        private void _Btn_Annulation_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void _Btn_Confirmation_Click(object sender, RoutedEventArgs e)
+        {
+            ((ViewModelAddContrat)this.DataContext).InsertContrat(_DatePicker_DebutContrat.DisplayDate, Convert.ToInt32(_TextBox_DureContrat.Text), _Textbox_CodeContrat.Text, _TextBox_FichierContrat.Text);
+
+
+            this.Close();
         }
     }
 }
