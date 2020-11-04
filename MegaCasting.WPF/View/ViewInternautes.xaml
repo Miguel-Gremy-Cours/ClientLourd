@@ -192,9 +192,31 @@
 
                     </ComboBox>
 
-                    <TextBox Grid.Column="3" Grid.Row="9" Visibility="{Binding SelectedInternaute, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedInternaute.DateNaissance}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
+                    <DatePicker Grid.Column="3" 
+                                Grid.Row="9" 
+                                Visibility="{Binding SelectedInternaute, Converter={StaticResource _SharedObjectToVisibilityConverter}}" 
+                                Text="{Binding SelectedInternaute.DateNaissance}" 
+                                Foreground="White" 
+                                FontFamily="Helvitica" 
+                                FontSize="30" 
+                                FontWeight="Light"
+                                x:Name="_DatePickerDateNaissance"
+                                SelectedDateFormat="Short"
+                                FirstDayOfWeek="Monday"
+                                SelectedDate="{Binding SelectedInternaute.DateNaissance}"/>
 
-                    <TextBox Grid.Column="3" Grid.Row="11" Visibility="{Binding SelectedInternaute, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedInternaute.DateInscription}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
+                    <DatePicker Grid.Column="3" 
+                                Grid.Row="11" 
+                                Visibility="{Binding SelectedInternaute, Converter={StaticResource _SharedObjectToVisibilityConverter}}" 
+                                Text="{Binding SelectedInternaute.DateInscription}" 
+                                Foreground="White" 
+                                FontFamily="Helvitica" 
+                                FontSize="30" 
+                                FontWeight="Light"
+                                x:Name="_DatePickerDateInscrption"
+                                SelectedDateFormat="Short"
+                                FirstDayOfWeek="Monday"
+                                SelectedDate="{Binding SelectedInternaute.DateInscription}"/>
 
                     <TextBox Grid.Column="3" Grid.Row="13" Visibility="{Binding SelectedInternaute, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedInternaute.Login}" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" ></TextBox>
 
