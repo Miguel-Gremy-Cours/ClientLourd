@@ -21,25 +21,25 @@ namespace MegaCasting.WPF.View
     /// </summary>
     public partial class ViewMain : UserControl
     {
-       
-            public ViewMain()
-            {
-                InitializeComponent();
-            }
 
-            private void Btn_Logout_Click(object sender, RoutedEventArgs e)
-            {
+        public ViewMain()
+        {
+            InitializeComponent();
+        }
 
-                Connexion connexion = new Connexion();
-                connexion.Show();
-            var window= Window.GetWindow(this);
-            window.Visibility=Visibility.Collapsed;
-            }
+        private void Btn_Logout_Click(object sender, RoutedEventArgs e)
+        {
 
-            private void Btn_Site_Click(object sender, RoutedEventArgs e)
-            {
+            Connexion connexion = new Connexion();
+            connexion.Show();
+            var window = Window.GetWindow(this);
+            window.Visibility = Visibility.Collapsed;
+        }
 
-            }
-        
+        private void Btn_Site_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
     }
 }

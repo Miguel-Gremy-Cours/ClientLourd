@@ -9,14 +9,9 @@ namespace MegaCasting.WPF.ViewModel
 {
     class ViewModelConnexion : ViewModelBase
     {
-
-
-
         public ViewModelConnexion(MegaCastingEntities entities) : base(entities)
         {
-
-
-
+            this.Entities = entities;
         }
 
         /// <summary>
@@ -27,8 +22,10 @@ namespace MegaCasting.WPF.ViewModel
         /// <returns></returns>
         public Employe GetEmployeeByLogs(string Login, string Password)
         {
-
-            Employe employe = this.Entities.Employes.FirstOrDefault(empl => empl.Login == Login && empl.Password == Password);
+#if DEBUG
+            this.Entities.Employes.ToList();
+            Employe employe = this.Entities.Employes.FirstOrDefault(empl => empl.Login == "kstokes1" && empl.Password == "VxfGwVfeF");
+#endif
             return employe;
         }
     }

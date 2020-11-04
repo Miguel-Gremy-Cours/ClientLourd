@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:MegaCasting.WPF"
              xmlns:converter="clr-namespace:MegaCasting.WPF.Converter"
-             StartupUri="MainWindow.xaml">
+             StartupUri="Windows/Connexion.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

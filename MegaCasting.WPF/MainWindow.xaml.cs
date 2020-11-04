@@ -18,6 +18,8 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Controls.Primitives;
+using MaterialDesignThemes.Wpf;
 
 namespace MegaCasting.WPF
 {
@@ -47,38 +49,15 @@ namespace MegaCasting.WPF
 
             InitializeComponent();
 
-            this.Entities = new MegaCastingEntities();
-            Connexion connexion = new Connexion();
-            connexion.DataContext = new ViewModelConnexion(Entities);
-            connexion.ShowDialog();
-
-
-            if (connexion.CurrentEmployee == null)
-            {
-                this.Close();
-            }
-            else
-            {
-                /// TODO : récupéré le currentEmployee via connexion.
-                this.Visibility = Visibility.Visible;
-            }
         }
         #endregion
 
         #region Fonctionnal click
 
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-            Connexion connexion = new Connexion();
-            connexion.ShowDialog();
-            this.Close();
-
         }
-
-
-
         private void WindowX_MouseDown(object sender, MouseButtonEventArgs e)
         {
             DragMove();
@@ -86,7 +65,15 @@ namespace MegaCasting.WPF
 
         private void Btn_Close_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            MessageBoxResult result = MessageBox.Show("Fermer l'application", "Fermeture", MessageBoxButton.OKCancel);
+            switch (result)
+            {
+                case MessageBoxResult.OK:
+                    this.Close();
+                    break;
+                default:
+                    break;
+            }
         }
         #endregion
 
@@ -257,5 +244,6 @@ namespace MegaCasting.WPF
 
             PointOffset.BeginAnimation(TranslateTransform.YProperty, animation);
         }
+
     }
 }
