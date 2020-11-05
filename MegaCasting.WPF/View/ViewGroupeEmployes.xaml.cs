@@ -37,7 +37,7 @@ namespace MegaCasting.WPF.View
 
         private void _Delete_GroupeEmploye_Click(object sender, RoutedEventArgs e)
         {
-            ((ViewModelGroupeEmployes)this.DataContext).DeleteGropue();
+            ((ViewModelGroupeEmployes)this.DataContext).DeleteGropue(); //Ne peut pas s'exécuter lorsque le groupe contient 
         }
 
         private void _Save_GroupeEmploye_Click(object sender, RoutedEventArgs e)

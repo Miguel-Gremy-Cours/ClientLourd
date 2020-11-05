@@ -1,4 +1,5 @@
 ﻿using MahApps.Metro.Controls;
+using MegaCasting.WPF.ViewModel.Add;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,17 @@ namespace MegaCasting.WPF.Windows.Add
         public WindowAddOffre()
         {
             InitializeComponent();
+        }
+
+        private void _Btn_Annulation_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void _Btn_Confirmation_Click(object sender, RoutedEventArgs e)
+        {
+            ((ViewModelAddOffres)this.DataContext).InsertOffre(_TextBox_Intitule.Text, _DatePicker_DatePublication.DisplayDate, Convert.ToInt32(_TextBox_DureDiffusion.Text), Convert.ToInt32(_TextBox_NombrePostes), _TextBox_DescriptionPoste.Text, _TextBox_DescriptionProfile.Text, _TextBox_Localisation.Text, _TextBox_CodeOffre.Text);
+            this.Close();
         }
     }
 }

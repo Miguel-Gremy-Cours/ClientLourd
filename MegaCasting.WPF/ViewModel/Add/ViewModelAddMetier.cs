@@ -56,6 +56,7 @@ namespace MegaCasting.WPF.ViewModel.Add
         {
             Metier metier = new Metier();
             metier.Libelle = libelle;
+            metier.DomaineMetier = SelectedDomaineMetiers;
             this.Metiers.Add(metier);
             this.SaveChanges();
         }

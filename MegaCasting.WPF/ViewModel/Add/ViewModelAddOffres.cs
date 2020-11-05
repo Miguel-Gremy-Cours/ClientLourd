@@ -85,19 +85,19 @@ namespace MegaCasting.WPF.ViewModel.Add
         #endregion
 
         #region Method
-        public void InsertOffre(int idStudio, string intitule, int idMetier, DateTime datePublication, int dureDiffusion, int nombrePoste, string descriptionPoste, string descriptionProfile, int idEmploye, string localisatoin, string codeOffre)
+        public void InsertOffre( string intitule,  DateTime datePublication, int dureDiffusion, int nombrePoste, string descriptionPoste, string descriptionProfile, string localisatoin, string codeOffre)
         {
             Offre offre = new Offre();
 
-            offre.IdStudio = idStudio;
+            offre.Studio = SelectedStudio;
             offre.Intitule = intitule;
-            offre.IdMetier = idMetier;
+            offre.Metier = SelectedMetier;
             offre.DatePublication = datePublication;
             offre.DescriptionPoste = descriptionPoste;
             offre.DescriptionProfile = descriptionProfile;
             offre.DureDiffusion = dureDiffusion;
             offre.NombrePostes = nombrePoste;
-            offre.IdEmploye = idEmploye;
+            offre.Employe = SelectedEmploye;
             offre.Localisation = localisatoin;
             offre.CodeOffre = codeOffre;
 

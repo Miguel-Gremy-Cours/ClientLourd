@@ -50,8 +50,7 @@
                         <ColumnDefinition Width="2*" />
                     </Grid.ColumnDefinitions>
 
-                    <Label Grid.Row="0" Grid.Column="0" Content="Id"
-                           FontFamily="Helvitica" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="20" FontWeight="Light" />
+                    
                  
                     <Label Grid.Row="2" Grid.Column="0" Content="Libellé"
                            FontFamily="Helvitica" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="20" FontWeight="Light" />
@@ -73,6 +72,23 @@
                         </ComboBox.ItemContainerStyle>
                     </ComboBox>
                    
+                </Grid>
+                <Grid Grid.Row="2" Grid.Column="1">
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="_Btn_Annulation"  Margin="20,0,0,0" Click="_Btn_Annulation_Click">
+                            <StackPanel Orientation="Horizontal">
+
+                                <TextBlock Text="Annuler" Foreground="White" Background="Transparent" FontFamily="Helvitica" FontSize="30" FontWeight="Light" VerticalAlignment="Center" />
+                                <materialDesign:PackIcon Kind="Cancel" Width="40" Height="40"/>
+                            </StackPanel>
+                        </Button>
+                        <Button x:Name="_Btn_Confirmation"  Margin="150,0,0,0" Click="_Btn_Confirmation_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Confirmer" Foreground="White" Background="Transparent" FontFamily="Helvitica" FontSize="30" FontWeight="Light" VerticalAlignment="Center" />
+                                <metro:PackIconMaterialDesign Kind="Check" Width="40" Height="40"/>
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
                 </Grid>
             </Grid>
         </Border>

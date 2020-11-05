@@ -76,9 +76,9 @@
                     </ComboBox>
 
                     <DatePicker Grid.Row="1" Grid.Column="1" x:Name="_DatePicker_DebutContrat" Text="{Binding Contrat.DebutContrat}" Foreground="White" FontFamily="Helvatica" FontSize="20" SelectedDateFormat="Short" FirstDayOfWeek="Monday" SelectedDate="{x:Static sys:DateTime.Now}" />
-                    <TextBox Grid.Row="2" Grid.Column="1" x:Name="_TextBox_DureContrat" Text="{Binding Contrat.DureContrat}" Foreground="White" Background="Transparent" FontFamily="Helvitica" FontSize="20" FontWeight="Light" />
-                    <TextBox Grid.Row="3" Grid.Column="1" x:Name="_Textbox_CodeContrat" Text="{Binding Contrat.CodeContrat}" Foreground="White" Background="Transparent" FontFamily="Helvitica" FontSize="20" FontWeight="Light" />
-                    <TextBox Grid.Row="4" Grid.Column="1" x:Name="_TextBox_FichierContrat" Text="{Binding Contrat.FichierContrat}" Foreground="White" FontFamily="Helvatica" FontSize="20" FontWeight="Light" />
+                    <TextBox Grid.Row="2" Grid.Column="1" x:Name="_TextBox_DureContrat" Text="{Binding Contrat.DureContrat}" Foreground="White" Background="Transparent" FontFamily="Helvitica" FontSize="20" FontWeight="Light" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="3" Grid.Column="1" x:Name="_Textbox_CodeContrat" Text="{Binding Contrat.CodeContrat}" Foreground="White" Background="Transparent" FontFamily="Helvitica" FontSize="20" FontWeight="Light" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="4" Grid.Column="1" x:Name="_TextBox_FichierContrat" Text="{Binding Contrat.FichierContrat}" Foreground="White" Background="Transparent" FontFamily="Helvatica" FontSize="20" FontWeight="Light" VerticalAlignment="Center"/>
                     <ComboBox Grid.Row="5" Grid.Column="1" x:Name="_ComboBox_Offre" materialDesign:HintAssist.Hint="Offre" ItemsSource="{Binding Offres}" DisplayMemberPath="CodeOffre" SelectedItem="{Binding SelectedOffre}" Text="{Binding Offre.CodeOffre}" Foreground="White" Background="Transparent" FontFamily="Helvatica" FontSize="20" FontWeight="Light" >
                         <ComboBox.ItemContainerStyle>
                             <Style TargetType="ComboBoxItem">

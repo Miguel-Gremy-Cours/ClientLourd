@@ -1,4 +1,5 @@
 ﻿using MahApps.Metro.Controls;
+using MegaCasting.WPF.ViewModel.Add;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,17 @@ namespace MegaCasting.WPF.Windows.Add
         public WindowAddTypeContrat()
         {
             InitializeComponent();
+        }
+
+        private void _Btn_Annulation_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void _Btn_Confirmation_Click(object sender, RoutedEventArgs e)
+        {
+            ((ViewModelAddTypeContrat)this.DataContext).InserteTypeContrat(_TextBox_Libelle.Text);
+            this.Close();
         }
     }
 }

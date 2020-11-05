@@ -71,13 +71,13 @@ namespace MegaCasting.WPF.ViewModel.Add
         #endregion
 
         #region Method
-        public void InsertEmploye(string nom, string prenom, int idCivilite, int idGroupeEmploye, string login, string password)
+        public void InsertEmploye(string nom, string prenom,   string login, string password)
         {
             Employe employe = new Employe();
             employe.Nom = nom;
             employe.Prenom = prenom;
-            employe.IdCivilite = idCivilite;
-            employe.IdGroupeEmployes = idGroupeEmploye;
+            employe.Civilite = SelectedCivilite;
+            employe.GroupeEmploye = SelectedGroupeEmploye;
             employe.Login = login;
             employe.Password = password;
 
