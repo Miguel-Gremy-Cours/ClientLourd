@@ -76,7 +76,7 @@
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
 
-                <ListBox Grid.Column="0"  x:Name="_ListBoxContrat" ItemsSource="{Binding Contrats}" DisplayMemberPath="CodeContrat" SelectedItem="{Binding SelectedContrat}" Foreground="White">
+                <ListBox Grid.Column="0"  x:Name="_ListBoxContrat" ItemsSource="{Binding Contrats}" DisplayMemberPath="CodeContrat" SelectedItem="{Binding SelectedContrat}" Foreground="White" ScrollViewer.VerticalScrollBarVisibility="Visible" Height="550">
                 </ListBox>
                 <Rectangle Grid.Column="1" Fill="White"/>
                 <!--Grid avec des champs types textbox se traouve à droit-->

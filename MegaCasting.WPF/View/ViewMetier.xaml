@@ -103,7 +103,7 @@
                          ItemsSource="{Binding Metiers}"
                          DisplayMemberPath="Libelle"
                          SelectedItem="{Binding SelectedMetier}"
-                         Foreground="White" FontFamily="Helvitica" FontSize="15" FontWeight="Light">
+                         Foreground="White" FontFamily="Helvitica" FontSize="15" FontWeight="Light" ScrollViewer.VerticalScrollBarVisibility="Visible" Height="550">
                 </ListBox>
                 <Rectangle Grid.Column="1" Fill="White"/>
                 <!--Grid avec des champs types textbox se traouve à droit-->
