@@ -6,6 +6,7 @@ using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace MegaCasting.WPF.ViewModel
 {
@@ -66,20 +67,25 @@ namespace MegaCasting.WPF.ViewModel
 
         public void DeleteGropue()
         {
-            // vérification de droit de suppression, aucune table liée
+            
+            var groupEmpty = (from G in GroupeEmployes
+                              join emp in Employes
+                              on G.Id equals emp.IdGroupeEmployes
+                              into x
+                              from emp in x.DefaultIfEmpty()
+                              where G==null
+                              select G
+                              );
 
-            //suppression d'élément
-            try
+            if (groupEmpty == null)
             {
                 this.GroupeEmployes.Remove(SelectedGroupeEmploye);
                 this.SaveChanges();
             }
-            catch (Exception)
+            else
             {
-
-                throw;
-            }
-
+                MessageBox.Show("Cette table ne peut être supprimée car il y a des données liées!", "ERROR");
+            }    
             
         }
         #endregion

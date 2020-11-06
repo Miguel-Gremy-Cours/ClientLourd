@@ -47,6 +47,8 @@ namespace MegaCasting.WPF.ViewModel.Add
             this.GroupeEmployes.Add(groupeEmploye);
             this.SaveChanges();
         }
+
+
         #endregion
     }
 }

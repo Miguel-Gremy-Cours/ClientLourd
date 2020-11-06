@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace MegaCasting.WPF.ViewModel
 {
@@ -16,10 +17,17 @@ namespace MegaCasting.WPF.ViewModel
         #region Attributes
         private DomaineMetier _SelectedDomaineMetier;
         private ObservableCollection<DomaineMetier> _DomaineMetiers;
+        private ObservableCollection<Metier> _Metiers;
 
         #endregion
 
         #region Properties
+        public ObservableCollection<Metier> Metiers
+        {
+            get { return _Metiers; }
+            set { _Metiers = value; }
+        }
+
         public ObservableCollection<DomaineMetier> DomaineMetiers
         {
             get { return _DomaineMetiers; }
@@ -40,7 +48,8 @@ namespace MegaCasting.WPF.ViewModel
 
             this.Entities.DomaineMetiers.ToList();
             this.DomaineMetiers = this.Entities.DomaineMetiers.Local;
-
+            this.Entities.Metiers.ToList();
+            this.Metiers = this.Entities.Metiers.Local;
             //this.TypeContrats = new ObservableCollection<TypeContrat>();
             //foreach (TypeContrat typeContrat in this.Entities.TypeContrats) 
             //{
@@ -51,25 +60,7 @@ namespace MegaCasting.WPF.ViewModel
         #endregion
         #region Method
 
-        /// <summary>
-        /// Ajouter un nouveau domaine
-        /// </summary>
-        public void InsertDomaineMetier()
-        {
-            if (this.Entities.DomaineMetiers.Any(dom => dom.Libelle== "Nouveau domaine"))
-            {
-                DomaineMetier domaineMetier = new DomaineMetier();
-                domaineMetier.Libelle = "Nouveau domaine";
-                this.DomaineMetiers.Add(domaineMetier);
-                this.SaveChanges();
-                this.SelectedDomaineMetier = domaineMetier;
-
-            }
-
-        }
-
-
-
+       
         /// <summary>
         /// supprimer un domaine
         /// </summary>
@@ -77,18 +68,34 @@ namespace MegaCasting.WPF.ViewModel
         public void DeleteDomaineMetier()
         {
             // vérification de droit de suppression, table liée à Metier
-
+            var domaineEmpty = (from domaine in DomaineMetiers
+                                join mt in Metiers
+                                on domaine.Id equals mt.IdDomaineMetier
+                                into x
+                                from mt in x.DefaultIfEmpty()
+                                where mt==null
+                                select domaine
+                                );
             //suppression d'élément
-            try
+            if (domaineEmpty == null)
             {
                 this.DomaineMetiers.Remove(SelectedDomaineMetier);
                 this.SaveChanges();
             }
-            catch (Exception)
+            else
             {
-
-                throw;
+                MessageBox.Show("Cette table ne peut être supprimée car il y a des données liées!", "ERROR");
             }
+            //try
+            //{
+            //    this.DomaineMetiers.Remove(SelectedDomaineMetier);
+            //    this.SaveChanges();
+            //}
+            //catch (Exception)
+            //{
+
+            //    MessageBox.Show("Cette table ne peut être supprimée car il y a des données liées!", "ERROR");
+            //}
         }
         #endregion
     }

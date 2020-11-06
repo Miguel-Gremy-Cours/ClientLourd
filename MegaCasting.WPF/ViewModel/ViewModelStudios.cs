@@ -7,6 +7,8 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Forms;
 
 namespace MegaCasting.WPF.ViewModel
 {
@@ -18,9 +20,19 @@ namespace MegaCasting.WPF.ViewModel
         #region Attributes
         private ObservableCollection<Studio> _Studios;
         private Studio _SelectedStudio;
+        private ObservableCollection<Offre> _Offres;
+        
         #endregion
 
         #region Properties
+        
+
+        public ObservableCollection<Offre> Offres
+        {
+            get { return _Offres; }
+            set { _Offres = value; }
+        }
+
         public ObservableCollection<Studio> Studios
         {
             get { return _Studios; }
@@ -38,30 +50,12 @@ namespace MegaCasting.WPF.ViewModel
         {
             this.Entities.Studios.ToList();
             this.Studios = this.Entities.Studios.Local;
+            this.Entities.Offres.ToList();
+            this.Offres = this.Entities.Offres.Local;
         }
         #endregion
 
         #region Method
-
-        /// <summary>
-        /// Ajouter un nouveau studio
-        /// </summary>
-        public void InsertStudio()
-        {
-            if (this.Entities.Studios.Any(stu => stu.Libelle == "Nouveau studio"))
-            {
-                Studio studio = new Studio();
-                studio.Libelle = "Nouveau studio";
-                this.Studios.Add(studio);
-                this.SaveChanges();
-                this.SelectedStudio = studio;
-
-            }
-
-        }
-
-
-
         /// <summary>
         /// supprimer un studio
         /// </summary>
@@ -70,16 +64,24 @@ namespace MegaCasting.WPF.ViewModel
         {
             // vérification de droit de suppression, table liée à Offre
 
-            //suppression d'élément
-            try
+            var studioEmpty = (from stu in Studios
+                              join offre in Offres
+                              on stu.Id equals offre.IdStudio
+                              into x
+                              from offre in x.DefaultIfEmpty()
+                              where offre == null
+                              select stu
+                              );
+
+            if (studioEmpty == null)
             {
+                //suppression d'élément
                 this.Studios.Remove(SelectedStudio);
                 this.SaveChanges();
             }
-            catch (Exception)
+            else
             {
-
-                throw;
+                System.Windows.MessageBox.Show("Cette table ne peut être supprimée car il y a des données liées!", "ERROR");
             }
         }
         #endregion

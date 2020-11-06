@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace MegaCasting.WPF.ViewModel
 {
@@ -29,9 +30,16 @@ namespace MegaCasting.WPF.ViewModel
         private Offre _SelectedOffres;
         private ObservableCollection<Employe> _Employes;
         private Employe _SelectedEmploye;
+        private ObservableCollection<Contrat> _Contrats;
         #endregion
 
         #region Properties
+        public ObservableCollection<Contrat> Contrats 
+        {
+            get { return _Contrats; }
+            set {  _Contrats= value; }
+        }
+
         public ObservableCollection<Employe> Employes
         {
             get { return _Employes; }
@@ -91,30 +99,13 @@ namespace MegaCasting.WPF.ViewModel
             this.Metiers = this.Entities.Metiers.Local;
             this.Entities.Employes.ToList();
             this.Employes = this.Entities.Employes.Local;
+            this.Entities.Contrats.ToList();
+            this.Contrats = this.Entities.Contrats.Local;
         }
         #endregion
 
 
         #region Method
-        /// <summary>
-        /// Ajouter une offre
-        /// </summary>
-        public void InsertOffre()
-        {
-            if (this.Entities.Offres.Any(of => of.Intitule == "Nouvelle offre"))
-            {
-                Offre offre = new Offre();
-                offre.Intitule = "Nouvelle offre";
-                this.Offres.Add(offre);
-                this.SaveChanges();
-                this.SelectedOffre = offre;
-
-            }
-
-        }
-
-
-
         /// <summary>
         /// supprimer une offre
         /// </summary>
@@ -122,18 +113,34 @@ namespace MegaCasting.WPF.ViewModel
         public void DeleteOffre()
         {
             // vérification de droit de suppression, aucune table liée à offresInternautes
-
+            var EmptyOffre= (from of in Offres
+                             join ctr in Contrats
+                             on of.Id equals ctr.IdOffre
+                             into x
+                             from ctr in x.DefaultIfEmpty()
+                             where ctr == null
+                             select of
+                              );
             //suppression d'élément
-            try
+            if (EmptyOffre == null)
             {
                 this.Offres.Remove(SelectedOffre);
                 this.SaveChanges();
             }
-            catch (Exception)
+            else
             {
-
-                throw;
+                MessageBox.Show("Cette table ne peut être supprimée car il y a des données liées!", "ERROR");
             }
+            //try
+            //{
+            //    this.Offres.Remove(SelectedOffre);
+            //    this.SaveChanges();
+            //}
+            //catch (Exception)
+            //{
+
+            //    MessageBox.Show("Cette table ne peut être supprimée car il y a des données liées!", "ERROR");
+            //}
         }
         #endregion
     }

@@ -6,6 +6,9 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+
+
 
 namespace MegaCasting.WPF.ViewModel
 {
@@ -13,20 +16,20 @@ namespace MegaCasting.WPF.ViewModel
 
     {
 
-        #region Attributes
-        #endregion
-
-        #region Properties
-        #endregion
-        #region Constrcutor
-        #endregion
+        
 
         #region Attributes
         private TypeContrat _SelectedTypeContrat;
         private ObservableCollection<TypeContrat> _TypeContrats;
+        private ObservableCollection<Contrat> _Contrats;
         #endregion
 
         #region Properties
+        public ObservableCollection<Contrat> Contrats
+        {
+            get { return _Contrats; }
+            set { _Contrats = value; }
+        }
         public TypeContrat SelectedTypeContrat
         {
             get { return _SelectedTypeContrat; }
@@ -37,7 +40,6 @@ namespace MegaCasting.WPF.ViewModel
             get { return _TypeContrats; }
             set { _TypeContrats = value; }
         }
-
         #endregion
 
 
@@ -50,7 +52,8 @@ namespace MegaCasting.WPF.ViewModel
 
             this.Entities.TypeContrats.ToList();
             this.TypeContrats = this.Entities.TypeContrats.Local;
-            
+            this.Entities.Contrats.ToList();
+            this.Contrats = this.Entities.Contrats.Local;
             //this.TypeContrats = new ObservableCollection<TypeContrat>();
             //foreach (TypeContrat typeContrat in this.Entities.TypeContrats) 
             //{
@@ -60,26 +63,6 @@ namespace MegaCasting.WPF.ViewModel
         #endregion
 
         #region Method
-
-        /// <summary>
-        /// Ajouter un nouveau type de contrat
-        /// </summary>
-        public void InsertTypeContrats()
-        {
-            if(this.Entities.TypeContrats.Any(type=>type.Libelle=="Nouveau type de contrat"))
-            {
-                TypeContrat typeContrat = new TypeContrat();
-                typeContrat.Libelle = "Nouveau type de contrat";
-                this.TypeContrats.Add(typeContrat);
-                this.SaveChanges();
-                this.SelectedTypeContrat = typeContrat;
-
-            }
-
-        }
-
-
-   
        /// <summary>
        /// supprimer un type de contrat
        /// </summary>
@@ -87,18 +70,30 @@ namespace MegaCasting.WPF.ViewModel
         public void DeleteTypeContrats()
         {
             // vérification de droit de suppression, aucune table liée
-
+            var typeEmpty = (from tp in TypeContrats
+                             join ctr in Contrats
+                             on tp.Id equals ctr.IdTypeContrat
+                             into x
+                             from ctr in x.DefaultIfEmpty()
+                             where ctr == null
+                             select tp
+                              );
             //suppression d'élément
-            try
-            {
-                this.TypeContrats.Remove(SelectedTypeContrat);
-                this.SaveChanges();
-            }
-            catch (Exception)
-            {
 
-                throw;
+
+            if (typeEmpty.Contains(SelectedTypeContrat))
+            {
+                
+                    this.TypeContrats.Remove(SelectedTypeContrat);
+                    this.SaveChanges();
+               
             }
+            else
+            {
+                MessageBox.Show("Cette table ne peut être supprimée car il y a des données liées!", "ERROR");
+            }
+
+            
         }
         #endregion
     }

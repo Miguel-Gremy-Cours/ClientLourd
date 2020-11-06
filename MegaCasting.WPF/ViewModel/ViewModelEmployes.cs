@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace MegaCasting.WPF.ViewModel
 {
@@ -27,9 +28,16 @@ namespace MegaCasting.WPF.ViewModel
         private ObservableCollection<Civilite> _Civilites;
         private Employe _SelectedEmploye;
         private ObservableCollection<Employe> _Employes;
+        private ObservableCollection<Offre> _Offres;
         #endregion
 
         #region Properties
+        public ObservableCollection<Offre> Offres
+        {
+            get { return _Offres; }
+            set { _Offres = value; }
+        }
+
         public ObservableCollection<GroupeEmploye> GroupeEmployes
         {
             get { return _GroupeEmployes; }
@@ -77,26 +85,15 @@ namespace MegaCasting.WPF.ViewModel
 
             this.Entities.GroupeEmployes.ToList();
             this.GroupeEmployes = this.Entities.GroupeEmployes.Local;
+
+            this.Entities.Offres.ToList();
+            this.Offres = this.Entities.Offres.Local;
         }
         #endregion
-        /// <summary>
-        /// Ajouter un employé
-        /// </summary>
-        public void InsertEmploye()
-        {
-            if (this.Entities.Employes.Any(person => person.Nom == "Nouveau Nom")&& this.Entities.Employes.Any(P=>P.Prenom=="Nouveau préNom"))
-            {
-                Employe employe = new Employe();
-                employe.Nom = "Nouveau Nom";
-                employe.Prenom = "Nouveau prénom";
-                this.Employes.Add(employe);
-                this.SaveChanges();
-                this.SelectedEmploye = employe;
 
-            }
 
-        }
 
+        #region Method
 
 
         /// <summary>
@@ -105,11 +102,27 @@ namespace MegaCasting.WPF.ViewModel
 
         public void DeleteEmploye()
         {
+            var EmployeEmpty = (from emp in Employes
+                                join of in Offres
+                                on emp.Id equals of.IdEmploye
+                                into x
+                                from of in x.DefaultIfEmpty()
+                                where of == null
+                                select emp
+                              );
             // vérification de droit de suppression, aucune table liée
+            if (EmployeEmpty.Contains(SelectedEmploye))
+            {
 
             //suppression d'élément
             this.Employes.Remove(SelectedEmploye);
             this.SaveChanges();
+            }
+            else
+            {
+                MessageBox.Show("Cette table ne peut être supprimée car il y a des données liées!", "ERROR");
+            }
         }
+        #endregion
     }
 }

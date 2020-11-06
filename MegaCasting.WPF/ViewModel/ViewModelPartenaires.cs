@@ -52,26 +52,6 @@ namespace MegaCasting.WPF.ViewModel
 
 
         #region Method
-
-        /// <summary>
-        /// Ajouter un nouveau partenaire
-        /// </summary>
-        public void InsertPartenaire()
-        {
-            if (this.Entities.Partenaires.Any(partenaire => partenaire.Libelle== "Nouveau partenaire"))
-            {
-                Partenaire partenaire = new Partenaire();
-                partenaire.Libelle = "Nouveau partenaire";
-                this.Partenaires.Add(partenaire);
-                this.SaveChanges();
-                this.SelectedPartenaire = partenaire;
-
-            }
-
-        }
-
-
-
         /// <summary>
         /// supprimer un partenaire
         /// </summary>

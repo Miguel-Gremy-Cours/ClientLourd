@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace MegaCasting.WPF.ViewModel
 {
@@ -76,6 +77,10 @@ namespace MegaCasting.WPF.ViewModel
             // vérification de droit de suppression,  table civilité liée à Employes, Internautes
 
             //suppression d'élément
+
+     
+
+
             try
             {
                 this.Civilites.Remove(SelectedCivilite);
@@ -84,7 +89,7 @@ namespace MegaCasting.WPF.ViewModel
             catch (Exception)
             {
 
-                throw;
+                MessageBox.Show("Cette table ne peut être supprimée car il y a des données liées!", "ERROR");
             }
         }
 

@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace MegaCasting.WPF.ViewModel
 {
@@ -19,14 +20,18 @@ namespace MegaCasting.WPF.ViewModel
         private Metier _SelectedMetier;
         private ObservableCollection<DomaineMetier> _DomaineMetier;
         private DomaineMetier _SelectedDomaineMetier;
-
-       
+        private ObservableCollection<Offre> _Offres;
 
 
 
         #endregion
 
         #region Properties
+        public ObservableCollection<Offre> Offres
+        {
+            get { return _Offres; }
+            set { _Offres = value; }
+        }
         public Metier SelectedMetier
         {
             get { return _SelectedMetier; }
@@ -71,26 +76,8 @@ namespace MegaCasting.WPF.ViewModel
 
         #region Method
 
-        /// <summary>
-        /// ajouter un métier
-        /// </summary>
-        public void InsertMetier()
-        {
-
-            if (this.Entities.Metiers.Any(m => m.Libelle == "Nouveau métier"))
-            {
-                Metier metier = new Metier();
-                metier.Libelle = "Nouveau métier";
-                //TODO: Selectionner un DomaineMetier, lui affecter id de DomaineMetier
-
-                metier.DomaineMetier.Libelle = "DomaineMetier";
-
-
-                this.Metiers.Add(metier);
-                this.SaveChanges();
-                this.SelectedMetier = metier;
-            }
-        }
+     
+        
 
         /// <summary>
         /// supprimer un métier
@@ -98,18 +85,26 @@ namespace MegaCasting.WPF.ViewModel
         public void DeleteMetier()
         {
             // vérification de droit de suppression, table Metier liée à Offre
-            //
+            var emptyMetier = (from mt in Metiers
+                               join of in Offres
+                               on mt.Id equals of.IdMetier
+                               into x
+                               from of in x.DefaultIfEmpty()
+                               where of == null
+                               select mt
+                               );
+
             //suppression d'élément
-            try
+            if (emptyMetier.Contains(SelectedMetier))
             {
                 this.Metiers.Remove(SelectedMetier);
                 this.SaveChanges();
             }
-            catch (Exception)
+            else
             {
-
-                throw;
+                MessageBox.Show("Cette table ne peut être supprimée car il y a des données liées!", "ERROR");
             }
+            
         }
 
 
