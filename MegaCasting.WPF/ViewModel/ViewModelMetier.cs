@@ -100,8 +100,16 @@ namespace MegaCasting.WPF.ViewModel
             // vérification de droit de suppression, table Metier liée à Offre
             //
             //suppression d'élément
-            this.Metiers.Remove(SelectedMetier);
-            this.SaveChanges();
+            try
+            {
+                this.Metiers.Remove(SelectedMetier);
+                this.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
 

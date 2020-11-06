@@ -89,8 +89,16 @@ namespace MegaCasting.WPF.ViewModel
             // vérification de droit de suppression, aucune table liée
 
             //suppression d'élément
-            this.TypeContrats.Remove(SelectedTypeContrat);
-            this.SaveChanges();
+            try
+            {
+                this.TypeContrats.Remove(SelectedTypeContrat);
+                this.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
         #endregion
     }

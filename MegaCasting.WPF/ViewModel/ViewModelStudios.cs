@@ -71,8 +71,16 @@ namespace MegaCasting.WPF.ViewModel
             // vérification de droit de suppression, table liée à Offre
 
             //suppression d'élément
-            this.Studios.Remove(SelectedStudio);
-            this.SaveChanges();
+            try
+            {
+                this.Studios.Remove(SelectedStudio);
+                this.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
         #endregion
     }

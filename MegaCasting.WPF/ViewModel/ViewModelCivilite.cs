@@ -76,8 +76,16 @@ namespace MegaCasting.WPF.ViewModel
             // vérification de droit de suppression,  table civilité liée à Employes, Internautes
 
             //suppression d'élément
-            this.Civilites.Remove(SelectedCivilite);
-            this.SaveChanges();
+            try
+            {
+                this.Civilites.Remove(SelectedCivilite);
+                this.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
 
