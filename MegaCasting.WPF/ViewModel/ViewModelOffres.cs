@@ -122,7 +122,7 @@ namespace MegaCasting.WPF.ViewModel
                              select of
                               );
             //suppression d'élément
-            if (EmptyOffre == null)
+            if (EmptyOffre.Contains(SelectedOffre))
             {
                 this.Offres.Remove(SelectedOffre);
                 this.SaveChanges();

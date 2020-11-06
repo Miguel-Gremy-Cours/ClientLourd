@@ -60,23 +60,7 @@ namespace MegaCasting.WPF.ViewModel
         #endregion
 
         #region Method
-        /// <summary>
-        /// Ajouter un internaute
-        /// </summary>
-        public void InsertInternaute()
-        {
-            if (this.Entities.Internautes.Any(In => In.Nom == "Nouveau Nom") &&this.Entities.Internautes.Any(Ip=>Ip.Prenom == "Nouveau préNom") )
-            {
-                Internaute internaute = new Internaute();
-                internaute.Nom = "Nouveau Nom";
-                internaute.Prenom = "Nouveau préNom";
-                this.Internautes.Add(internaute);
-                this.SaveChanges();
-                this.SelectedInternaute = internaute;
-
-            }
-
-        }
+  
 
 
 

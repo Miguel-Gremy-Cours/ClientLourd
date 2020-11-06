@@ -77,7 +77,7 @@ namespace MegaCasting.WPF.ViewModel
                                 select domaine
                                 );
             //suppression d'élément
-            if (domaineEmpty == null)
+            if (domaineEmpty.Contains(SelectedDomaineMetier))
             {
                 this.DomaineMetiers.Remove(SelectedDomaineMetier);
                 this.SaveChanges();

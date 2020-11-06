@@ -78,24 +78,6 @@ namespace MegaCasting.WPF.ViewModel
 
         #region Method
 
-        /// <summary>
-        /// Ajouter une offreInternaute
-        /// </summary>
-        public void InsertOffreInternaute()
-        {
-            if (this.Entities.TypeContrats.Any(type => type.Libelle == "Nouvelle offreInternaute"))
-            {
-                OffresInternaute offresInternaute = new OffresInternaute();
-                offresInternaute.DatePostulation = DateTime.Now ;
-                this.OffresInternautes.Add(offresInternaute);
-                this.SaveChanges();
-                this.SelectedOffresInternaute = offresInternaute;
-
-            }
-
-        }
-
-
 
         /// <summary>
         /// supprimer une offreInternaute

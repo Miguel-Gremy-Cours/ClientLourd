@@ -77,7 +77,7 @@ namespace MegaCasting.WPF.ViewModel
                               select G
                               );
 
-            if (groupEmpty == null)
+            if (groupEmpty.Contains(SelectedGroupeEmploye))
             {
                 this.GroupeEmployes.Remove(SelectedGroupeEmploye);
                 this.SaveChanges();

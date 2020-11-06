@@ -73,7 +73,7 @@ namespace MegaCasting.WPF.ViewModel
                               select stu
                               );
 
-            if (studioEmpty == null)
+            if (studioEmpty.Contains(SelectedStudio))
             {
                 //suppression d'élément
                 this.Studios.Remove(SelectedStudio);
