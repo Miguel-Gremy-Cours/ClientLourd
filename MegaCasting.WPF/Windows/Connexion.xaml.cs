@@ -82,6 +82,8 @@ namespace MegaCasting.WPF.Windows
             {
                 TxtBx_Login.Text = "";
                 PwBx_Password.Password = "";
+                ConnexionError connexionError = new ConnexionError();
+                connexionError.ShowDialog();
                 //WindowError windowError = new WindowError();
                 //windowError.ShowDialog();
 

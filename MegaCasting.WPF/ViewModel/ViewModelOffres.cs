@@ -1,4 +1,5 @@
 ﻿using MegaCasting.DBLib;
+using MegaCasting.WPF.Windows;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -163,7 +164,8 @@ namespace MegaCasting.WPF.ViewModel
             }
             else
             {
-                MessageBox.Show("Cette table ne peut être supprimée car il y a des données liées!", "ERROR");
+                SuppresionError suppresionError = new SuppresionError();
+                suppresionError.ShowDialog();
             }
         }
         #endregion

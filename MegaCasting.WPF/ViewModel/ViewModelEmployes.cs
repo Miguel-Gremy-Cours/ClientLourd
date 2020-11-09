@@ -1,4 +1,5 @@
 ﻿using MegaCasting.DBLib;
+using MegaCasting.WPF.Windows;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -135,7 +136,8 @@ namespace MegaCasting.WPF.ViewModel
             }
             else
             {
-                MessageBox.Show("Impossble de supprimer cet élément", "OK");
+                SuppresionError suppresionError = new SuppresionError();
+                suppresionError.ShowDialog();
             }
         }
         #endregion

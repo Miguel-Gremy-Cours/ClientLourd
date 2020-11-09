@@ -270,6 +270,12 @@
     <Compile Include="Windows\Connexion.xaml.cs">
       <DependentUpon>Connexion.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\ConnexionError.xaml.cs">
+      <DependentUpon>ConnexionError.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SuppresionError.xaml.cs">
+      <DependentUpon>SuppresionError.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -385,6 +391,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Windows\Connexion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ConnexionError.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\SuppresionError.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

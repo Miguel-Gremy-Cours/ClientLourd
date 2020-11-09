@@ -78,14 +78,14 @@
                 </Grid>
                 <Grid Grid.Row="2" Grid.Column="1">
                     <StackPanel Orientation="Horizontal">
-                        <Button x:Name="_Btn_Annulation"  Margin="20,0,0,0" Click="_Btn_Annulation_Click">
+                        <Button x:Name="_Btn_Annulation"  Margin="20,0,0,0" Click="_Btn_Annulation_Click" Foreground="White" Background="Transparent">
                             <StackPanel Orientation="Horizontal">
 
                                 <TextBlock Text="Annuler" Foreground="White" Background="Transparent" FontFamily="Helvitica" FontSize="30" FontWeight="Light" VerticalAlignment="Center" />
                                 <materialDesign:PackIcon Kind="Cancel" Width="40" Height="40"/>
                             </StackPanel>
                         </Button>
-                        <Button x:Name="_Btn_Confirmation"  Margin="150,0,0,0" Click="_Btn_Confirmation_Click">
+                        <Button x:Name="_Btn_Confirmation"  Margin="150,0,0,0" Click="_Btn_Confirmation_Click" Foreground="White" Background="Transparent">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="Confirmer" Foreground="White" Background="Transparent" FontFamily="Helvitica" FontSize="30" FontWeight="Light" VerticalAlignment="Center" />
                                 <metro:PackIconMaterialDesign Kind="Check" Width="40" Height="40"/>
