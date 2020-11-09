@@ -14,3 +14,45 @@
     CONSTRAINT [FK_Internautes_Civilite] FOREIGN KEY ([IdCivilite]) REFERENCES [dbo].[Civilite] ([Id])
 );
 
+
+
+
+GO
+
+CREATE   TRIGGER [dbo].[TR_nom_upcase] ON [dbo].[Internaute]
+AFTER INSERT, UPDATE
+AS
+BEGIN
+IF (SELECT TRIGGER_NESTLEVEL()) < 2
+	BEGIN
+		UPDATE Internaute
+			SET nom = UPPER(Internaute.nom)
+		FROM Internaute
+		INNER JOIN inserted ON inserted.id = Internaute.id
+	END
+END
+GO
+
+CREATE   TRIGGER [dbo].[TR_date_inscription_update] ON [dbo].[Internaute]
+AFTER UPDATE
+AS 
+BEGIN
+IF (SELECT TRIGGER_NESTLEVEL()) < 2
+	BEGIN
+		UPDATE Internaute
+			SET DateInscription = deleted.DateInscription
+		FROM Internaute
+		INNER JOIN deleted ON deleted.id = Internaute.id
+	END
+END
+GO
+
+CREATE   TRIGGER [dbo].[TR_date_inscription_insert] ON [dbo].[Internaute]
+AFTER INSERT
+AS 
+BEGIN
+	UPDATE Internaute
+		SET DateInscription = GETDATE()
+	FROM Internaute
+	INNER JOIN inserted ON inserted.id = Internaute.id
+END
