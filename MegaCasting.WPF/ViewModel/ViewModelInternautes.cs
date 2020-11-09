@@ -86,12 +86,12 @@ namespace MegaCasting.WPF.ViewModel
         public void DeleteInternaute()
         {
             // vérification de droit de suppression puis suppréssion d'un élément
-            try
+            if(!SelectedInternaute.OffresInternautes.Any())
             {
                 this.Internautes.Remove(SelectedInternaute);
                 this.SaveChanges();
             }
-            catch (Exception)
+            else
             {
                 MessageBox.Show("Impossible de supprimer cet élément", "OK");
             }

@@ -76,12 +76,12 @@ namespace MegaCasting.WPF.ViewModel
         public void DeleteStudio()
         {
             // vérification de droit de suppression puis suppréssion d'un élément
-            try
+            if(!SelectedStudio.Offres.Any())
             {
                 this.Studios.Remove(SelectedStudio);
                 this.SaveChanges();
             }
-            catch(Exception)
+            else
             {
                 System.Windows.MessageBox.Show("Impossible de supprimer cet élément", "OK");
             }

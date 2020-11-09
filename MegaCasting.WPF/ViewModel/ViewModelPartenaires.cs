@@ -56,15 +56,8 @@ namespace MegaCasting.WPF.ViewModel
         public void DeletePartenaire()
         {
             // vérification de droit de suppression puis suppréssion des éléments
-            try
-            {
-                this.Partenaires.Remove(SelectedPartenaire);
-                this.SaveChanges();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Impossible de supprimer cet élément", "OK");
-            }
+            this.Partenaires.Remove(SelectedPartenaire);
+            this.SaveChanges();
         }
         #endregion
     }

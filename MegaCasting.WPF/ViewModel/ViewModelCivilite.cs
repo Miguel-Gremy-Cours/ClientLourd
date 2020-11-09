@@ -59,12 +59,12 @@ namespace MegaCasting.WPF.ViewModel
         public void DeleteCivilite()
         {
             // Vérification de droit de suppression puis suppréssion d'élément
-            try
+            if(!SelectedCivilite.Employes.Any() && SelectedCivilite.Internautes.Any())
             {
                 this.Civilites.Remove(SelectedCivilite);
                 this.SaveChanges();
             }
-            catch (Exception)
+            else
             {
                 MessageBox.Show("Impossibe de supprimer cet élément", "OK");
             }

@@ -74,12 +74,12 @@ namespace MegaCasting.WPF.ViewModel
         public void DeleteDomaineMetier()
         {
             // vérification de droit de suppression puis suppréssion d'élément
-            try
+            if(!SelectedDomaineMetier.Metiers.Any())
             {
                 this.DomaineMetiers.Remove(SelectedDomaineMetier);
                 this.SaveChanges();
             }
-            catch(Exception)
+            else
             {
                 MessageBox.Show("Impossible de supprimer cet élément", "OK");
             }

@@ -114,15 +114,8 @@ namespace MegaCasting.WPF.ViewModel
         public void DeleteOffreInternaute()
         {
             // vérification de droit de suppression puis suppréssion de l'élément
-            try
-            {
-                this.OffresInternautes.Remove(SelectedOffresInternaute);
-                this.SaveChanges();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Impossible de supprimer cet élément", "OK");
-            }
+            this.OffresInternautes.Remove(SelectedOffresInternaute);
+            this.SaveChanges();
         }
         #endregion
     }

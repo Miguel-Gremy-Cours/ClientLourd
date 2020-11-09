@@ -128,12 +128,12 @@ namespace MegaCasting.WPF.ViewModel
         public void DeleteEmploye()
         {
             // Vérification de droit de suppression puis suppréssion d'élément
-            try
+            if(!SelectedEmploye.Offres.Any())
             {
                 this.Employes.Remove(SelectedEmploye);
                 this.SaveChanges();
             }
-            catch (Exception)
+            else
             {
                 MessageBox.Show("Impossble de supprimer cet élément", "OK");
             }

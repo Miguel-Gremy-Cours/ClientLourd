@@ -99,12 +99,12 @@ namespace MegaCasting.WPF.ViewModel
         public void DeleteMetier()
         {
             // vérification de droit de suppression puis suppréssion d'un élément
-            try
+            if(!SelectedMetier.Offres.Any())
             {
                 this.Metiers.Remove(SelectedMetier);
                 this.SaveChanges();
             }
-            catch(Exception)
+            else
             {
                 MessageBox.Show("Impossible de supprimer cet élément", "OK");
             }   

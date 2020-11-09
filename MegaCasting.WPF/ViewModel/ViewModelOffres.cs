@@ -156,12 +156,12 @@ namespace MegaCasting.WPF.ViewModel
         public void DeleteOffre()
         {
             // vérification de droit de suppression puis suppréssion de l'élément
-            try
+            if(!SelectedOffre.OffresInternautes.Any() && SelectedOffre.Contrats.Any())
             {
                 this.Offres.Remove(SelectedOffre);
                 this.SaveChanges();
             }
-            catch(Exception)
+            else
             {
                 MessageBox.Show("Cette table ne peut être supprimée car il y a des données liées!", "ERROR");
             }

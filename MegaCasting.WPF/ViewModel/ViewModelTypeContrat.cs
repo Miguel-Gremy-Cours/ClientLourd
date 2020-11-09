@@ -77,12 +77,12 @@ namespace MegaCasting.WPF.ViewModel
         public void DeleteTypeContrats()
         {
             // vérification de droit de suppression puis suppréssion de l'élément
-            try
+            if (!SelectedTypeContrat.Contrats.Any())
             {
                 this.TypeContrats.Remove(SelectedTypeContrat);
                 this.SaveChanges();
             }
-            catch (Exception)
+            else
             {
                 MessageBox.Show("Impossible de supprimer cet élément", "OK");
             }

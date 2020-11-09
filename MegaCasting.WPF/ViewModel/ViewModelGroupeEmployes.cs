@@ -71,35 +71,20 @@ namespace MegaCasting.WPF.ViewModel
         }
         #endregion
         #region Method
-
-        
-
-
-
         /// <summary>
         /// supprimer un groupe
         /// </summary>
 
         public void DeleteGropue()
         {
-            
-            var groupEmpty = (from G in GroupeEmployes
-                              join emp in Employes
-                              on G.Id equals emp.IdGroupeEmployes
-                              into x
-                              from emp in x.DefaultIfEmpty()
-                              where G==null
-                              select G
-                              );
-
-            if (groupEmpty.Contains(SelectedGroupeEmploye))
+            if (!SelectedGroupeEmploye.Employes.Any())
             {
                 this.GroupeEmployes.Remove(SelectedGroupeEmploye);
                 this.SaveChanges();
             }
             else
             {
-                MessageBox.Show("Cette table ne peut être supprimée car il y a des données liées!", "ERROR");
+                MessageBox.Show("Impossible de supprimer cet élément", "OK");
             }    
             
         }

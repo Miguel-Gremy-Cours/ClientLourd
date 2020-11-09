@@ -115,15 +115,8 @@ namespace MegaCasting.WPF.ViewModel
         public void DeleteContrat()
         {
             // Vérification de droit de suppression puis suppréssion d'élément
-            try
-            {
-                this.Contrats.Remove(SelectedContrat);
-                this.SaveChanges();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Impossibe de supprimer cet élément", "OK");
-            }
+            this.Contrats.Remove(SelectedContrat);
+            this.SaveChanges();
         }
         #endregion
     }
