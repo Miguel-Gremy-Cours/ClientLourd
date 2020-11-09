@@ -13,17 +13,28 @@ namespace MegaCasting.WPF.ViewModel.Add
     class ViewModelAddPartenaires : ViewModelBase
     {
         #region Attributes
+        /// <summary>
+        /// Attribut de Partenaire qui sera créé
+        /// </summary>
         private Partenaire _Partenaire;
+        /// <summary>
+        /// Attribut contenant la liste des Partenaires de la base de données
+        /// </summary>
         private ObservableCollection<Partenaire> _Partenaires;
         #endregion
 
         #region Accesseurs
+        /// <summary>
+        /// Déclarer une propriété de type ObservableCollection, pour la liste des Partenaires de la base de données
+        /// </summary>
         public ObservableCollection<Partenaire> Partenaires
         {
             get { return _Partenaires; }
             set { _Partenaires = value; }
         }
-
+        /// <summary>
+        /// Déclarer une propriété de type de Classe Employe, pour Employe qui sera créé
+        /// </summary>
         public Partenaire Partenaire
         {
             get { return _Partenaire; }
@@ -31,6 +42,10 @@ namespace MegaCasting.WPF.ViewModel.Add
         }
         #endregion
         #region Constructor
+        /// <summary>
+        /// Constructeur de ViewModelAddPartenaires, dans lequel contient la liste des Partenaires
+        /// </summary>
+        /// <param name="entities"></param>
         public ViewModelAddPartenaires(MegaCastingEntities entities) : base(entities)
         {
             this.Partenaire = new Partenaire();
@@ -39,6 +54,17 @@ namespace MegaCasting.WPF.ViewModel.Add
         }
         #endregion
         #region Method
+        /// <summary>
+        /// Méthode pour ajouter un nouveau partenaire, qui prendra les paramètres qui suivent
+        /// </summary>
+        /// <param name="siret"></param>
+        /// <param name="adresse"></param>
+        /// <param name="numeroAdresse"></param>
+        /// <param name="libelle"></param>
+        /// <param name="email"></param>
+        /// <param name="telephone"></param>
+        /// <param name="login"></param>
+        /// <param name="password"></param>
         public void InsertPartenaire(string siret, string adresse,int numeroAdresse, string libelle, string email, string telephone,string login, string password)
 
         { 

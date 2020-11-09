@@ -11,9 +11,15 @@ namespace MegaCasting.WPF.ViewModel.Add
     class ViewModelAddCivilite : ViewModelBase
     {
         #region Attributes
+        /// <summary>
+        /// Attribut contenant la Civilité qui sera créée
+        /// </summary>
         private Civilite _Civilite;
         #endregion
         #region Accesseurs
+        /// <summary>
+        /// Déclarer une propriété "Civilite" de type de classe Civilite
+        /// </summary>
         public Civilite Civilite
         {
             get { return _Civilite; }
@@ -21,6 +27,10 @@ namespace MegaCasting.WPF.ViewModel.Add
         }
         #endregion
         #region constructor
+        /// <summary>
+        /// Créer ViewModelAddCivilite, dans lequelle contient une nouvelle instance Civilité
+        /// </summary>
+        /// <param name="entities"></param>
         public ViewModelAddCivilite(MegaCastingEntities entities) : base(entities)
         {
             this.Civilite = new Civilite();

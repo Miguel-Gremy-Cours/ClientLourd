@@ -12,53 +12,100 @@ namespace MegaCasting.WPF.ViewModel.Add
     class ViewModelAddOffres : ViewModelBase
     {
         #region Attributes
+        /// <summary>
+        /// Attribut d'Offre qui sera créée
+        /// </summary>
         private Offre _Offre;
+        /// <summary>
+        /// Attribut contenant la liste des Studios de la base de données
+        /// </summary>
         private ObservableCollection<Studio> _Studios;
+        /// <summary>
+        /// Attribut contenant le Studio selectionné dans la vue
+        /// </summary>
         private Studio _SelectedStudio;
+        /// <summary>
+        /// Attribut contenant la liste des Metiers de la base de données
+        /// </summary>
         private ObservableCollection<Metier> _Metiers;
+        /// <summary>
+        /// Attribut contenant le Metier selectionné dans la vue
+        /// </summary>
         private Metier _SelectedMetier;
+        /// <summary>
+        /// Attribut contenant la liste des Employes de la base de données
+        /// </summary>
         private ObservableCollection<Employe> _Employes;
+        /// <summary>
+        /// Attribut contenant l'Emplye selectionné dans la vue
+        /// </summary>
         private Employe _SelectedEmploye;
+        /// <summary>
+        /// Attribut contenant la liste des Offres de la base de données
+        /// </summary>
         private ObservableCollection<Offre> _Offres;
         #endregion
 
         #region Accesseurs
+        /// <summary>
+        /// Déclarer une propriété de type ObservableCollection, pour la liste d'Offre de la base de données
+        /// </summary>
         public ObservableCollection<Offre> Offres
         {
             get { return _Offres; }
             set { _Offres = value; }
         }
-
+        /// <summary>
+        /// Déclarer une propriété de type de Classe Offre, pour Offre qui sera créé
+        /// </summary>
         public Offre Offre
         {
             get { return _Offre; }
             set { _Offre = value; }
         }
+        /// <summary>
+        /// Déclarer une propriété de type ObservableCollection, pour la liste de Studios de la base de données
+        /// </summary>
         public ObservableCollection<Studio> Studios
         {
             get { return _Studios; }
             set { _Studios = value; }
         }
+        /// <summary>
+        /// Déclarer une propriété de type de Classe Studio, pour Studio qui sera sélectionné dans la vue
+        /// </summary>
         public Studio SelectedStudio
         {
             get { return _SelectedStudio; }
             set { _SelectedStudio = value; }
         }
+        /// <summary>
+        /// Déclarer une propriété de type de Classe Metier, pour Metier qui sera sélectionné dans la vue
+        /// </summary>
         public Metier SelectedMetier
         {
             get { return _SelectedMetier; }
             set { _SelectedMetier = value; }
         }
+        /// <summary>
+        /// Déclarer une propriété de type ObservableCollection, pour la liste de Metiers de la base de données
+        /// </summary>
         public ObservableCollection<Metier> Metiers
         {
             get { return _Metiers; }
             set { _Metiers = value; }
         }
+        /// <summary>
+        /// Déclarer une propriété de type de Classe Employe, pour Employe qui sera sélectionné dans la vue
+        /// </summary>
         public Employe SelectedEmploye
         {
             get { return _SelectedEmploye; }
             set { _SelectedEmploye = value; }
         }
+        /// <summary>
+        /// Déclarer une propriété de type ObservableCollection, pour la liste de Emplyes de la base de données
+        /// </summary>
         public ObservableCollection<Employe> Employes
         {
             get { return _Employes; }
@@ -66,6 +113,10 @@ namespace MegaCasting.WPF.ViewModel.Add
         }
         #endregion
         #region Constructor
+        /// <summary>
+        /// Contructuer de ViewModelAddOffres, dans lequel contient les listes de Studios, Metiers, Offres et Employes de la base de données
+        /// </summary>
+        /// <param name="entities"></param>
         public ViewModelAddOffres(MegaCastingEntities entities) : base(entities)
         {
             this.Offre = new Offre();
@@ -85,6 +136,17 @@ namespace MegaCasting.WPF.ViewModel.Add
         #endregion
 
         #region Method
+        /// <summary>
+        /// Méthode pour ajouter une nouvelle offre qui prendra les paramètres qui suivent
+        /// </summary>
+        /// <param name="intitule"></param>
+        /// <param name="datePublication"></param>
+        /// <param name="dureDiffusion"></param>
+        /// <param name="nombrePoste"></param>
+        /// <param name="descriptionPoste"></param>
+        /// <param name="descriptionProfile"></param>
+        /// <param name="localisatoin"></param>
+        /// <param name="codeOffre"></param>
         public void InsertOffre( string intitule,  DateTime datePublication, int dureDiffusion, int nombrePoste, string descriptionPoste, string descriptionProfile, string localisatoin, string codeOffre)
         {
             Offre offre = new Offre();
