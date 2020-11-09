@@ -78,7 +78,7 @@
                     <Label Grid.Row="10" Grid.Column="0" Content="Code d'offre"
                            FontFamily="Helvitica" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="20" FontWeight="Light" />
 
-                    <ComboBox Grid.Row="0" Grid.Column="1" x:Name="_ComboBox_Studio" materialDesign:HintAssist.Hint="Sélectionner un studio" ItemsSource="{Binding Stuidos}" DisplayMemberPath="Libelle" SelectedItem="{Binding SelectedStudio}" Foreground="White" Background="Transparent" FontFamily="Helvatica" FontSize="20" FontWeight="Light">
+                    <ComboBox Grid.Row="0" Grid.Column="1" x:Name="_ComboBox_Studio" materialDesign:HintAssist.Hint="Sélectionner un studio" ItemsSource="{Binding Studios}" DisplayMemberPath="Libelle" SelectedItem="{Binding SelectedStudio}" Foreground="White" Background="Transparent" FontFamily="Helvatica" FontSize="20" FontWeight="Light">
                         <ComboBox.ItemContainerStyle>
                             <Style TargetType="ComboBoxItem">
                                 <Setter Property="Background" 
