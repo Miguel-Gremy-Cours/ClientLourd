@@ -12,38 +12,53 @@ namespace MegaCasting.WPF.ViewModel
 {
     public class ViewModelGroupeEmployes:ViewModelBase
     {
-
-
-
-
         #region Attributes
+        /// <summary>
+        /// Attribut contenant la liste des GroupeEmployes de la base de donnée
+        /// </summary>
         private ObservableCollection<GroupeEmploye> _GroupeEmployes;
-        private GroupeEmploye _SelecteedGroupeEmploye;
+        /// <summary>
+        /// Attribut contenant le GroupeEmploye de la vue
+        /// </summary>
+        private GroupeEmploye _SelectedGroupeEmploye;
+        /// <summary>
+        /// Attribut contenant la liste des Employes de la base de donnée
+        /// </summary>
         private ObservableCollection<Employe> _Employes;
         private Employe _Employe;
         #endregion
-
         #region Properties
+        /// <summary>
+        /// Employe de la vue
+        /// </summary>
         public Employe Employe
         {
             get { return _Employe; }
             set { _Employe = value; }
         }
-
+        /// <summary>
+        /// Employes de la base de donnée
+        /// </summary>
         public ObservableCollection<Employe> Employes
         {
             get { return _Employes; }
             set { _Employes = value; }
         }
+        /// <summary>
+        /// GroupeEmployes de la base de donnée
+        /// </summary>
         public ObservableCollection<GroupeEmploye> GroupeEmployes
         {
             get { return _GroupeEmployes; }
             set { _GroupeEmployes = value; }
         }
+        /// <summary>
+        /// GroupeEmploye de la vue
+        /// </summary>
         public GroupeEmploye SelectedGroupeEmploye
         {
-            get { return _SelecteedGroupeEmploye; }
-            set { _SelecteedGroupeEmploye = value; }
+            get { return _SelectedGroupeEmploye; }
+            set { _SelectedGroupeEmploye = value; }
         }
         #endregion
         #region Constrcutor
