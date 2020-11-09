@@ -11,11 +11,20 @@ namespace MegaCasting.WPF.ViewModel
     {
 
         #region Attributues
+        /// <summary>
+        /// Attribut contenant les données de la base de donnée
+        /// </summary>
         private MegaCastingEntities _Entities;
+        /// <summary>
+        /// Attribut du ViewModel
+        /// </summary>
         private ViewModelMainWindow _ViewModel;
         #endregion
 
         #region  Properties
+        /// <summary>
+        /// Entitées de la base de donnée
+        /// </summary>
         public MegaCastingEntities Entities
         {
             get { return _Entities; }
@@ -23,6 +32,9 @@ namespace MegaCasting.WPF.ViewModel
 
 
         }
+        /// <summary>
+        /// ViewModel pour la page correspondante
+        /// </summary>
         public ViewModelMainWindow ViewModel
         {
             get { return _ViewModel; }
@@ -31,27 +43,29 @@ namespace MegaCasting.WPF.ViewModel
 
         #endregion
         #region constrcutor
-
-
+        /// <summary>
+        /// Constructeur de la classe 'ViewModelBase'
+        /// </summary>
+        /// <param name="entities"></param>
         public ViewModelBase(MegaCastingEntities entities)
         {
             this.Entities = entities;
-
-
         }
         #endregion
 
         #region Method
         /// <summary>
-        /// Sauvegarde de modification
+        /// Sauvegarde de modification en base de donnée
         /// </summary>
         public void SaveChanges()
         {
             this.Entities.SaveChanges();
         }
 
+        /*
         public string ToDateValue(DateTime? pValue)
             => pValue == null ? "NULL" : $"'{pValue.Value.ToString("yyyyMMdd")}'";
+        */
         #endregion
     }
 }
