@@ -81,7 +81,15 @@ namespace MegaCasting.WPF
 
         private void WindowX_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            DragMove();
+            try
+            {
+                DragMove();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("le click droit ne peut pas bouger la fenêtre!", "ERROR");
+            }
         }
 
         private void Btn_Close_Click(object sender, RoutedEventArgs e)
