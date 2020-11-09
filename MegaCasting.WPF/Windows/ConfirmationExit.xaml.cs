@@ -34,7 +34,7 @@ namespace MegaCasting.WPF.Windows
 
         private void _Btn_OK_Click(object sender, RoutedEventArgs e)
         {
-             this.Close();
+            Application.Current.Shutdown();
             
         }
     }
