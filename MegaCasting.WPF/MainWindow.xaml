@@ -12,7 +12,7 @@
         xmlns:view="clr-namespace:MegaCasting.WPF.View"
         Title="Bienvenu à la gestion de MegaCasting"
         Height="850" Width="1400" AllowsTransparency="True" Background="Transparent" WindowStyle="None" ResizeMode="NoResize" 
-        WindowStartupLocation="CenterScreen" Visibility="Collapsed" MouseDown="WindowX_MouseDown">
+        WindowStartupLocation="CenterScreen" Visibility="Visible" MouseDown="WindowX_MouseDown">
 
 
     <Window.Resources>
@@ -115,8 +115,9 @@
 
                 <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="100,0,0,0">
                     <materialDesign:PackIcon Kind="Videocam" Foreground="White" Width="75" Height="75"  VerticalAlignment="Center"  HorizontalAlignment="Left"/>
-                    <TextBlock  Text="MegaCasting" Foreground="White" FontFamily="Helvitica" FontSize="60" FontWeight="Light" VerticalAlignment="Center"/>
-                    <Button Margin="620,0,0,0" x:Name="Btn_Close" Click="Btn_Close_Click" BorderThickness="0" Background="Transparent">
+                    <Label  Content="MegaCasting" Foreground="White" FontFamily="Helvitica" FontSize="60" FontWeight="Light" VerticalAlignment="Center"/>
+                    <Label  Content="{Binding CurrentEmploye}" Foreground="White" FontFamily="Helvitica" FontSize="60" FontWeight="Light" VerticalAlignment="Center"  Margin="100"/>
+                    <Button Margin="520,0,0,0" x:Name="Btn_Close" Click="Btn_Close_Click" BorderThickness="0" Background="Transparent">
                         <materialDesign:PackIcon Grid.Column="2" Kind="ExitToApp" Foreground="White" Width="50" Height="50"  VerticalAlignment="Center"  HorizontalAlignment="Center" />
                     </Button>
                 </StackPanel>

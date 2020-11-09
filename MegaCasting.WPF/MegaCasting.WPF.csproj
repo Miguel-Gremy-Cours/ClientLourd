@@ -267,6 +267,9 @@
     <Compile Include="Windows\Add\WindowAddPartenaire.xaml.cs" />
     <Compile Include="Windows\Add\WindowAddStudio.xaml.cs" />
     <Compile Include="Windows\Add\WindowAddTypeContrat.xaml.cs" />
+    <Compile Include="Windows\ConfirmationExit.xaml.cs">
+      <DependentUpon>ConfirmationExit.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Connexion.xaml.cs">
       <DependentUpon>Connexion.xaml</DependentUpon>
     </Compile>
@@ -389,6 +392,10 @@
     <Page Include="Windows\Add\WindowAddTypeContrat.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\ConfirmationExit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\Connexion.xaml">
       <SubType>Designer</SubType>

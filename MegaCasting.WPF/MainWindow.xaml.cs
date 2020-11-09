@@ -73,15 +73,18 @@ namespace MegaCasting.WPF
 
         private void Btn_Close_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Fermer l'application", "Fermeture", MessageBoxButton.OKCancel);
-            switch (result)
-            {
-                case MessageBoxResult.OK:
-                    this.Close();
-                    break;
-                default:
-                    break;
-            }
+            ConfirmationExit confirmation = new ConfirmationExit();
+            confirmation.ShowDialog();
+
+            //MessageBoxResult result = MessageBox.Show("Fermer l'application", "Fermeture", MessageBoxButton.OKCancel);
+            //switch (result)
+            //{
+            //    case MessageBoxResult.OK:
+            //        this.Close();
+            //        break;
+            //    default:
+            //        break;
+            //}
         }
         #endregion
 
