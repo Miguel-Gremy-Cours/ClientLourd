@@ -6,6 +6,7 @@ using System.Linq;
 using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MegaCasting.WPF.ViewModel
 {
@@ -113,9 +114,16 @@ namespace MegaCasting.WPF.ViewModel
         /// </summary>
         public void DeleteContrat()
         {
-            // vérification de droit de suppression puis suppréssion
-            this.Contrats.Remove(SelectedContrat);
-            this.SaveChanges();
+            // Vérification de droit de suppression puis suppréssion d'élément
+            try
+            {
+                this.Contrats.Remove(SelectedContrat);
+                this.SaveChanges();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Impossibe de supprimer cet élément", "OK");
+            }
         }
         #endregion
     }

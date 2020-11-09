@@ -12,90 +12,77 @@ namespace MegaCasting.WPF.ViewModel
 {
     public class ViewModelDomaineMetier:ViewModelBase
     {
-
-
         #region Attributes
+        /// <summary>
+        /// Attribut contenant le DomaineMetier de la vue
+        /// </summary>
         private DomaineMetier _SelectedDomaineMetier;
+        /// <summary>
+        /// Attribut contenant la liste des DomaineMetiers de la base de donnée
+        /// </summary>
         private ObservableCollection<DomaineMetier> _DomaineMetiers;
+        /// <summary>
+        /// Attribut contenant la liste des Metiers de la base de donnée
+        /// </summary>
         private ObservableCollection<Metier> _Metiers;
-
         #endregion
-
         #region Properties
-        public ObservableCollection<Metier> Metiers
-        {
-            get { return _Metiers; }
-            set { _Metiers = value; }
-        }
-
-        public ObservableCollection<DomaineMetier> DomaineMetiers
-        {
-            get { return _DomaineMetiers; }
-            set { _DomaineMetiers = value; }
-        }
+        /// <summary>
+        /// DomaineMetier de la vue
+        /// </summary>
         public DomaineMetier SelectedDomaineMetier
         {
             get { return _SelectedDomaineMetier; }
             set { _SelectedDomaineMetier = value; }
         }
-
+        /// <summary>
+        /// DomaineMetiers de la base de donnée
+        /// </summary>
+        public ObservableCollection<DomaineMetier> DomaineMetiers
+        {
+            get { return _DomaineMetiers; }
+            set { _DomaineMetiers = value; }
+        }
+        /// <summary>
+        /// Metiers de la base de donnée
+        /// </summary>
+        public ObservableCollection<Metier> Metiers
+        {
+            get { return _Metiers; }
+            set { _Metiers = value; }
+        }
         #endregion
-
         #region Constrcutor
+        /// <summary>
+        /// Constructeur de la classe ViewModelDomaineMetier
+        /// </summary>
+        /// <param name="entities"></param>
         public ViewModelDomaineMetier(MegaCastingEntities entities) : base(entities)
         {
-
-
+            // Initialisation de la liste des DomaineMetiers dans la variable
             this.Entities.DomaineMetiers.ToList();
             this.DomaineMetiers = this.Entities.DomaineMetiers.Local;
+            // Initialisation de la liste des Metiers dans la variable
             this.Entities.Metiers.ToList();
             this.Metiers = this.Entities.Metiers.Local;
-            //this.TypeContrats = new ObservableCollection<TypeContrat>();
-            //foreach (TypeContrat typeContrat in this.Entities.TypeContrats) 
-            //{
-            //    this.TypeContrats.Add(typeContrat);
-            //}
         }
-
         #endregion
         #region Method
-
-       
         /// <summary>
         /// supprimer un domaine
         /// </summary>
-
         public void DeleteDomaineMetier()
         {
-            // vérification de droit de suppression, table liée à Metier
-            var domaineEmpty = (from domaine in DomaineMetiers
-                                join mt in Metiers
-                                on domaine.Id equals mt.IdDomaineMetier
-                                into x
-                                from mt in x.DefaultIfEmpty()
-                                where mt==null
-                                select domaine
-                                );
-            //suppression d'élément
-            if (domaineEmpty.Contains(SelectedDomaineMetier))
+            // vérification de droit de suppression puis suppréssion d'élément
+            try
             {
                 this.DomaineMetiers.Remove(SelectedDomaineMetier);
                 this.SaveChanges();
             }
-            else
+            catch(Exception)
             {
-                MessageBox.Show("Cette table ne peut être supprimée car il y a des données liées!", "ERROR");
+                MessageBox.Show("Impossible de supprimer cet élément", "OK");
             }
-            //try
-            //{
-            //    this.DomaineMetiers.Remove(SelectedDomaineMetier);
-            //    this.SaveChanges();
-            //}
-            //catch (Exception)
-            //{
-
-            //    MessageBox.Show("Cette table ne peut être supprimée car il y a des données liées!", "ERROR");
-            //}
         }
         #endregion
     }
