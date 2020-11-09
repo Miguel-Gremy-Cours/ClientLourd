@@ -46,9 +46,9 @@ namespace MegaCasting.WPF
         #region contructor
         public MainWindow()
         {
-
             InitializeComponent();
-
+            this.Entities = new MegaCastingEntities();
+            this.DataContext = new ViewModelMainWindow(Entities);
         }
         #endregion
 
