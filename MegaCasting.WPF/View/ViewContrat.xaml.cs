@@ -25,6 +25,9 @@ namespace MegaCasting.WPF.View
     /// </summary>
     public partial class ViewContrat : UserControl
     {
+        /// <summary>
+        /// Contructeur de ViewContrat
+        /// </summary>
         public ViewContrat()
         {
             InitializeComponent();

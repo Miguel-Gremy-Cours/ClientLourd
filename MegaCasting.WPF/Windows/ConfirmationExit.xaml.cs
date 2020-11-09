@@ -24,7 +24,7 @@ namespace MegaCasting.WPF.Windows
         {
             InitializeComponent();
         }
-        MainWindow mainWindow;
+        
        
 
         private void _Btn_Annulation_Click(object sender, RoutedEventArgs e)
