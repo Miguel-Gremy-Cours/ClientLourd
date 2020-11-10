@@ -21,16 +21,27 @@ namespace MegaCasting.WPF.Windows.Add
     /// </summary>
     public partial class WindowAddTypeContrat : MetroWindow
     {
+        /// <summary>
+        /// Contructeur de WindowAddDomaineMetier
+        /// </summary>
         public WindowAddTypeContrat()
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Boutton pour annuler l'ajout
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _Btn_Annulation_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
-
+        /// <summary>
+        /// Boutton pour valider les information de TypeContrat puis l'ajouter dans la base de donner
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _Btn_Confirmation_Click(object sender, RoutedEventArgs e)
         {
             ((ViewModelAddTypeContrat)this.DataContext).InserteTypeContrat(_TextBox_Libelle.Text);

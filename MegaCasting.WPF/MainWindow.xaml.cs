@@ -30,12 +30,17 @@ namespace MegaCasting.WPF
     {
 
         #region Attributes
+        /// <summary>
+        /// Attribut contenant les données de la base de donnée
+        /// </summary>
         private MegaCastingEntities _Entities;
 
         #endregion
 
         #region Properties
-
+        /// <summary>
+        /// Entitées de la base de donnée
+        /// </summary>
         public MegaCastingEntities Entities
         {
             get { return _Entities; }
@@ -44,6 +49,10 @@ namespace MegaCasting.WPF
         #endregion
 
         #region contructor
+        /// <summary>
+        /// Constructeur de MainWindow
+        /// </summary>
+        /// <param name="entities"></param>
         public MainWindow()
         {
             InitializeComponent();
@@ -53,24 +62,33 @@ namespace MegaCasting.WPF
         #endregion
 
         #region Fonctionnal click
+        /// <summary>
+        /// Button click de base dans la template de listbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
         }
+        /// <summary>
+        /// Méthode pour autoriser le redispositionner la fenêtre
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void WindowX_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            try
+            if (e.LeftButton == MouseButtonState.Pressed)
             {
                 DragMove();
             }
-            catch (Exception)
-            {
-
-                MessageBox.Show("le click droit ne peut pas bouger la fenêtre!", "ERROR");
-            }
         }
-
+        /// <summary>
+        /// Boutton pour fermer la fenêtre de connexion, ce qui rappellera un popup de confirmation
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_Close_Click(object sender, RoutedEventArgs e)
         {
             ConfirmationExit confirmation = new ConfirmationExit();
@@ -97,7 +115,7 @@ namespace MegaCasting.WPF
         private void Btn_ViewMain_Click(object sender, RoutedEventArgs e)
         {
 
-
+            // Vider les éléments enfants (UserControl,Vue) de mainWindow dans ce DockPanel, puis ajouter la vue de ViewMain
             this.DockPanelView.Children.Clear();
             ViewModelMainWindow viewModel = new ViewModelMainWindow(this.Entities);
             ViewMain view = new ViewMain();
@@ -108,7 +126,7 @@ namespace MegaCasting.WPF
 
         private void Btn_ViewTypeContrat_Click(object sender, RoutedEventArgs e)
         {
-
+            // Vider les éléments enfants (UserControl,Vue) de mainWindow dans ce DockPanel, puis ajouter la vue de ViewTypeContrat
 
             this.DockPanelView.Children.Clear();
             ViewModelTypeContrat viewModel = new ViewModelTypeContrat(this.Entities);
@@ -127,6 +145,7 @@ namespace MegaCasting.WPF
 
         private void Btn_ViewContrat_Click(object sender, RoutedEventArgs e)
         {
+            // Vider les éléments enfants (UserControl,Vue) de mainWindow dans ce DockPanel, puis ajouter la vue de ViewContrat
             this.DockPanelView.Children.Clear();
             ViewModelContrat viewModel = new ViewModelContrat(this.Entities);
             ViewContrat view = new ViewContrat();
@@ -137,6 +156,7 @@ namespace MegaCasting.WPF
 
         private void Btn_ViewOffre_Click(object sender, RoutedEventArgs e)
         {
+            // Vider les éléments enfants (UserControl,Vue) de mainWindow dans ce DockPanel, puis ajouter la vue de ViewOffre
             this.DockPanelView.Children.Clear();
             ViewModelOffres viewModel = new ViewModelOffres(this.Entities);
             ViewOffres view = new ViewOffres();
@@ -147,6 +167,7 @@ namespace MegaCasting.WPF
 
         private void Btn_ViewOffreInternaute_Click(object sender, RoutedEventArgs e)
         {
+            // Vider les éléments enfants (UserControl,Vue) de mainWindow dans ce DockPanel, puis ajouter la vue de ViewOffreInternaute
             this.DockPanelView.Children.Clear();
             ViewModelOffresInternautes viewModel = new ViewModelOffresInternautes(this.Entities);
             ViewOffresInternautes view = new ViewOffresInternautes();
@@ -157,6 +178,7 @@ namespace MegaCasting.WPF
 
         private void Btn_ViewInternaute_Click(object sender, RoutedEventArgs e)
         {
+            // Vider les éléments enfants (UserControl,Vue) de mainWindow dans ce DockPanel, puis ajouter la vue de ViewInternaute
             this.DockPanelView.Children.Clear();
             ViewModelInternautes viewModel = new ViewModelInternautes(this.Entities);
             ViewInternautes view = new ViewInternautes();
@@ -167,6 +189,7 @@ namespace MegaCasting.WPF
 
         private void Btn_ViewMetier_Click(object sender, RoutedEventArgs e)
         {
+            // Vider les éléments enfants (UserControl,Vue) de mainWindow dans ce DockPanel, puis ajouter la vue de ViewMetier
             this.DockPanelView.Children.Clear();
             ViewModelMetier viewModel = new ViewModelMetier(this.Entities);
             ViewMetier view = new ViewMetier();
@@ -177,6 +200,7 @@ namespace MegaCasting.WPF
 
         private void Btn_ViewDomaineMetier_Click(object sender, RoutedEventArgs e)
         {
+            // Vider les éléments enfants (UserControl,Vue) de mainWindow dans ce DockPanel, puis ajouter la vue de ViewDomaineMetier
             this.DockPanelView.Children.Clear();
             ViewModelDomaineMetier viewModel = new ViewModelDomaineMetier(this.Entities);
             ViewDomaineMetier view = new ViewDomaineMetier();
@@ -187,6 +211,7 @@ namespace MegaCasting.WPF
 
         private void Btn_ViewStudio_Click(object sender, RoutedEventArgs e)
         {
+            // Vider les éléments enfants (UserControl,Vue) de mainWindow dans ce DockPanel, puis ajouter la vue de ViewStudio
             this.DockPanelView.Children.Clear();
             ViewModelStudios viewModel = new ViewModelStudios(this.Entities);
             ViewStudios view = new ViewStudios();
@@ -197,6 +222,7 @@ namespace MegaCasting.WPF
 
         private void Btn_ViewPartenaire_Click(object sender, RoutedEventArgs e)
         {
+            // Vider les éléments enfants (UserControl,Vue) de mainWindow dans ce DockPanel, puis ajouter la vue de ViewPartenaire
             this.DockPanelView.Children.Clear();
             ViewModelPartenaires viewModel = new ViewModelPartenaires(this.Entities);
             ViewPartenaires view = new ViewPartenaires();
@@ -207,6 +233,7 @@ namespace MegaCasting.WPF
 
         private void Btn_ViewEmploye_Click(object sender, RoutedEventArgs e)
         {
+            // Vider les éléments enfants (UserControl,Vue) de mainWindow dans ce DockPanel, puis ajouter la vue de ViewEmploye
             this.DockPanelView.Children.Clear();
             ViewModelEmployes viewModel = new ViewModelEmployes(this.Entities);
             ViewEmployes view = new ViewEmployes();
@@ -217,6 +244,7 @@ namespace MegaCasting.WPF
 
         private void Btn_ViewGroupe_Click(object sender, RoutedEventArgs e)
         {
+            // Vider les éléments enfants (UserControl,Vue) de mainWindow dans ce DockPanel, puis ajouter la vue de ViewGroupeEmploye
             this.DockPanelView.Children.Clear();
             ViewModelGroupeEmployes viewModel = new ViewModelGroupeEmployes(this.Entities);
             ViewGroupeEmployes view = new ViewGroupeEmployes();
@@ -231,13 +259,12 @@ namespace MegaCasting.WPF
         #region Animation Menu
 
         /// <summary>
-        /// 
+        /// Méthode pour activer une animation d'une barre pour indiquer la position de la souris lorsqu'elle entre dans la zone de menu
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
 
 
-        #endregion
 
         private void ListBoxItem_MouseEnter(object sender, MouseEventArgs e)
         {
@@ -255,6 +282,7 @@ namespace MegaCasting.WPF
 
             PointOffset.BeginAnimation(TranslateTransform.YProperty, animation);
         }
+        #endregion
 
     }
 }

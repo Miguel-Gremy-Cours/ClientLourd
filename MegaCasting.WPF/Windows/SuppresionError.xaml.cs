@@ -19,12 +19,18 @@ namespace MegaCasting.WPF.Windows
     /// Logique d'interaction pour Error.xaml
     /// </summary>
     public partial class SuppresionError : MetroWindow
-    {
+    {  /// <summary>
+        /// Constructeur de la fenêtre SuppressionError
+        /// </summary>
         public SuppresionError()
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// boutton pour fermer cette fenêtre
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _Btn_OK_Click(object sender, RoutedEventArgs e)
         {
             this.Close();

@@ -65,7 +65,11 @@ namespace MegaCasting.WPF.Windows
 
         #endregion
 
-
+        /// <summary>
+        /// Méthode pour autoriser le redispositionner la fenêtre
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void WindowX_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
@@ -73,13 +77,18 @@ namespace MegaCasting.WPF.Windows
                 DragMove();
             }
         }
-
+        /// <summary>
+        /// Méthode pour le boutton login
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_Login_Click(object sender, RoutedEventArgs e)
-        {
+        {    // on récupère le chaine de de connexion et mot de passe
             CurrentEmployee = ((ViewModelConnexion)this.DataContext).GetEmployeeByLogs(TxtBx_Login.Text, PwBx_Password.Password);
 
             if (CurrentEmployee == null)
             {
+                //Si Login et Mot de passe de correspond à aucune valuer dans la base de données, on nettoye la zone de Textbox login et mot de passe.
                 TxtBx_Login.Text = "";
                 PwBx_Password.Password = "";
                 ConnexionError connexionError = new ConnexionError();
@@ -90,6 +99,7 @@ namespace MegaCasting.WPF.Windows
             }
             else
             {
+                // quand les valuers de login et de mot de passe correspond à celles dans la BDD, on instancie une la Mainwindow et fermer la fenêtre de connexion.
                 MainWindow mainWindow = new MainWindow();
                 this.Close();
                 mainWindow.ShowDialog();

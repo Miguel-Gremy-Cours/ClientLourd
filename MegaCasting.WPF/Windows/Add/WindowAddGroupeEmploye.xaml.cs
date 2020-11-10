@@ -20,17 +20,27 @@ namespace MegaCasting.WPF.Windows.Add
     /// Logique d'interaction pour WindowAddGroupeEmploye.xaml
     /// </summary>
     public partial class WindowAddGroupeEmploye : MetroWindow
-    {
+    {   /// <summary>
+        /// Contructeur de WindowAddDomaineMetier
+        /// </summary>
         public WindowAddGroupeEmploye()
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Boutton pour annuler l'ajout
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _Btn_Annulation_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
-
+        /// <summary>
+        /// Boutton pour valider les information de l'Employe puis l'ajouter dans la base de donner
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _Btn_Confirmation_Click(object sender, RoutedEventArgs e)
         {
             ((ViewModelAddGroupeEmployes)this.DataContext).InsertGroupeEmploye(_TextBox_Libelle.Text);

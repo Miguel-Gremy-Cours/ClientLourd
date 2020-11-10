@@ -20,17 +20,27 @@ namespace MegaCasting.WPF.Windows.Add
     /// Logique d'interaction pour WindowAddEmploye.xaml
     /// </summary>
     public partial class WindowAddEmploye : MetroWindow
-    {
+    {   /// <summary>
+        /// Contructeur de WindowAddEmploye
+        /// </summary>
         public WindowAddEmploye()
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Boutton pour annuler l'ajout
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _Btn_Annulation_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
-
+        /// <summary>
+        /// Boutton pour valider les information d'Employe puis l'ajouter dans la base de donner
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _Btn_Confirmation_Click(object sender, RoutedEventArgs e)
         {
             ((ViewModelAddEmployes)this.DataContext).InsertEmploye(_TextBox_Nom.Text, _TextBox_Prenom.Text, _TextBox_Login.Text, _TextBox_Password.Text);

@@ -23,12 +23,16 @@ namespace MegaCasting.WPF.Windows.Add
     public partial class WindowAddDomaineMetier : MetroWindow
     {
         #region Attributes
-
+        /// <summary>
+        /// Attribut contenant le nouveau DomaineMetier
+        /// </summary>
         private DomaineMetier _NewDomaine;
         #endregion
 
         #region Properties
-
+        /// <summary>
+        /// Properties de DomaineMetier de la BDD
+        /// </summary>
         public DomaineMetier NewDomaine
         {
             get { return _NewDomaine; }
@@ -37,18 +41,28 @@ namespace MegaCasting.WPF.Windows.Add
         #endregion
 
         #region Constructor
-
+        /// <summary>
+        /// Contructeur de WindowAddDomaineMetier
+        /// </summary>
         public WindowAddDomaineMetier()
         {
             InitializeComponent();
         }
         #endregion
-
+        /// <summary>
+        /// Boutton pour annuler l'ajout
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _Btn_Annulation_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
-
+        /// <summary>
+        /// Boutton pour valider les information du DomaineMetier puis l'ajouter dans la base de donner
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _Btn_Confirmation_Click(object sender, RoutedEventArgs e)
         {
            ((ViewModelAddDomaineMetier)this.DataContext).InsertDomaineMetier(_TextBox_Libelle.Text);

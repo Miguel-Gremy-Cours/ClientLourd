@@ -20,17 +20,27 @@ namespace MegaCasting.WPF.Windows.Add
     /// Logique d'interaction pour WindowAddOffre.xaml
     /// </summary>
     public partial class WindowAddOffre : MetroWindow
-    {
+    {   /// <summary>
+        /// Contructeur de WindowAddOffre
+        /// </summary>
         public WindowAddOffre()
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Boutton pour annuler l'ajout
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _Btn_Annulation_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
-
+        /// <summary>
+        /// Boutton pour valider les information de l'Offre puis l'ajouter dans la base de donner
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _Btn_Confirmation_Click(object sender, RoutedEventArgs e)
         {
             ((ViewModelAddOffres)this.DataContext).InsertOffre(_TextBox_Intitule.Text, _DatePicker_DatePublication.DisplayDate, Convert.ToInt32(_TextBox_DureDiffusion.Text), Convert.ToInt32(_TextBox_NombrePostes.Text), _TextBox_DescriptionPoste.Text, _TextBox_DescriptionProfile.Text, _TextBox_Localisation.Text, _TextBox_CodeOffre.Text);

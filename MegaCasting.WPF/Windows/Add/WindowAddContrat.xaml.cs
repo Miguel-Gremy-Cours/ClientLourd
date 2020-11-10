@@ -21,17 +21,24 @@ namespace MegaCasting.WPF.Windows.Add
     /// Logique d'interaction pour WindowAddContrat.xaml
     /// </summary>
     public partial class WindowAddContrat : MetroWindow
-    {
+    {    /// <summary>
+         /// Constructeur de la fenêtre WindowAddContrat
+         /// </summary>
         public WindowAddContrat()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Boutton pour annuler la fermeture de cette fenêtre
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _Btn_Annulation_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
-
+        //Boutton pour valider les information de du contrat puis l'ajouter dans la base de donner
         private void _Btn_Confirmation_Click(object sender, RoutedEventArgs e)
         {
             ((ViewModelAddContrat)this.DataContext).InsertContrat(_DatePicker_DebutContrat.DisplayDate, Convert.ToInt32(_TextBox_DureContrat.Text), _Textbox_CodeContrat.Text, _TextBox_FichierContrat.Text);
