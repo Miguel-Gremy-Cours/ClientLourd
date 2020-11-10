@@ -21,11 +21,18 @@ namespace MegaCasting.WPF.View
     /// </summary>
     public partial class ViewOffresInternautes : UserControl
     {
+        /// <summary>
+        /// Contructeur de ViewDomaineMetier
+        /// </summary>
         public ViewOffresInternautes()
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Boutton pou sauvegarder les modifications effectuées du OffreInternaute sélectionnée dans la vue
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _Save_Changes_Click(object sender, RoutedEventArgs e)
         {
             ((ViewModelOffresInternautes)this.DataContext).SaveChanges();

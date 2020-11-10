@@ -22,26 +22,41 @@ namespace MegaCasting.WPF.View
     /// Logique d'interaction pour ViewOffres.xaml
     /// </summary>
     public partial class ViewOffres : UserControl
-    {
+    {/// <summary>
+     /// Contructeur de ViewOffre
+     /// </summary>
         public ViewOffres()
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Boutton pour rappelle la fenêtre pour ajouter un nouvelle Offre
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _New_Offre_Click(object sender, RoutedEventArgs e)
-        {
+        {/// nouvelle instance de la fenêtre 
             WindowAddOffre windowAddOffre = new WindowAddOffre();
+            /// nouvelle instance de ViewModelAddOffre à partir de Entities de BDD, puis affecter à dataContext de cette fénêtre.
             windowAddOffre.DataContext = new ViewModelAddOffres(((ViewModelOffres)this.DataContext).Entities);
             windowAddOffre.ShowDialog();
 
         }
-
+        /// <summary>
+        /// Boutton pour supprimer une Offre
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _Btn_Delete_Click(object sender, RoutedEventArgs e)
         {
             ((ViewModelOffres)this.DataContext).DeleteOffre();
 
         }
-
+        /// <summary>
+        /// Boutton pou sauvegarder les modifications effectuées de l'Offre sélectionné dans la vue
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _Save_Offre_Click(object sender, RoutedEventArgs e)
         {
             ((ViewModelOffres)this.DataContext).SaveChanges();

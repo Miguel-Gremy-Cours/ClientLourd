@@ -23,23 +23,39 @@ namespace MegaCasting.WPF.View
     /// </summary>
     public partial class ViewPartenaires : UserControl
     {
+        /// <summary>
+        /// Contructeur de ViewPartenaires
+        /// </summary>
         public ViewPartenaires()
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Boutton pour rappelle la fenêtre pour ajouter un nouveau Partenaire
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _New_Partenaire_Click(object sender, RoutedEventArgs e)
-        {
+        {/// nouvelle instance de la fenêtre
             WindowAddPartenaire windowAddPartenaire = new WindowAddPartenaire();
+            /// nouvelle instance de ViewModelAddPartenaire à partir de Entities de BDD, puis affecter à dataContext de cette fénêtre.
             windowAddPartenaire.DataContext = new ViewModelAddPartenaires(((ViewModelPartenaires)this.DataContext).Entities);
             windowAddPartenaire.ShowDialog();
         }
-
+        /// <summary>
+        /// Boutton pour supprimer un Partenaire
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _Delete_Partenaire_Click(object sender, RoutedEventArgs e)
         {
             ((ViewModelPartenaires)this.DataContext).DeletePartenaire();
         }
-
+        /// <summary>
+        /// Boutton pou sauvegarder les modifications effectuées du Partenaire sélectionné dans la vue
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _Save_Partenaire_Click(object sender, RoutedEventArgs e)
         {
             ((ViewModelPartenaires)this.DataContext).SaveChanges();

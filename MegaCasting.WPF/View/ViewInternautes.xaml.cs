@@ -20,17 +20,27 @@ namespace MegaCasting.WPF.View
     /// Logique d'interaction pour ViewInternautes.xaml
     /// </summary>
     public partial class ViewInternautes : UserControl
-    {
+    { /// <summary>
+      /// Contructeur de ViewInternautes
+      /// </summary>
         public ViewInternautes()
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Boutton pour supprimer un Internaute
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _Delete_Internaute_Click(object sender, RoutedEventArgs e)
         {
             ((ViewModelInternautes)this.DataContext).DeleteInternaute();
         }
-
+        /// <summary>
+        /// Boutton pou sauvegarder les modifications effectuées d'Internaute sélectionné dans la vue
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _Save_internaute_Click(object sender, RoutedEventArgs e)
         {
             ((ViewModelInternautes)this.DataContext).SaveChanges();
