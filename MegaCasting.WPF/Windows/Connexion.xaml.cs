@@ -14,6 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Security.Cryptography;
 
 namespace MegaCasting.WPF.Windows
 {
@@ -22,11 +23,7 @@ namespace MegaCasting.WPF.Windows
     /// </summary>
     public partial class Connexion : WindowX
     {
-
-
-
         #region Attributues
-
         private MegaCastingEntities _Entities;
         private Employe _CurrentEmployee;
         private bool _IsLogsValids;
@@ -51,9 +48,6 @@ namespace MegaCasting.WPF.Windows
         }
         #endregion
         #region constrcutor
-
-
-
         public Connexion()
         {
             InitializeComponent();
@@ -62,7 +56,6 @@ namespace MegaCasting.WPF.Windows
             this.Entities = new MegaCastingEntities();
             this.DataContext = new ViewModelConnexion(Entities);
         }
-
         #endregion
 
 
@@ -77,6 +70,10 @@ namespace MegaCasting.WPF.Windows
         private void Btn_Login_Click(object sender, RoutedEventArgs e)
         {
             CurrentEmployee = ((ViewModelConnexion)this.DataContext).GetEmployeeByLogs(TxtBx_Login.Text, PwBx_Password.Password);
+
+            #if DEBUG
+                CurrentEmployee = ((ViewModelConnexion)this.DataContext).GetEmployeeByLogs("spickover0", "eG3Agf");
+            #endif
 
             if (CurrentEmployee == null)
             {
@@ -94,7 +91,6 @@ namespace MegaCasting.WPF.Windows
                 this.Close();
                 mainWindow.ShowDialog();
             }
-
         }
     }
 }
