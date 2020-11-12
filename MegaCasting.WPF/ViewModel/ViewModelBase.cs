@@ -1,4 +1,5 @@
 ﻿using MegaCasting.DBLib;
+using MegaCasting.WPF.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -60,6 +61,7 @@ namespace MegaCasting.WPF.ViewModel
         public void SaveChanges()
         {
             this.Entities.SaveChanges();
+            WindowSucces windowSucces = new WindowSucces();
         }
 
         /*

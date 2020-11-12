@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
+using MegaCasting.WPF.Windows;
 
 namespace MegaCasting.WPF.ViewModel.Add
 {
@@ -72,8 +73,17 @@ namespace MegaCasting.WPF.ViewModel.Add
             studio.Libelle = libelle;
             studio.Email = email;
             studio.Telephone = telephone;
+
+            if (studio.Siret != null && studio.Adresse != null && studio.NumeroAdresse != null && studio.Libelle != null && studio.Email != null && studio.Telephone != null)
+            {
             this.Studios.Add(studio);
             this.SaveChanges();
+                WindowSucces window = new WindowSucces();
+            }
+            else
+            {
+                WindowErrorChampEmpty window = new WindowErrorChampEmpty();
+            }
         }
         #endregion
     }

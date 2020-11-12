@@ -41,23 +41,12 @@ namespace MegaCasting.WPF.Windows.Add
         //Boutton pour valider les information de du contrat puis l'ajouter dans la base de donner
         private void _Btn_Confirmation_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
+          
+
             ((ViewModelAddContrat)this.DataContext).InsertContrat(_DatePicker_DebutContrat.DisplayDate, Convert.ToInt32(_TextBox_DureContrat.Text), _Textbox_CodeContrat.Text, _TextBox_FichierContrat.Text);
-
-            }
-            catch (Exception)
-            {
-
+                this.Close();
                 
-            }
-            finally
-            {
-
-            this.Close();
-            }
-
-
+            
         }
     }
 }

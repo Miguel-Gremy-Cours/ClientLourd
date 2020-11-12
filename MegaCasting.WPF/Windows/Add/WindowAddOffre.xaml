@@ -90,7 +90,7 @@
                     </ComboBox>
                     <TextBox Grid.Row="1" Grid.Column="1" x:Name="_TextBox_Intitule"   materialDesign:HintAssist.Hint="Saisir l'intitulé d'offre"  Text="{Binding Offres.Intitule}" Foreground="White" Background="Transparent" FontFamily="Helvitica" FontSize="20" FontWeight="Light" VerticalAlignment="Center" />
 
-                    <ComboBox Grid.Row="2" Grid.Column="1" x:Name="_ComboBox_Metier" materialDesign:HintAssist.Hint="Sélectionner un studio" ItemsSource="{Binding Metiers}" DisplayMemberPath="Libelle" SelectedItem="{Binding SelectedMetier}" Text="{Binding Metiers.Libelle}" Foreground="White" Background="Transparent" FontFamily="Helvatica" FontSize="20" FontWeight="Light">
+                    <ComboBox Grid.Row="2" Grid.Column="1" x:Name="_ComboBox_Metier" materialDesign:HintAssist.Hint="Sélectionner un métier" ItemsSource="{Binding Metiers}" DisplayMemberPath="Libelle" SelectedItem="{Binding SelectedMetier}" Text="{Binding Metiers.Libelle}" Foreground="White" Background="Transparent" FontFamily="Helvatica" FontSize="20" FontWeight="Light">
                         <ComboBox.ItemContainerStyle>
                             <Style TargetType="ComboBoxItem">
                                 <Setter Property="Background" 
@@ -113,7 +113,7 @@
 
 
 
-                    <ComboBox Grid.Row="8" Grid.Column="1" x:Name="_ComboBox_Offre" materialDesign:HintAssist.Hint="Sélectionner un opérateur" ItemsSource="{Binding SelectedEmploye}" Text="{Binding Employe.Login}" SelectedItem="{Binding SelectedEmploye}"  Foreground="White" Background="Transparent" FontFamily="Helvatica" FontSize="20" FontWeight="Light" DisplayMemberPath="Login" >
+                    <ComboBox Grid.Row="8" Grid.Column="1" x:Name="_ComboBox_Offre" materialDesign:HintAssist.Hint="Sélectionner un opérateur" ItemsSource="{Binding Employes}" Text="{Binding Employe.Login}" SelectedItem="{Binding SelectedEmploye}"  Foreground="White" Background="Transparent" FontFamily="Helvatica" FontSize="20" FontWeight="Light" DisplayMemberPath="Login" >
                     <!--<ComboBoxItem>
                         <DataTemplate>
                             <Grid>

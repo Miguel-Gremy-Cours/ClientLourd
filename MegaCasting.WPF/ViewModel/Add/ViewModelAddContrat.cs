@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using MegaCasting.WPF.Windows;
 
 namespace MegaCasting.WPF.ViewModel.Add
 {
@@ -141,8 +142,18 @@ namespace MegaCasting.WPF.ViewModel.Add
             contrat.FichierContrat = fichierContrat;
             contrat.Offre = SelectedOffre;
 
+
+            if (contrat.TypeContrat!=null && contrat.DebutContrat!= null && contrat.DureContrat!=null && contrat.CodeContrat!=null && contrat.FichierContrat!= null && contrat.Offre!=null)
+            {
+
             this.Contrats.Add(contrat);
             this.SaveChanges();
+                WindowSucces windowSucces = new WindowSucces();
+            }
+            else
+            {
+                WindowErrorChampEmpty windowError = new WindowErrorChampEmpty();
+            }
             //this.SelectedContrat = contrat;
         }
 

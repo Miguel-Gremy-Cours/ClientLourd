@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows;
 using Application = System.Windows.Application;
+using MegaCasting.WPF.Windows;
 
 namespace MegaCasting.WPF.ViewModel.Add
 {
@@ -166,8 +167,17 @@ namespace MegaCasting.WPF.ViewModel.Add
             offre.Localisation = localisatoin;
             offre.CodeOffre = codeOffre;
 
+
+            if (offre.Studio!=null && offre.Intitule!= null && offre.Metier!= null && offre.DatePublication!= null && offre.DescriptionPoste!= null && offre.DescriptionProfile!= null && offre.DureDiffusion!= null && offre.NombrePostes!=null && offre.Employe!=null && offre.Localisation!= null && offre.CodeOffre!=null)
+            {
             this.Offres.Add(offre);
             this.SaveChanges();
+                WindowSucces window = new WindowSucces();
+            }
+            else
+            {
+                WindowErrorChampEmpty window = new WindowErrorChampEmpty();
+            }
         }
         #endregion
     }

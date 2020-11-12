@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MegaCasting.WPF.Windows;
 
 namespace MegaCasting.WPF.ViewModel.Add
 {
@@ -127,8 +128,17 @@ namespace MegaCasting.WPF.ViewModel.Add
             employe.Login = login;
             employe.Password = password;
 
+            if (employe.Nom!=null&& employe.Prenom!=null && employe.Civilite!= null && employe.GroupeEmploye!= null && employe.Login!= null && employe.Password!= null)
+            {
             this.Employes.Add(employe);
             this.SaveChanges();
+                WindowSucces window = new WindowSucces();
+            }
+            else
+            {
+                WindowErrorChampEmpty window = new WindowErrorChampEmpty();
+            }
+
 
         }
         #endregion

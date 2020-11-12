@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
+using MegaCasting.WPF.Windows;
 
 namespace MegaCasting.WPF.ViewModel.Add
 {
@@ -78,8 +79,18 @@ namespace MegaCasting.WPF.ViewModel.Add
 
             domaineMetier.Libelle = libelle;
 
+
+            if (domaineMetier.Libelle != null)
+            {
+
             this.DomaineMetiers.Add(domaineMetier);
             this.SaveChanges();
+                WindowSucces window =new WindowSucces();
+            }
+            else
+            {
+                WindowErrorChampEmpty window = new WindowErrorChampEmpty();
+            }
             
         }
         #endregion

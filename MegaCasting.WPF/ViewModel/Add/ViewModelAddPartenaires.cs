@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using System.Security.RightsManagement;
+using MegaCasting.WPF.Windows;
 
 namespace MegaCasting.WPF.ViewModel.Add
 {
@@ -77,8 +78,17 @@ namespace MegaCasting.WPF.ViewModel.Add
             partenaire.Telephone = telephone;
             partenaire.Login = login;
             partenaire.Password = password;
+
+            if (partenaire.Siret!=null&& partenaire.Adresse != null && partenaire.NumeroAdresse != null && partenaire.Libelle != null && partenaire.Email != null && partenaire.Telephone != null && partenaire.Login != null && partenaire.Password != null)
+            {
             this.Partenaires.Add(partenaire);
             this.SaveChanges();
+                WindowSucces window = new WindowSucces();
+            }
+            else
+            {
+                WindowErrorChampEmpty window = new WindowErrorChampEmpty();
+            }
         } 
         #endregion
 

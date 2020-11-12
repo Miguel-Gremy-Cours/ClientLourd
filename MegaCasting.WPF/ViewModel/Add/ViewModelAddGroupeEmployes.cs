@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
+using MegaCasting.WPF.Windows;
 
 namespace MegaCasting.WPF.ViewModel.Add
 {
@@ -62,8 +63,17 @@ namespace MegaCasting.WPF.ViewModel.Add
         {
             GroupeEmploye groupeEmploye = new GroupeEmploye();
             groupeEmploye.Libelle = libelle;
+            if (groupeEmploye.Libelle!=null)
+            {
             this.GroupeEmployes.Add(groupeEmploye);
             this.SaveChanges();
+                WindowSucces windowSucces = new WindowSucces();
+            }
+            else
+            {
+                WindowErrorChampEmpty window = new WindowErrorChampEmpty();
+            }
+
         }
 
 

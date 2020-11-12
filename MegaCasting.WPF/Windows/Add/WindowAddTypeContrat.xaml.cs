@@ -44,21 +44,12 @@ namespace MegaCasting.WPF.Windows.Add
         /// <param name="e"></param>
         private void _Btn_Confirmation_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
+          
             ((ViewModelAddTypeContrat)this.DataContext).InserteTypeContrat(_TextBox_Libelle.Text);
 
-            }
-            catch (Exception)
-            {
-
-                
-            }
-            finally
-            {
-
+         
             this.Close();
-            }
+           
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
+using MegaCasting.WPF.Windows;
 
 namespace MegaCasting.WPF.ViewModel.Add
 {
@@ -62,8 +63,17 @@ namespace MegaCasting.WPF.ViewModel.Add
         {
             TypeContrat typeContrat = new TypeContrat();
             typeContrat.Libelle = libelle;
+            if (typeContrat.Libelle!=null)
+            {
             this.TypeContrats.Add(typeContrat);
             this.SaveChanges();
+                WindowSucces windowSucces = new WindowSucces();
+
+            }
+            else
+            {
+                WindowErrorChampEmpty window = new WindowErrorChampEmpty();
+            }
         }
         #endregion
 

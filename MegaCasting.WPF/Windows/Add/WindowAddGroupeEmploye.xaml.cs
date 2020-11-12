@@ -43,21 +43,13 @@ namespace MegaCasting.WPF.Windows.Add
         /// <param name="e"></param>
         private void _Btn_Confirmation_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
+           
 
             ((ViewModelAddGroupeEmployes)this.DataContext).InsertGroupeEmploye(_TextBox_Libelle.Text);
-            }
-            catch (Exception)
-            {
-
-               
-            }
-            finally
-            {
+        
             this.Close();
 
-            }
+            
         }
     }
 }

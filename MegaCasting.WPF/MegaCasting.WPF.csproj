@@ -279,6 +279,12 @@
     <Compile Include="Windows\SuppresionError.xaml.cs">
       <DependentUpon>SuppresionError.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\WindowErrorChampEmpty.xaml.cs">
+      <DependentUpon>WindowErrorChampEmpty.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\WindowSucces.xaml.cs">
+      <DependentUpon>WindowSucces.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -406,6 +412,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\SuppresionError.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\WindowErrorChampEmpty.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\WindowSucces.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

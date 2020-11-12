@@ -43,21 +43,12 @@ namespace MegaCasting.WPF.Windows.Add
         /// <param name="e"></param>
         private void _Btn_Confirmation_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
+          
             ((ViewModelAddOffres)this.DataContext).InsertOffre(_TextBox_Intitule.Text, _DatePicker_DatePublication.DisplayDate, Convert.ToInt32(_TextBox_DureDiffusion.Text), Convert.ToInt32(_TextBox_NombrePostes.Text), _TextBox_DescriptionPoste.Text, _TextBox_DescriptionProfile.Text, _TextBox_Localisation.Text, _TextBox_CodeOffre.Text);
 
-            }
-            catch (Exception)
-            {
-
-                
-            }
-            finally
-            {
-
+         
             this.Close();
-            }
+            
         }
     }
 }
