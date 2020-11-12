@@ -1,6 +1,5 @@
 ﻿using MahApps.Metro.Controls;
 using MegaCasting.WPF.ViewModel.Add;
-using Panuon.UI.Silver;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,12 +43,17 @@ namespace MegaCasting.WPF.Windows.Add
         /// <param name="e"></param>
         private void _Btn_Confirmation_Click(object sender, RoutedEventArgs e)
         {
-          if(_TextBox_NombrePostes.Text!=null&& _TextBox_DureDiffusion.Text!=null&& _TextBox_Intitule.Text != null&& _TextBox_DescriptionPoste.Text!=null&& _TextBox_DescriptionProfile.Text!=null&& _TextBox_Localisation.Text!=null&& _TextBox_CodeOffre.Text!=null)
+          if (int.TryParse(_TextBox_NombrePostes.Text, out int resultNbPoste)!=false&& int.TryParse(_TextBox_DureDiffusion.Text, out int resultDuree) !=false&& _TextBox_Intitule.Text != null&& _TextBox_DescriptionPoste.Text!=null&& _TextBox_DescriptionProfile.Text!=null&& _TextBox_Localisation.Text!=null&& _TextBox_CodeOffre.Text!=null)
             {
 
-            ((ViewModelAddOffres)this.DataContext).InsertOffre(_TextBox_Intitule.Text, _DatePicker_DatePublication.DisplayDate, (int)_TextBox_DureDiffusion.Text.ToInt(), (int)_TextBox_NombrePostes.Text.ToInt(), _TextBox_DescriptionPoste.Text, _TextBox_DescriptionProfile.Text, _TextBox_Localisation.Text, _TextBox_CodeOffre.Text);
+            ((ViewModelAddOffres)this.DataContext).InsertOffre(_TextBox_Intitule.Text, _DatePicker_DatePublication.DisplayDate, Convert.ToInt32(_TextBox_DureDiffusion.Text), Convert.ToInt32(_TextBox_NombrePostes.Text), _TextBox_DescriptionPoste.Text, _TextBox_DescriptionProfile.Text, _TextBox_Localisation.Text, _TextBox_CodeOffre.Text);
 
             this.Close();
+            }
+
+            else
+            {
+                WindowErrorChampEmpty windowErrorChampEmpty = new WindowErrorChampEmpty();
             }
             
          
