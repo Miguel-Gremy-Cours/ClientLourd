@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MegaCasting.WPF.ViewModel
 {
-    class ViewModelConnexion : ViewModelBase
+    public class ViewModelConnexion : ViewModelBase
     {
         /// <summary>
         /// Constructeur de la classe ViewModelConnexion

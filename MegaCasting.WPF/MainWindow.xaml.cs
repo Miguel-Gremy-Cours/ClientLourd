@@ -31,13 +31,26 @@ namespace MegaCasting.WPF
 
         #region Attributes
         /// <summary>
-        /// Attribut contenant les données de la base de donnée
+        /// Attribut contenant les données de la base de données
         /// </summary>
         private MegaCastingEntities _Entities;
-
+        /// <summary>
+        /// Attribut contenant les données de la base de données
+        /// </summary>
+        private Employe _CurrentEmploye;
+       
         #endregion
 
         #region Properties
+        /// <summary>
+        /// properties de Employe actuel
+        /// </summary>
+        public Employe CurrentEmploye
+        {
+            get { return _CurrentEmploye; }
+            set { _CurrentEmploye = value; }
+        }
+
         /// <summary>
         /// Entitées de la base de donnée
         /// </summary>
@@ -57,7 +70,11 @@ namespace MegaCasting.WPF
         {
             InitializeComponent();
             this.Entities = new MegaCastingEntities();
-            this.DataContext = new ViewModelMainWindow(Entities);
+            _Label_Emp.Content = Application.Current.Resources["currentEmp"];
+            //ChangeMenuItemVisibility();
+
+            //this.DataContext = new ViewModelMainWindow(Entities); 
+            //=> ces deux lignes ont été déplacées dans Connexion.Xaml.cs
         }
         #endregion
 
@@ -109,9 +126,32 @@ namespace MegaCasting.WPF
 
 
 
+        private void ChangeMenuItemVisibility()
+        {
+            string login = Application.Current.Resources["currentEmp"].ToString();
+            Employe emp = this.Entities.Employes.FirstOrDefault(employe => employe.Login == login);
+
+            if (emp.IdGroupeEmployes==2)
+            {
+                ViewEmploye.Visibility = Visibility.Visible;
+                Btn_ViewEmploye.Visibility = Visibility.Visible;
+
+                ViewGroupe.Visibility = Visibility.Visible;
+                Btn_ViewGroupe.Visibility = Visibility.Visible;
+
+                ViewInternaute.Visibility = Visibility.Visible;
+                Btn_ViewInternaute.Visibility = Visibility.Visible;
+
+                ViewOffreInternaute.Visibility = Visibility.Visible;
+                Btn_ViewOffreInternaute.Visibility = Visibility.Visible;
+
+                ViewTypeContrat.Visibility = Visibility.Visible;
+                Btn_ViewTypeContrat.Visibility = Visibility.Visible;
+            }
+           
+        }
+
         #region MenuClick
-
-
         private void Btn_ViewMain_Click(object sender, RoutedEventArgs e)
         {
 

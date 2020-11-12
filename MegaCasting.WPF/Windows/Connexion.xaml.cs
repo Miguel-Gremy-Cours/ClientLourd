@@ -97,7 +97,11 @@ namespace MegaCasting.WPF.Windows
             else
             {
                 // quand les valuers de login et de mot de passe correspond à celles dans la BDD, on instancie une la Mainwindow et fermer la fenêtre de connexion.
+                Application.Current.Resources.Remove("currentEmp");
+                Application.Current.Resources.Add("currentEmp", TxtBx_Login.Text);
                 MainWindow mainWindow = new MainWindow();
+                mainWindow.Entities = new MegaCastingEntities();
+                mainWindow.DataContext = new ViewModelConnexion(Entities);
                 this.Close();
                 mainWindow.ShowDialog();
             }

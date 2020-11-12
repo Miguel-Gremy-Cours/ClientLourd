@@ -48,39 +48,39 @@
         <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="Btn_ViewMain">
             <BeginStoryboard Storyboard="{StaticResource CloseMenu}"/>
         </EventTrigger>
-        <!--<EventTrigger RoutedEvent="ButtonBase.Click" SourceName="Btn_ViewContrat">
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="Btn_ViewContrat">
             <BeginStoryboard Storyboard="{StaticResource CloseMenu}"/>
-        </EventTrigger>-->
-        <!--<EventTrigger RoutedEvent="ButtonBase.Click" SourceName="Btn_ViewTypeContrat">
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="Btn_ViewTypeContrat">
             <BeginStoryboard Storyboard="{StaticResource CloseMenu}"/>
-        </EventTrigger>-->
+        </EventTrigger>
         <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="Btn_ViewOffre">
             <BeginStoryboard Storyboard="{StaticResource CloseMenu}"/>
         </EventTrigger>
-        <!--<EventTrigger RoutedEvent="ButtonBase.Click" SourceName="Btn_ViewOffreInternaute">
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="Btn_ViewOffreInternaute">
             <BeginStoryboard Storyboard="{StaticResource CloseMenu}"/>
-        </EventTrigger>-->
-        <!--<EventTrigger RoutedEvent="ButtonBase.Click" SourceName="Btn_ViewInternaute">
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="Btn_ViewInternaute">
             <BeginStoryboard Storyboard="{StaticResource CloseMenu}"/>
-        </EventTrigger>-->
-        <!--<EventTrigger RoutedEvent="ButtonBase.Click" SourceName="Btn_ViewMetier">
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="Btn_ViewMetier">
             <BeginStoryboard Storyboard="{StaticResource CloseMenu}"/>
-        </EventTrigger>-->
-        <!--<EventTrigger RoutedEvent="ButtonBase.Click" SourceName="Btn_ViewDomaineMetier">
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="Btn_ViewDomaineMetier">
             <BeginStoryboard Storyboard="{StaticResource CloseMenu}"/>
-        </EventTrigger>-->
+        </EventTrigger>
         <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="Btn_ViewStudio">
             <BeginStoryboard Storyboard="{StaticResource CloseMenu}"/>
         </EventTrigger>
         <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="Btn_ViewPartenaire">
             <BeginStoryboard Storyboard="{StaticResource CloseMenu}"/>
         </EventTrigger>
-        <!--<EventTrigger RoutedEvent="ButtonBase.Click" SourceName="Btn_ViewEmploye">
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="Btn_ViewEmploye">
             <BeginStoryboard Storyboard="{StaticResource CloseMenu}"/>
-        </EventTrigger>-->
-        <!--<EventTrigger RoutedEvent="ButtonBase.Click" SourceName="Btn_ViewGroupe">
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="Btn_ViewGroupe">
             <BeginStoryboard Storyboard="{StaticResource CloseMenu}"/>
-        </EventTrigger>-->
+        </EventTrigger>
         <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtonOpen">
             <BeginStoryboard Storyboard="{StaticResource OpenMenu}"/>
         </EventTrigger>
@@ -116,7 +116,8 @@
                 <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="100,0,0,0">
                     <materialDesign:PackIcon Kind="Videocam" Foreground="White" Width="75" Height="75"  VerticalAlignment="Center"  HorizontalAlignment="Left"/>
                     <Label  Content="MegaCasting" Foreground="White" FontFamily="Helvitica" FontSize="60" FontWeight="Light" VerticalAlignment="Center"/>
-                    <Label  Content="{Binding CurrentEmploye}" Foreground="White" FontFamily="Helvitica" FontSize="60" FontWeight="Light" VerticalAlignment="Center"  Margin="100"/>
+                    <TextBlock Text="Opérateur:" Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                        <Label x:Name="_Label_Emp"  Foreground="White" FontFamily="Helvitica" FontSize="30" FontWeight="Light" VerticalAlignment="Center"  />
                     <Button Margin="520,0,0,0" x:Name="Btn_Close" Click="Btn_Close_Click" BorderThickness="0" Background="Transparent">
                         <materialDesign:PackIcon Grid.Column="2" Kind="ExitToApp" Foreground="White" Width="50" Height="50"  VerticalAlignment="Center"  HorizontalAlignment="Center" />
                     </Button>
@@ -222,22 +223,22 @@
                             </StackPanel>
                         </Button>
                     </ListBoxItem>
-                    <!--<ListBoxItem x:Name="ViewTypeContrat">
+                    <ListBoxItem x:Name="ViewTypeContrat">
                         <Button BorderThickness="0" Background="Transparent" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewTypeContrat" Click="Btn_ViewTypeContrat_Click">
                             <StackPanel Style="{StaticResource StackPanelStyle}">
                                 <iconPacks:PackIconMaterialDesign Kind="MergeType" Width="30" Height="30" VerticalAlignment="Center" Foreground="White"/>
                                 <TextBlock Text="Type contrat" FontSize="30" FontWeight="Light" Foreground="White"/>
                             </StackPanel>
                         </Button>
-                    </ListBoxItem>-->
-                    <!--<ListBoxItem x:Name="ViewContrat">
+                    </ListBoxItem>
+                    <ListBoxItem x:Name="ViewContrat" >
                         <Button BorderThickness="0" Background="Transparent" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewContrat" Click="Btn_ViewContrat_Click">
                             <StackPanel Style="{StaticResource StackPanelStyle}">
                                 <iconPacks:PackIconMaterialDesign Kind="Book"  Width="30" Height="30" VerticalAlignment="Center" Foreground="White"/>
                                 <TextBlock Text="Contrats" FontSize="30" FontWeight="Light" Foreground="White"/>
                             </StackPanel>
                         </Button>
-                    </ListBoxItem>-->
+                    </ListBoxItem>
                     <ListBoxItem x:Name="ViewOfrre">
                         <Button BorderThickness="0" Background="Transparent" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewOffre" Click="Btn_ViewOffre_Click">
                             <StackPanel Style="{StaticResource StackPanelStyle}">
@@ -246,38 +247,38 @@
                             </StackPanel>
                         </Button>
                     </ListBoxItem>
-                    <!--<ListBoxItem x:Name="ViewOffreInternaute">
+                    <ListBoxItem x:Name="ViewOffreInternaute" >
                         <Button BorderThickness="0" Background="Transparent" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewOffreInternaute" Click="Btn_ViewOffreInternaute_Click">
                             <StackPanel Style="{StaticResource StackPanelStyle}">
                                 <iconPacks:PackIconFontAwesome Kind="LinkSolid"  Width="30" Height="30" VerticalAlignment="Center" Foreground="White"/>
                                 <TextBlock Text="Offre Internaute" FontSize="30" FontWeight="Light" Foreground="White"/>
                             </StackPanel>
                         </Button>
-                    </ListBoxItem>-->
-                    <!--<ListBoxItem x:Name="ViewInternaute">
+                    </ListBoxItem>
+                    <ListBoxItem x:Name="ViewInternaute" >
                         <Button BorderThickness="0" Background="Transparent" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewInternaute" Click="Btn_ViewInternaute_Click">
                             <StackPanel Style="{StaticResource StackPanelStyle}">
                                 <iconPacks:PackIconFontAwesome Kind="UserCheckSolid"  Width="30" Height="30" VerticalAlignment="Center" Foreground="White"/>
                                 <TextBlock Text="Internautes" FontSize="30" FontWeight="Light" Foreground="White"/>
                             </StackPanel>
                         </Button>
-                    </ListBoxItem>-->
-                    <!--<ListBoxItem x:Name="ViewMetier">
+                    </ListBoxItem>
+                    <ListBoxItem x:Name="ViewMetier" >
                         <Button BorderThickness="0" Background="Transparent" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewMetier" Click="Btn_ViewMetier_Click">
                             <StackPanel Style="{StaticResource StackPanelStyle}">
                                 <iconPacks:PackIconFontAwesome Kind="JointSolid"  Width="30" Height="30" VerticalAlignment="Center" Foreground="White"/>
                                 <TextBlock Text="Métiers" FontSize="30" FontWeight="Light" Foreground="White"/>
                             </StackPanel>
                         </Button>
-                    </ListBoxItem>-->
-                    <!--<ListBoxItem x:Name="ViewDomaineMetier">
+                    </ListBoxItem>
+                    <ListBoxItem x:Name="ViewDomaineMetier" >
                         <Button BorderThickness="0" Background="Transparent" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewDomaineMetier" Click="Btn_ViewDomaineMetier_Click">
                             <StackPanel Style="{StaticResource StackPanelStyle}">
                                 <iconPacks:PackIconFontAwesome Kind="PagelinesBrands"  Width="30" Height="30" VerticalAlignment="Center" Foreground="White"/>
                                 <TextBlock Text="Domaines" FontSize="30" FontWeight="Light" Foreground="White"/>
                             </StackPanel>
                         </Button>
-                    </ListBoxItem>-->
+                    </ListBoxItem>
                     <ListBoxItem x:Name="ViewStudio">
                         <Button BorderThickness="0" Background="Transparent" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewStudio" Click="Btn_ViewStudio_Click">
                             <StackPanel Style="{StaticResource StackPanelStyle}">
@@ -294,22 +295,22 @@
                             </StackPanel>
                         </Button>
                     </ListBoxItem>
-                    <!--<ListBoxItem x:Name="ViewEmploye">
+                    <ListBoxItem x:Name="ViewEmploye">
                         <Button BorderThickness="0" Background="Transparent" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewEmploye" Click="Btn_ViewEmploye_Click">
                             <StackPanel Style="{StaticResource StackPanelStyle}">
                                 <iconPacks:PackIconFontAwesome Kind="UserCircleSolid"  Width="30" Height="30" VerticalAlignment="Center" Foreground="White"/>
                                 <TextBlock Text="Employés" FontSize="30" FontWeight="Light" Foreground="White"/>
                             </StackPanel>
                         </Button>
-                    </ListBoxItem>-->
-                    <!--<ListBoxItem x:Name="ViewGroupe" >
+                    </ListBoxItem>
+                    <ListBoxItem x:Name="ViewGroupe" >
                         <Button BorderThickness="0" Background="Transparent" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewGroupe" Click="Btn_ViewGroupe_Click">
                             <StackPanel Style="{StaticResource StackPanelStyle}">
                                 <iconPacks:PackIconFontAwesome Kind="LayerGroupSolid"  Width="30" Height="30" VerticalAlignment="Center" Foreground="White"/>
                                 <TextBlock Text="Groupes" FontSize="30" FontWeight="Light" Foreground="White"/>
                             </StackPanel>
                         </Button>
-                    </ListBoxItem>-->
+                    </ListBoxItem>
 
                 </ListBox>
 

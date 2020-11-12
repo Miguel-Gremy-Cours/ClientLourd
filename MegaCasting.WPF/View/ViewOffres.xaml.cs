@@ -28,6 +28,7 @@ namespace MegaCasting.WPF.View
         public ViewOffres()
         {
             InitializeComponent();
+           
         }
         /// <summary>
         /// Boutton pour rappelle la fenêtre pour ajouter un nouvelle Offre

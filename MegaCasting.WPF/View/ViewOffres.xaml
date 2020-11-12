@@ -407,28 +407,14 @@
                             </Style>
                         </ComboBox.ItemContainerStyle>
                     </ComboBox>
-                    <ComboBox Grid.Column="7" 
-                              Grid.Row="15"
-                              x:Name="_Cmbox_Employe"
-                              ItemsSource="{Binding Employes}"
-                              DisplayMemberPath="Nom"
-                              SelectedItem="{Binding SelectedEmploye}"
-                              Visibility="{Binding SelectedOffre, Converter={StaticResource _SharedObjectToVisibilityConverter}}" 
-                             Text="{Binding SelectedOffre.Employe.Nom}" 
-                             
+                    <Label  Grid.Column="7" 
+                            Grid.Row="15" 
+                             Visibility="{Binding SelectedOffre, Converter={StaticResource _SharedObjectToVisibilityConverter}}" 
+                             Content="{Binding SelectedOffre.Employe.Login}" 
                              Foreground="White" 
-                             FontFamily="Helvitica"
+                             FontFamily="Helvitica" 
                              FontSize="30"
-                             FontWeight="Light" >
-                        <ComboBox.ItemContainerStyle>
-                            <Style TargetType="ComboBoxItem">
-                                <Setter Property="Background" 
-                                        Value="Crimson" />
-                                <Setter Property="Foreground" 
-                                        Value="DarkGray"/>
-                            </Style>
-                        </ComboBox.ItemContainerStyle>
-                    </ComboBox>
+                             FontWeight="Light"  ></Label>
                     <TextBox Grid.Column="5" 
                                 Grid.Row="17"
                                  Visibility="{Binding SelectedOffre, Converter={StaticResource _SharedObjectToVisibilityConverter}}" 
