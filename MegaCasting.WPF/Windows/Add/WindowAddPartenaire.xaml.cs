@@ -43,13 +43,20 @@ namespace MegaCasting.WPF.Windows.Add
         /// <param name="e"></param>
         private void _Btn_Confirmation_Click(object sender, RoutedEventArgs e)
         {
+            if (int.TryParse(_TextBox_NumeroAdresse.Text, out int number) != false)
+            {
+
+
+                ((ViewModelAddPartenaires)this.DataContext).InsertPartenaire(_TextBox_Siret.Text, _TextBox_Adresse.Text, Convert.ToInt32(_TextBox_NumeroAdresse.Text), _TextBox_Libelle.Text, _TextBox_Email.Text, _TextBox_Telephone.Text, _TextBox_Login.Text, _TextBox_Password.Text);
           
-
-            ((ViewModelAddPartenaires)this.DataContext).InsertPartenaire(_TextBox_Siret.Text, _TextBox_Adresse.Text, Convert.ToInt32(_TextBox_NumeroAdresse.Text), _TextBox_Libelle.Text, _TextBox_Email.Text, _TextBox_Telephone.Text, _TextBox_Login.Text, _TextBox_Password.Text);
-          
-
-
             this.Close();
+            }
+            else
+            {
+                WindowErrorChampEmpty windowErrorChampEmpty = new WindowErrorChampEmpty();
+            }
+
+
             
         }
     }
