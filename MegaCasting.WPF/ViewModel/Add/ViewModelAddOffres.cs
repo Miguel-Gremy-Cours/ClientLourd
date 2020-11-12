@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Windows;
 using Application = System.Windows.Application;
 using MegaCasting.WPF.Windows;
+using System.Data.Entity;
 
 namespace MegaCasting.WPF.ViewModel.Add
 {
@@ -105,7 +106,7 @@ namespace MegaCasting.WPF.ViewModel.Add
         public Employe SelectedEmploye
         {
             get { return _SelectedEmploye; }
-            set { _SelectedEmploye = this.Entities.Employes.FirstOrDefault(emp => emp.Login == Application.Current.Resources["currentEmploye"].ToString()); }
+            set { _SelectedEmploye = value; }
         }
         /// <summary>
         /// Déclarer une propriété de type ObservableCollection, pour la liste de Emplyes de la base de données
@@ -168,7 +169,7 @@ namespace MegaCasting.WPF.ViewModel.Add
             offre.CodeOffre = codeOffre;
 
 
-            if (offre.Studio!=null && offre.Intitule!= null && offre.Metier!= null && offre.DatePublication!= null && offre.DescriptionPoste!= null && offre.DescriptionProfile!= null && offre.DureDiffusion!= null && offre.NombrePostes!=null && offre.Employe!=null && offre.Localisation!= null && offre.CodeOffre!=null)
+            if (offre.Studio!=null && offre.Intitule!= null && offre.Metier!= null && offre.DatePublication!= null && offre.DescriptionPoste!= null && offre.DescriptionProfile!= null && offre.Employe!=null && offre.Localisation!= null && offre.CodeOffre!=null)
             {
             this.Offres.Add(offre);
             this.SaveChanges();

@@ -60,8 +60,21 @@ namespace MegaCasting.WPF.ViewModel
         /// </summary>
         public void SaveChanges()
         {
+            try
+            {
             this.Entities.SaveChanges();
+
+            }
+            catch (Exception)
+            {
+
+               
+            }
+            finally
+            {
+
             WindowSucces windowSucces = new WindowSucces();
+            }
         }
 
         /*
