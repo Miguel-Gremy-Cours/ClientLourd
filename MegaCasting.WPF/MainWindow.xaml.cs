@@ -71,7 +71,7 @@ namespace MegaCasting.WPF
             InitializeComponent();
             this.Entities = new MegaCastingEntities();
             _Label_Emp.Content = Application.Current.Resources["currentEmp"];
-            //ChangeMenuItemVisibility();
+            ChangeMenuItemVisibility();
 
             //this.DataContext = new ViewModelMainWindow(Entities); 
             //=> ces deux lignes ont été déplacées dans Connexion.Xaml.cs
@@ -145,8 +145,7 @@ namespace MegaCasting.WPF
                 ViewOffreInternaute.Visibility = Visibility.Visible;
                 Btn_ViewOffreInternaute.Visibility = Visibility.Visible;
 
-                ViewTypeContrat.Visibility = Visibility.Visible;
-                Btn_ViewTypeContrat.Visibility = Visibility.Visible;
+                
             }
            
         }

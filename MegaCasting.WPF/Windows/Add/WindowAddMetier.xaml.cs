@@ -43,8 +43,22 @@ namespace MegaCasting.WPF.Windows.Add
         /// <param name="e"></param>
         private void _Btn_Confirmation_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
             ((ViewModelAddMetier)this.DataContext).InsertMetier(_TextBox_Libelle.Text);
+
+            }
+            catch (Exception)
+            {
+
+                
+            }
+            finally
+            {
             this.Close();
+
+            }
+
         }
 
     }

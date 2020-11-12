@@ -43,8 +43,21 @@ namespace MegaCasting.WPF.Windows.Add
         /// <param name="e"></param>
         private void _Btn_Confirmation_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+
             ((ViewModelAddEmployes)this.DataContext).InsertEmploye(_TextBox_Nom.Text, _TextBox_Prenom.Text, _TextBox_Login.Text, _TextBox_Password.Text);
+            }
+            catch (Exception)
+            {
+
+                
+            }
+            finally
+            {
+
             this.Close();
+            }
         }
     }
 }

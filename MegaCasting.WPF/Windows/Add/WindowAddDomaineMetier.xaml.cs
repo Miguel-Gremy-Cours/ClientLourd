@@ -65,9 +65,21 @@ namespace MegaCasting.WPF.Windows.Add
         /// <param name="e"></param>
         private void _Btn_Confirmation_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+
            ((ViewModelAddDomaineMetier)this.DataContext).InsertDomaineMetier(_TextBox_Libelle.Text);
-          
+            }
+            catch (Exception)
+            {
+
+                
+            }
+          finally
+            {
+
                 this.Close();
+            }
             //ToDo, Ajouter Une procédure de vérification et MessageBox en cas d'erreur
             
         }

@@ -223,7 +223,7 @@
                             </StackPanel>
                         </Button>
                     </ListBoxItem>
-                    <ListBoxItem x:Name="ViewTypeContrat">
+                    <ListBoxItem x:Name="ViewTypeContrat" Visibility="Collapsed">
                         <Button BorderThickness="0" Background="Transparent" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewTypeContrat" Click="Btn_ViewTypeContrat_Click">
                             <StackPanel Style="{StaticResource StackPanelStyle}">
                                 <iconPacks:PackIconMaterialDesign Kind="MergeType" Width="30" Height="30" VerticalAlignment="Center" Foreground="White"/>
@@ -247,7 +247,7 @@
                             </StackPanel>
                         </Button>
                     </ListBoxItem>
-                    <ListBoxItem x:Name="ViewOffreInternaute" >
+                    <ListBoxItem x:Name="ViewOffreInternaute" Visibility="Collapsed" >
                         <Button BorderThickness="0" Background="Transparent" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewOffreInternaute" Click="Btn_ViewOffreInternaute_Click">
                             <StackPanel Style="{StaticResource StackPanelStyle}">
                                 <iconPacks:PackIconFontAwesome Kind="LinkSolid"  Width="30" Height="30" VerticalAlignment="Center" Foreground="White"/>
@@ -255,7 +255,7 @@
                             </StackPanel>
                         </Button>
                     </ListBoxItem>
-                    <ListBoxItem x:Name="ViewInternaute" >
+                    <ListBoxItem x:Name="ViewInternaute" Visibility="Collapsed" >
                         <Button BorderThickness="0" Background="Transparent" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewInternaute" Click="Btn_ViewInternaute_Click">
                             <StackPanel Style="{StaticResource StackPanelStyle}">
                                 <iconPacks:PackIconFontAwesome Kind="UserCheckSolid"  Width="30" Height="30" VerticalAlignment="Center" Foreground="White"/>
@@ -295,7 +295,7 @@
                             </StackPanel>
                         </Button>
                     </ListBoxItem>
-                    <ListBoxItem x:Name="ViewEmploye">
+                    <ListBoxItem x:Name="ViewEmploye" Visibility="Collapsed">
                         <Button BorderThickness="0" Background="Transparent" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewEmploye" Click="Btn_ViewEmploye_Click">
                             <StackPanel Style="{StaticResource StackPanelStyle}">
                                 <iconPacks:PackIconFontAwesome Kind="UserCircleSolid"  Width="30" Height="30" VerticalAlignment="Center" Foreground="White"/>
@@ -303,7 +303,7 @@
                             </StackPanel>
                         </Button>
                     </ListBoxItem>
-                    <ListBoxItem x:Name="ViewGroupe" >
+                    <ListBoxItem x:Name="ViewGroupe" Visibility="Collapsed" >
                         <Button BorderThickness="0" Background="Transparent" BorderBrush="Transparent" Width="240" x:Name="Btn_ViewGroupe" Click="Btn_ViewGroupe_Click">
                             <StackPanel Style="{StaticResource StackPanelStyle}">
                                 <iconPacks:PackIconFontAwesome Kind="LayerGroupSolid"  Width="30" Height="30" VerticalAlignment="Center" Foreground="White"/>

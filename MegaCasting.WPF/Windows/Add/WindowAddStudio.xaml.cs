@@ -44,8 +44,21 @@ namespace MegaCasting.WPF.Windows.Add
         /// <param name="e"></param>
         private void _Btn_Confirmation_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+
             ((ViewModelAddSudios)this.DataContext).InsertStudio(_TextBox_Siret.Text, _TextBox_Adresse.Text, Convert.ToInt32(_TextBox_NumeroAdresse.Text), _TextBox_Libelle.Text, _TextBox_Email.Text, _TextBox_Telephone.Text);
+            }
+            catch (Exception)
+            {
+
+               
+            }
+            finally
+            {
             this.Close();
+
+            }
         }
     }
 }

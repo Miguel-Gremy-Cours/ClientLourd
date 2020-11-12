@@ -6,6 +6,9 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Windows;
+using Application = System.Windows.Application;
 
 namespace MegaCasting.WPF.ViewModel.Add
 {
@@ -101,7 +104,7 @@ namespace MegaCasting.WPF.ViewModel.Add
         public Employe SelectedEmploye
         {
             get { return _SelectedEmploye; }
-            set { _SelectedEmploye = value; }
+            set { _SelectedEmploye = this.Entities.Employes.FirstOrDefault(emp => emp.Login == Application.Current.Resources["currentEmploye"].ToString()); }
         }
         /// <summary>
         /// Déclarer une propriété de type ObservableCollection, pour la liste de Emplyes de la base de données
