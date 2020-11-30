@@ -3,6 +3,7 @@ using MegaCasting.DBLib;
 using MegaCasting.WPF.ViewModel.Add;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,9 +33,16 @@ namespace MegaCasting.WPF.Windows.Add
         /// </summary>
         private Employe _CurrentEmploye;
 
+        private ObservableCollection<Offre> _Offres;
         #endregion
 
         #region Properties
+        public ObservableCollection<Offre> Offres
+        {
+            get { return _Offres; }
+            set { _Offres = value; }
+        }
+
         /// <summary>
         /// properties de Employe actuel
         /// </summary>
@@ -93,10 +101,23 @@ namespace MegaCasting.WPF.Windows.Add
 
             if (int.TryParse(_TextBox_NombrePostes.Text, out int resultNbPoste)!=false&& int.TryParse(_TextBox_DureDiffusion.Text, out int resultDuree) !=false&& _TextBox_Intitule.Text != null&& _TextBox_DescriptionPoste.Text!=null&& _TextBox_DescriptionProfile.Text!=null&& _TextBox_Localisation.Text!=null&& _TextBox_CodeOffre.Text!=null)
             {
+                //if (_TextBox_CodeOffre.Text == this.Entities.Offres.FirstOrDefault
+                //    (o => o.CodeOffre == _TextBox_CodeOffre.Text).ToString()
+                //    ||
+                //    _TextBox_Intitule.Text==this.Entities.Offres.FirstOrDefault
+                //    (o => o.CodeOffre == _TextBox_Intitule.Text).ToString()
+                //    )
+                //{
+                //    ErrorDoubleElement errorDoubleElement = new ErrorDoubleElement();
+                //}
+                //else
+                //{
+                //}
 
-            ((ViewModelAddOffres)this.DataContext).InsertOffre(_TextBox_Intitule.Text, _DatePicker_DatePublication.DisplayDate, Convert.ToInt32(_TextBox_DureDiffusion.Text), Convert.ToInt32(_TextBox_NombrePostes.Text), empId,  _TextBox_DescriptionPoste.Text, _TextBox_DescriptionProfile.Text, _TextBox_Localisation.Text, _TextBox_CodeOffre.Text);
+                    ((ViewModelAddOffres)this.DataContext).InsertOffre(_TextBox_Intitule.Text, _DatePicker_DatePublication.DisplayDate, Convert.ToInt32(_TextBox_DureDiffusion.Text), Convert.ToInt32(_TextBox_NombrePostes.Text), empId,  _TextBox_DescriptionPoste.Text, _TextBox_DescriptionProfile.Text, _TextBox_Localisation.Text, _TextBox_CodeOffre.Text);
 
-            this.Close();
+                    this.Close();
+                
             }
 
             else
