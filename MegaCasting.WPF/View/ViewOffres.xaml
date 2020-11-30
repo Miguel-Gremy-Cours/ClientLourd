@@ -331,7 +331,7 @@
                     <DatePicker Grid.Column="5" 
                                 Grid.Row="5" 
                                 Visibility="{Binding SelectedOffre, Converter={StaticResource _SharedObjectToVisibilityConverter}}" 
-                                Text="{Binding SelectedOffre.DatePublication}" 
+                                
                                 Foreground="White" 
                                 FontFamily="Helvitica" 
                                 FontSize="30" 
@@ -339,7 +339,7 @@
                                 x:Name="_DatePickerDebutContrat"
                                 SelectedDateFormat="Short"
                                 FirstDayOfWeek="Monday"
-                                SelectedDate="{Binding SelectedOffre.DatePublication}"/>
+                                SelectedDate="{Binding SelectedOffre.DatePublication, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
 
                     <TextBox Grid.Column="5" 

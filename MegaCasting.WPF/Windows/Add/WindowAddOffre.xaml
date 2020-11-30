@@ -101,7 +101,7 @@
                         </ComboBox.ItemContainerStyle>
                     </ComboBox>
 
-                    <DatePicker Grid.Row="3" Grid.Column="1" x:Name="_DatePicker_DatePublication" materialDesign:HintAssist.Hint="Sélectionner une date"  Text="{Binding Offres.DatePublication}" Foreground="White" FontFamily="Helvatica" FontSize="20" SelectedDateFormat="Short" FirstDayOfWeek="Monday" SelectedDate="{x:Static sys:DateTime.Now}" />
+                    <DatePicker Grid.Row="3" Grid.Column="1" x:Name="_DatePicker_DatePublication" materialDesign:HintAssist.Hint="Sélectionner une date"  Foreground="White" FontFamily="Helvatica" FontSize="20" SelectedDateFormat="Short" FirstDayOfWeek="Monday" SelectedDate="{Binding Offre.DatePublication, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, TargetNullValue={x:Static sys:DateTime.Now}}" />
 
 
 

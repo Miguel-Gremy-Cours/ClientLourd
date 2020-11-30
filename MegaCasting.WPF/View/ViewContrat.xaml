@@ -197,7 +197,7 @@
                     <DatePicker Grid.Column="3" 
                                 Grid.Row="5" 
                                 Visibility="{Binding SelectedContrat, Converter={StaticResource _SharedObjectToVisibilityConverter}}" 
-                                Text="{Binding SelectedContrat.DebutContrat}" 
+                               
                                 Foreground="White" 
                                 FontFamily="Helvitica" 
                                 FontSize="30" 
@@ -205,7 +205,7 @@
                                 x:Name="_DatePickerDebutContrat"
                                 SelectedDateFormat="Short"
                                 FirstDayOfWeek="Monday"
-                                SelectedDate="{Binding SelectedContrat.DebutContrat}"/>
+                                SelectedDate="{Binding SelectedContrat.DebutContrat, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, TargetNullValue={x:Static sys:DateTime.Now}}"/>
 
                     <TextBox Grid.Column="3" 
                              Grid.Row="7" 
