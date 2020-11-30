@@ -253,7 +253,7 @@
                     </TextBlock>
                     <TextBlock Grid.Column="5" 
                                Grid.Row="15"
-                               Text="Employé" 
+                               Text="Opérateur" 
                                
                                Foreground="White"
                                FontFamily="Helvitica" 

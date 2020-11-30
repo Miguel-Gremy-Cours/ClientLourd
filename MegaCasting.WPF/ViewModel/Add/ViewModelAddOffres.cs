@@ -106,7 +106,7 @@ namespace MegaCasting.WPF.ViewModel.Add
         public Employe SelectedEmploye
         {
             get { return _SelectedEmploye; }
-            set { _SelectedEmploye = value; }
+            set { _SelectedEmploye = value;}
         }
         /// <summary>
         /// Déclarer une propriété de type ObservableCollection, pour la liste de Emplyes de la base de données
@@ -134,9 +134,12 @@ namespace MegaCasting.WPF.ViewModel.Add
 
             this.Entities.Employes.ToList();
             this.Employes = this.Entities.Employes.Local;
+            
 
             this.Entities.Offres.ToList();
             this.Offres = this.Entities.Offres.Local;
+
+           
         }
         #endregion
 
@@ -152,9 +155,10 @@ namespace MegaCasting.WPF.ViewModel.Add
         /// <param name="descriptionProfile"></param>
         /// <param name="localisatoin"></param>
         /// <param name="codeOffre"></param>
-        public void InsertOffre( string intitule,  DateTime datePublication, int dureDiffusion, int nombrePoste, string descriptionPoste, string descriptionProfile, string localisatoin, string codeOffre)
+        public void InsertOffre( string intitule,  DateTime datePublication, int dureDiffusion, int nombrePoste, int idEmploye, string descriptionPoste, string descriptionProfile, string localisatoin, string codeOffre)
         {
             Offre offre = new Offre();
+            
 
             offre.Studio = SelectedStudio;
             offre.Intitule = intitule;
@@ -164,12 +168,12 @@ namespace MegaCasting.WPF.ViewModel.Add
             offre.DescriptionProfile = descriptionProfile;
             offre.DureDiffusion = dureDiffusion;
             offre.NombrePostes = nombrePoste;
-            offre.Employe = SelectedEmploye;
+            offre.IdEmploye= idEmploye;
             offre.Localisation = localisatoin;
             offre.CodeOffre = codeOffre;
 
 
-            if (offre.Studio!=null && offre.Intitule!= null && offre.Metier!= null && offre.DatePublication!= null && offre.DescriptionPoste!= null && offre.DescriptionProfile!= null && offre.Employe!=null && offre.Localisation!= null && offre.CodeOffre!=null)
+            if (offre.Studio!=null && offre.Intitule!= null && offre.Metier!= null && offre.DatePublication!= null && offre.DescriptionPoste!= null && offre.DescriptionProfile!= null && offre.IdEmploye!=null && offre.Localisation!= null && offre.CodeOffre!=null)
             {
             this.Offres.Add(offre);
             this.SaveChanges();
