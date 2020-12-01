@@ -175,9 +175,13 @@ namespace MegaCasting.WPF.ViewModel.Add
 
             if (offre.Studio!=null && offre.Intitule!= null && offre.Metier!= null && offre.DatePublication!= null && offre.DescriptionPoste!= null && offre.DescriptionProfile!= null && offre.IdEmploye!=null && offre.Localisation!= null && offre.CodeOffre!=null)
             {
-            this.Offres.Add(offre);
-            this.SaveChanges();
-                WindowSucces window = new WindowSucces();
+                //if (offre.CodeOffre==this.Entities)
+                //{
+
+                //}
+                    this.Offres.Add(offre);
+                    this.SaveChanges();
+                    WindowSucces window = new WindowSucces();
             }
             else
             {
