@@ -78,6 +78,8 @@ namespace MegaCasting.WPF.ViewModel
             // Initialisation de la liste Civilites dans la base de donnée
             this.Entities.Civilites.ToList();
             this.Civilites = this.Entities.Civilites.Local;
+
+            this.Entities.Internautes.ToList().ForEach(i => Console.WriteLine(i.Civilite.Id));
         }
         #endregion
         #region Method

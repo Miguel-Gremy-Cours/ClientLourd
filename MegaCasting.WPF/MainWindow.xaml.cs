@@ -129,9 +129,10 @@ namespace MegaCasting.WPF
         private void ChangeMenuItemVisibility()
         {
             string login = Application.Current.Resources["currentEmp"].ToString();
+            
             Employe emp = this.Entities.Employes.FirstOrDefault(employe => employe.Login == login);
 
-            if (emp.IdGroupeEmployes==2)
+            if (emp!=null&&emp.IdGroupeEmployes==2)
             {
                 ViewEmploye.Visibility = Visibility.Visible;
                 Btn_ViewEmploye.Visibility = Visibility.Visible;
