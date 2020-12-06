@@ -57,7 +57,7 @@
 
 
                    
-                    <TextBox Grid.Row="3" Grid.Column="1" x:Name="_TextBox_Libelle" Text="{Binding DomaineMetiers.Libelle}" Foreground="White" Background="Transparent" FontFamily="Helvitica" FontSize="20" FontWeight="Light" />
+                    <TextBox Grid.Row="3" Grid.Column="1" x:Name="_TextBox_Libelle" Text="{Binding DomaineMetier.Libelle}" Foreground="White" Background="Transparent" FontFamily="Helvitica" FontSize="20" FontWeight="Light" />
                     
                   
                 </Grid>

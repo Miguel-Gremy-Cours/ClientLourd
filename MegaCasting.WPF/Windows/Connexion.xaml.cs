@@ -86,8 +86,8 @@ namespace MegaCasting.WPF.Windows
             if (CurrentEmployee == null)
             {
                 //Si Login et Mot de passe de correspond à aucune valuer dans la base de données, on nettoye la zone de Textbox login et mot de passe.
-                TxtBx_Login.Text = "";
-                PwBx_Password.Password = "";
+                TxtBx_Login.Text ="";
+                PwBx_Password.Password ="";
                 ConnexionError connexionError = new ConnexionError();
                 connexionError.ShowDialog();
                 //WindowError windowError = new WindowError();

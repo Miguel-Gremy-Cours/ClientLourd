@@ -60,7 +60,7 @@ namespace MegaCasting.WPF.ViewModel.Add
         /// <summary>
         /// Déclarer une propriété de type de Classe DomaineMetier, pour la DomaineMetier qui sera sélectionné dans la vue
         /// </summary>
-        public DomaineMetier SelectedDomaineMetiers
+        public DomaineMetier SelectedDomaineMetier
         {
             get { return _SelectedDomaineMetier; }
             set { _SelectedDomaineMetier = value; }
@@ -89,14 +89,14 @@ namespace MegaCasting.WPF.ViewModel.Add
         {
             Metier metier = new Metier();
             metier.Libelle = libelle;
-            metier.DomaineMetier = SelectedDomaineMetiers;
+            metier.DomaineMetier = SelectedDomaineMetier;
 
 
             if (metier.Libelle!= null && metier.DomaineMetier!=null)
             {
 
-            this.Metiers.Add(metier);
-            this.SaveChanges();
+                this.Metiers.Add(metier);
+                this.SaveChanges();
                 WindowSucces window = new WindowSucces();
             }
             else

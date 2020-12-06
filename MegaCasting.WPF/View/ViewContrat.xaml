@@ -223,9 +223,10 @@
                               materialDesign:HintAssist.Hint="Code"
                               ItemsSource="{Binding Offres}"
                               DisplayMemberPath="CodeOffre"
+                              
                               SelectedItem="{Binding SelectedOffre}"
                               
-                             Visibility="{Binding SelectedContrat, Converter={StaticResource _SharedObjectToVisibilityConverter}}" 
+                             
                              Text="{Binding SelectedContrat.Offre.CodeOffre}" 
                               
                              Foreground="White" 

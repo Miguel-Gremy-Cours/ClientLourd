@@ -25,7 +25,7 @@ namespace MegaCasting.WPF.ViewModel
         /// <summary>
         /// Attribut contenant la liste des DomaineMetiers de la base de donnée
         /// </summary>
-        private ObservableCollection<DomaineMetier> _DomaineMetier;
+        private ObservableCollection<DomaineMetier> _DomaineMetiers;
         /// <summary>
         /// Attribut contenant le DomaineMetier de la vue
         /// </summary>
@@ -74,8 +74,8 @@ namespace MegaCasting.WPF.ViewModel
         /// </summary>
         public ObservableCollection<DomaineMetier> DomaineMetiers
         {
-            get { return _DomaineMetier; }
-            set { _DomaineMetier = value; }
+            get { return _DomaineMetiers; }
+            set { _DomaineMetiers = value; }
         }
         #endregion
         #region Constructor

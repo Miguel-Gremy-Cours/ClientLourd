@@ -186,8 +186,8 @@
                               x:Name="_CmBox_Domaine"
                               ItemsSource="{Binding DomaineMetiers}"
                               DisplayMemberPath="Libelle"
-                              SelectedItem="{Binding SelectedDomaineMetier}" 
-                              Visibility="{Binding SelectedMetier, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  
+                              SelectedValue="{Binding SelectedDomaineMetier,Mode=OneTime}" 
+                              
                               Text="{Binding SelectedMetier.DomaineMetier.Libelle}" 
                               Foreground="White"
                               FontFamily="Helvitica"
@@ -208,14 +208,13 @@
 
 
 
-                    <!--<ComboBox Grid.Column="3" Grid.Row="7" ItemsSource="{Binding Metier}" SelectedItem="{Binding SelectedMetier}" >
+                    <!--<ComboBox Grid.Column="3" Grid.Row="5" ItemsSource="{Binding Metier}" SelectedItem="{Binding SelectedMetier}" >
                         
                         <ComboBox.ItemTemplate>
                             <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <Rectangle Fill="{Binding DomaineMetiers.Libelle}" Width="16" Height="16" Margin="0,2,5,2" />
+                                
                                     <TextBlock Visibility="{Binding SelectedMetier, Converter={StaticResource _SharedObjectToVisibilityConverter}}"  Text="{Binding SelectedMetier.DomaineMetier.Libelle}" />
-                                </StackPanel>
+                              
                             </DataTemplate>
                         </ComboBox.ItemTemplate>
                         

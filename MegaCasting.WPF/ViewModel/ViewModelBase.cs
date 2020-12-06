@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace MegaCasting.WPF.ViewModel
 {
@@ -60,21 +61,21 @@ namespace MegaCasting.WPF.ViewModel
         /// </summary>
         public void SaveChanges()
         {
-            try
-            {
             this.Entities.SaveChanges();
+            //try
+            //{
 
-            }
-            catch (Exception)
-            {
-
+            //}
+            //catch (Exception e)
+            //{
                
-            }
-            finally
-            {
+               
+            //}
+            //finally
+            //{
 
-            WindowSucces windowSucces = new WindowSucces();
-            }
+            //WindowSucces windowSucces = new WindowSucces();
+            //}
         }
 
         /*

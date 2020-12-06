@@ -9,6 +9,7 @@ namespace MegaCasting.WPF.ViewModel
 {
     public class ViewModelConnexion : ViewModelBase
     {
+
         /// <summary>
         /// Constructeur de la classe ViewModelConnexion
         /// </summary>

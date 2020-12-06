@@ -83,14 +83,14 @@ namespace MegaCasting.WPF.ViewModel.Add
             if (domaineMetier.Libelle != null)
             {
 
-            this.DomaineMetiers.Add(domaineMetier);
-            this.SaveChanges();
+                this.DomaineMetiers.Add(domaineMetier);
+                this.SaveChanges();
                 WindowSucces window =new WindowSucces();
             }
-            else
-            {
-                WindowErrorChampEmpty window = new WindowErrorChampEmpty();
-            }
+            //else
+            //{
+            //    WindowErrorChampEmpty window = new WindowErrorChampEmpty();
+            //}
             
         }
         #endregion

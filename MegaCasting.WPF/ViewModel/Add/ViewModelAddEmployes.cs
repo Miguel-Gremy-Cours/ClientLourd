@@ -130,8 +130,8 @@ namespace MegaCasting.WPF.ViewModel.Add
 
             if (employe.Nom!=null&& employe.Prenom!=null && employe.Civilite!= null && employe.GroupeEmploye!= null && employe.Login!= null && employe.Password!= null)
             {
-            this.Employes.Add(employe);
-            this.SaveChanges();
+                this.Employes.Add(employe);
+                this.SaveChanges();
                 WindowSucces window = new WindowSucces();
             }
             else
