@@ -62,7 +62,7 @@ namespace MegaCasting.WPF.View
 
         private void _Save_Contrat_Click(object sender, RoutedEventArgs e)
         {
-            ((ViewModelContrat)this.DataContext).SaveChanges();
+            ((ViewModelContrat)this.DataContext).Update();
         }
 
     }

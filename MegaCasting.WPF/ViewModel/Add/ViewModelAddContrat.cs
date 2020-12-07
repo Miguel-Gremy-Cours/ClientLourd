@@ -143,12 +143,19 @@ namespace MegaCasting.WPF.ViewModel.Add
             contrat.Offre = SelectedOffre;
 
 
-            if (contrat.TypeContrat!=null && contrat.DebutContrat!= null && contrat.DureContrat!=null && contrat.CodeContrat!=null && contrat.FichierContrat!= null && contrat.Offre!=null)
+            if (contrat.TypeContrat!=null && contrat.DebutContrat!= null && contrat.DureContrat>0 && contrat.CodeContrat!=null && contrat.FichierContrat!= null && contrat.Offre!=null)
             {
-
-            this.Contrats.Add(contrat);
-            this.SaveChanges();
-                WindowSucces windowSucces = new WindowSucces();
+                if (!Entities.Contrats.Any(c => c.CodeContrat == codeContrat))
+                {
+                    this.Contrats.Add(contrat);
+                    this.SaveChanges();
+                    WindowSucces windowSucces = new WindowSucces();
+                }
+                else
+                {
+                    ErrorDoubleElement errorDoubleElement = new ErrorDoubleElement();
+                }
+            
             }
             else
             {

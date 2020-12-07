@@ -65,9 +65,17 @@ namespace MegaCasting.WPF.ViewModel.Add
             typeContrat.Libelle = libelle;
             if (typeContrat.Libelle!=null)
             {
-            this.TypeContrats.Add(typeContrat);
-            this.SaveChanges();
-                WindowSucces windowSucces = new WindowSucces();
+                if (!Entities.TypeContrats.Any(tc=>tc.Libelle==libelle))
+                {
+
+                    this.TypeContrats.Add(typeContrat);
+                    this.SaveChanges();
+                    WindowSucces windowSucces = new WindowSucces();
+                }
+                else
+                {
+                    ErrorDoubleElement errorDoubleElement = new ErrorDoubleElement();
+                }
 
             }
             else

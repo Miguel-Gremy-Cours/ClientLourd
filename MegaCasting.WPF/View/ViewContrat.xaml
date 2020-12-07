@@ -7,6 +7,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:metro="http://metro.mahapps.com/winfx/xaml/iconpacks"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:dotNetKitControls="clr-namespace:DotNetKit.Windows.Controls;assembly=DotNetKit.Wpf.AutoCompleteComboBox"
              mc:Ignorable="d" 
              d:DesignHeight="750" d:DesignWidth="800"  Background="Transparent" >
 
@@ -217,22 +218,25 @@
                              FontWeight="Light"
                              x:Name="_TextBoxDureContrat"/>
 
-                    <ComboBox Grid.Column="3"
-                             Grid.Row="9" 
-                              x:Name="_Cmbox_CodeOffre"
-                              materialDesign:HintAssist.Hint="Code"
-                              ItemsSource="{Binding Offres}"
-                              DisplayMemberPath="CodeOffre"
+                    <dotNetKitControls:AutoCompleteComboBox   Grid.Column="3"
+                                                              Grid.Row="9" 
+                                                              x:Name="_Cmbox_CodeOffre"
+                                                              materialDesign:HintAssist.Hint="Code Offre"
+                                                              
+                                                              SelectedValuePath="Id"
+                                                              TextSearch.TextPath="CodeOffre"                                                           
+                                                              DisplayMemberPath="CodeOffre"
+                                                              ItemsSource="{Binding Offres}"
+                                                              SelectedItem="{Binding SelectedOffre, NotifyOnSourceUpdated=True}"
+                                                             
                               
-                              SelectedItem="{Binding SelectedOffre}"
+                                                              Text="{Binding SelectedContrat.Offre.CodeOffre}"
+                                                             SelectedValue="{Binding SelectedContrat}" 
                               
-                             
-                             Text="{Binding SelectedContrat.Offre.CodeOffre}" 
-                              
-                             Foreground="White" 
-                             FontFamily="Helvitica" 
-                             FontSize="30"
-                             FontWeight="Light" >
+                                                             Foreground="Crimson" 
+                                                             FontFamily="Helvitica" 
+                                                             FontSize="30"
+                                                             FontWeight="Light" >       
                         <ComboBox.ItemContainerStyle>
                             <Style TargetType="ComboBoxItem">
                                 <Setter Property="Background" 
@@ -241,24 +245,34 @@
                                         Value="DarkGray"/>
                             </Style>
                         </ComboBox.ItemContainerStyle>
-                    </ComboBox>
+                    </dotNetKitControls:AutoCompleteComboBox>
 
 
-                    <ComboBox Grid.Column="3" 
-                              Grid.Row="11" 
-                              x:Name="_CmBox_TypeContrat"
-                              materialDesign:HintAssist.Hint="Type"
-                              ItemsSource="{Binding TypeContrats}"
-                              DisplayMemberPath="Libelle"
-                              SelectedItem="{Binding SelectedTypeContrat}"
-                              
-                              Visibility="{Binding SelectedContrat, Converter={StaticResource _SharedObjectToVisibilityConverter}}" 
+                    <TextBox Grid.Column="3" 
+                             Grid.Row="11" 
+                             Visibility="{Binding SelectedContrat, Converter={StaticResource _SharedObjectToVisibilityConverter}}" 
                              Text="{Binding SelectedContrat.TypeContrat.Libelle}" 
-                             
                              Foreground="White" 
                              FontFamily="Helvitica"
                              FontSize="30"
-                             FontWeight="Light" >
+                             FontWeight="Light" ></TextBox>
+                    <!--<dotNetKitControls:AutoCompleteComboBox   Grid.Column="3" 
+                                                              Grid.Row="11" 
+                                                              x:Name="_CmBox_TypeContrat"
+                                                              materialDesign:HintAssist.Hint="Type"
+                                                              SelectedValuePath="Id"
+                                                              TextSearch.TextPath="Libelle"
+                                                              DisplayMemberPath="Libelle"
+                                                              ItemsSource="{Binding TypeContrats}"
+                                                              SelectedItem="{Binding SelectedTypeContrat}"
+                                                              SelectedValue="{Binding SelectedTypeContrat, NotifyOnSourceUpdated=True ,UpdateSourceTrigger=PropertyChanged}"
+                                                              Visibility="{Binding SelectedContrat, Converter={StaticResource _SharedObjectToVisibilityConverter}}"
+                                                             
+                             
+                                                             Foreground="Crimson" 
+                                                             FontFamily="Helvitica"
+                                                             FontSize="30"
+                                                             FontWeight="Light" >           
 
                         <ComboBox.ItemContainerStyle>
                             <Style TargetType="ComboBoxItem">
@@ -268,7 +282,7 @@
                                         Value="DarkGray"/>
                             </Style>
                         </ComboBox.ItemContainerStyle>
-                    </ComboBox>
+                    </dotNetKitControls:AutoCompleteComboBox>-->
 
 
 

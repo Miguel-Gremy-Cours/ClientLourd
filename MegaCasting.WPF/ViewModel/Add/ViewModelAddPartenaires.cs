@@ -79,11 +79,19 @@ namespace MegaCasting.WPF.ViewModel.Add
             partenaire.Login = login;
             partenaire.Password = password;
 
-            if (partenaire.Siret!=null&& partenaire.Adresse != null && partenaire.NumeroAdresse != null && partenaire.Libelle != null && partenaire.Email != null && partenaire.Telephone != null && partenaire.Login != null && partenaire.Password != null)
+            if (partenaire.Siret!=null&& partenaire.Adresse != null && partenaire.NumeroAdresse >0 && partenaire.Libelle != null && partenaire.Email != null && partenaire.Telephone != null && partenaire.Login != null && partenaire.Password != null)
             {
-            this.Partenaires.Add(partenaire);
-            this.SaveChanges();
+                if (!Entities.Partenaires.Any(c => c.Libelle == libelle))
+                {
+
+                this.Partenaires.Add(partenaire);
+                this.SaveChanges();
                 WindowSucces window = new WindowSucces();
+                }
+                else
+                {
+                    ErrorDoubleElement errorDoubleElement = new ErrorDoubleElement();
+                }
             }
             else
             {

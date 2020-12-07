@@ -186,7 +186,7 @@
                               x:Name="_CmBox_Domaine"
                               ItemsSource="{Binding DomaineMetiers}"
                               DisplayMemberPath="Libelle"
-                              SelectedValue="{Binding SelectedDomaineMetier,Mode=OneTime}" 
+                              SelectedValue="{Binding SelectedDomaineMetier}" 
                               
                               Text="{Binding SelectedMetier.DomaineMetier.Libelle}" 
                               Foreground="White"

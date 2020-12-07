@@ -74,11 +74,19 @@ namespace MegaCasting.WPF.ViewModel.Add
             studio.Email = email;
             studio.Telephone = telephone;
 
-            if (studio.Siret != null && studio.Adresse != null && studio.NumeroAdresse != null && studio.Libelle != null && studio.Email != null && studio.Telephone != null)
+            if (studio.Siret != null && studio.Adresse != null && studio.NumeroAdresse >0 && studio.Libelle != null && studio.Email != null && studio.Telephone != null)
             {
-            this.Studios.Add(studio);
-            this.SaveChanges();
-                WindowSucces window = new WindowSucces();
+                if (!Entities.Studios.Any(c => c.Libelle == libelle))
+                {
+
+                    this.Studios.Add(studio);
+                    this.SaveChanges();
+                    WindowSucces window = new WindowSucces();
+                }
+                else
+                {
+                    ErrorDoubleElement errorDoubleElement = new ErrorDoubleElement();
+                }
             }
             else
             {

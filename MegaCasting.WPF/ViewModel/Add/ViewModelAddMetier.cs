@@ -94,10 +94,16 @@ namespace MegaCasting.WPF.ViewModel.Add
 
             if (metier.Libelle!= null && metier.DomaineMetier!=null)
             {
-
-                this.Metiers.Add(metier);
-                this.SaveChanges();
-                WindowSucces window = new WindowSucces();
+                if (!Entities.Metiers.Any(m=>m.Libelle==libelle))
+                {
+                    this.Metiers.Add(metier);
+                    this.SaveChanges();
+                    WindowSucces window = new WindowSucces();
+                }
+                else
+                {
+                    ErrorDoubleElement errorDoubleElement = new ErrorDoubleElement();
+                }
             }
             else
             {

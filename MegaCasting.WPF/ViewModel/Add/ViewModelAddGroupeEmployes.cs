@@ -65,9 +65,17 @@ namespace MegaCasting.WPF.ViewModel.Add
             groupeEmploye.Libelle = libelle;
             if (groupeEmploye.Libelle!=null)
             {
-            this.GroupeEmployes.Add(groupeEmploye);
-            this.SaveChanges();
-                WindowSucces windowSucces = new WindowSucces();
+                if (!Entities.GroupeEmployes.Any(ge=>ge.Libelle==libelle))
+                {
+
+                    this.GroupeEmployes.Add(groupeEmploye);
+                    this.SaveChanges();
+                    WindowSucces windowSucces = new WindowSucces();
+                }
+                else
+                {
+                    ErrorDoubleElement errorDoubleElement = new ErrorDoubleElement();
+                }
             }
             else
             {

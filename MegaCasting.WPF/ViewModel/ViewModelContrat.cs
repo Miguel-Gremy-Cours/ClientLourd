@@ -109,9 +109,22 @@ namespace MegaCasting.WPF.ViewModel
         }
         #endregion
         #region Method
+
+        public void Update()
+        {
+            if (!SelectedContrat.TypeContrat.Libelle.Any())
+            {
+                SaveChanges();
+            }
+        }
+
+
         /// <summary>
         /// Supprimer un type de contrat
         /// </summary>
+        /// 
+
+
         public void DeleteContrat()
         {
             // Vérification de droit de suppression puis suppréssion d'élément
